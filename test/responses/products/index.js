@@ -5,6 +5,6 @@
  */
 
 module.exports = {
-    requests: require('./requests'),
-    products: require('./products')
+    templates_by_product: require('./templates_by_product.json'),
+    published_products: require('./published_products.json')
 }
