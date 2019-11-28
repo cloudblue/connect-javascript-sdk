@@ -28,6 +28,9 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "jsdoc": "^3.6.3",
     "mocha": "^6.2.2",
     "nock": "^11.7.0",
