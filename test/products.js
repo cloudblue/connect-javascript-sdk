@@ -106,4 +106,45 @@ describe('Connect Javascript SDK - Products', () => {
         response.data[0].should.have.property('id').eql('PRD-000-000-000');
         response.data[0].should.have.property('name').eql('Product');
     });
+    it('returns the list of parameters configured for a product by product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/parameters')
+            .reply(200,[
+                {
+                  "id": "private-phoenixes-cssj",
+                  "name": "admin_email",
+                  "title": "Admin account email",
+                  "description": "Enter the email for the admin account to receive the activation link",
+                  "type": "text",
+                  "scope": "asset",
+                  "phase": "ordering",
+                  "constraints": {
+                    "hidden": false,
+                    "required": true,
+                    "unique": false
+                  }
+                },
+                {
+                  "id": "classy-cats-fycp",
+                  "name": "activation_link",
+                  "title": "Activation link",
+                  "description": "The link to activate the account",
+                  "type": "text",
+                  "scope": "asset",
+                  "phase": "fulfillment",
+                  "constraints": {
+                    "hidden": false,
+                    "required": true,
+                    "unique": false
+                  }
+                }
+              ]);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getParametersByProduct('PRD-000-000-000')        
+        response.data.should.be.an.Array();
+        response.data.should.have.size(2);
+        response.data[0].should.have.property('id');
+        response.data[0].should.have.property('scope');
+        response.data[0].should.have.property('phase');
+    });
 });
