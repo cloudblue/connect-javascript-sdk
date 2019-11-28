@@ -38,4 +38,19 @@ describe('Connect Javascript SDK - Requests', () => {
             element.asset.product.should.have.property('id').eql('PRD-000-000-000');
         });
     });
+    it('reject a request and returns the object request ', async () => {
+        nock('https://localhost')
+            .post(`/requests/PR-5426-9883-2189-001/fail`)
+            .reply(200, responses.requests.result_reject_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.rejectRequest('PR-5426-9883-2189-001', 'Reason to reject');        
+        response.data.should.be.an.Object();
+        response.data.should.have.property('id').eql('PR-5426-9883-2189-001');
+        response.data.should.have.property('status').eql('failed');
+
+    });
+
+
+
+
 });
