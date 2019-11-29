@@ -19,8 +19,8 @@ describe('Connect Javascript SDK - Requests', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list(['approved']);        
-        response.data.should.be.an.Array();
-        response.data.forEach(element => {
+        response.should.be.an.Array();
+        response.forEach(element => {
             element.should.have.property('status').eql('approved');
         });
     });
@@ -31,8 +31,8 @@ describe('Connect Javascript SDK - Requests', () => {
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list(['approved', 'pending'], ['PRD-000-000-000']);        
-        response.data.should.be.an.Array();
-        response.data.forEach(element => {
+        response.should.be.an.Array();
+        response.forEach(element => {
             element.should.have.property('asset');
             element.asset.should.have.property('product')
             element.asset.product.should.have.property('id').eql('PRD-000-000-000');
@@ -44,9 +44,9 @@ describe('Connect Javascript SDK - Requests', () => {
             .reply(200, responses.requests.result_reject_request);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.rejectRequest('PR-5426-9883-2189-001', 'Reason to reject');        
-        response.data.should.be.an.Object();
-        response.data.should.have.property('id').eql('PR-5426-9883-2189-001');
-        response.data.should.have.property('status').eql('failed');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-5426-9883-2189-001');
+        response.should.have.property('status').eql('failed');
 
     });
 
