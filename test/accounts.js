@@ -7,8 +7,10 @@
 const should = require('should');
 const nock = require('nock');
 
-const ConnectClient = require('../index');
-const HttpError = require('../lib/connect/api/errors').HttpError;
+const connect = require('../index'),
+    ConnectClient = connect.ConnectClient,
+    HttpError = connect.HttpError;
+
 
 describe('Connect Javascript SDK - Accounts', () => {
     afterEach(done => { nock.cleanAll(); done(); });

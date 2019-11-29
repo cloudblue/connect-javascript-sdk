@@ -8,7 +8,7 @@ const should = require('should');
 const nock = require('nock');
 const responses = require('./responses');
 
-const ConnectClient = require('../index');
+const ConnectClient = require('../index').ConnectClient;
 
 describe('Connect Javascript SDK - Requests', () => {
     afterEach(done => { nock.cleanAll(); done(); });
