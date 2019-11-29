@@ -37,13 +37,12 @@ describe('Connect Javascript SDK - Accounts', () => {
         response[0].should.have.property('id').eql('VA-000-000');
         response[0].should.have.property('name').eql('Vendor');
     });
-    // it('should be rejected if internal server error', async () => {
-    //     nock('https://localhost')
-    //         .get('/accounts')
-    //         .reply(500, 'Internal server error');
-    //     const client = new ConnectClient('https://localhost', '1234567890');
-    //     const response = await client.accounts.list();
-    //     console.log(response);
-    //     response.should.be.rejectedWith(HttpError);
-    // });
+    it('should be rejected if internal server error', async () => {
+        nock('https://localhost')
+            .get('/accounts')
+            .reply(500, 'Internal server error');
+        const client = new ConnectClient('https://localhost', '1234567890');
+        await client.accounts.list().should.be.rejectedWith(HttpError, {status: 500, message: 'Internal server error'});
+
+    });
 });
