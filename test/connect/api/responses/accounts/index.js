@@ -4,8 +4,6 @@
  * @copyright (c) 2019. Ingram Micro. All Rights Reserved.
  */
 
-module.exports = {
-    requests: require('./requests'),
-    products: require('./products'),
-    accounts: require('./accounts')
-}
+ module.exports = {
+     vendor_account: require('./vendor_account.json')
+ }

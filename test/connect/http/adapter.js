@@ -7,7 +7,6 @@
 
 const should = require('should');
 const { AbstractHttpAdapter } = require('../../../index');
-const { DefaultHttpAdapter } = require('../../../lib/connect/http/adapter');
 
 describe('Connect Javascript SDK - AbstractHttpAdapter', () => {
     it('constructor throw an error', () => {
