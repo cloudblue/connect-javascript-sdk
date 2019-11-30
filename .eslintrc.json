@@ -17,5 +17,6 @@
     },
     "rules": {
         "no-underscore-dangle": "off"
-    }
+    },
+    "ignorePatterns": ["test/", "node_modules/"]
 }

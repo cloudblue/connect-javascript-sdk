@@ -6,10 +6,9 @@
 
 const should = require('should');
 const nock = require('nock');
-
-const connect = require('../index'),
-    ConnectClient = connect.ConnectClient,
-    HttpError = connect.HttpError;
+const connect = require('../index');
+const ConnectClient = connect.ConnectClient;
+const HttpError = connect.HttpError;
 
 
 describe('Connect Javascript SDK - Accounts', () => {
