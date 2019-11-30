@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
-    "cover": "nyc --reporter=html mocha",
+    "cover": "nyc --reporter=html mocha --recursive",
     "docs": "jsdoc lib -r -d docs/"
   },
   "repository": {

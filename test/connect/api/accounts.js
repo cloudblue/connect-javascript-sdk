@@ -6,7 +6,7 @@
 
 const should = require('should');
 const nock = require('nock');
-const connect = require('../index');
+const connect = require('../../../index');
 const ConnectClient = connect.ConnectClient;
 const HttpError = connect.HttpError;
 
