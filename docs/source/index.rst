@@ -14,8 +14,11 @@ Introduction
 ------------
 
 CloudBlue Connect is a supply automation platform that manages your products and services, contracts, 
-ordering and fulfillment, usage and subscriptions. It supports any product, from physical goods to cloud 
-products, as well as any channel, including your direct and indirect sales channels and internal procurement. 
+ordering and fulfillment, usage and subscriptions. 
+
+It supports any product, from physical goods to cloud products, as well as any channel, including your 
+direct and indirect sales channels and internal procurement. 
+
 With its flexible APIs, it can connect to any commerce platform.
 
 Vendors can leverage CloudBlue Connect to:
@@ -40,7 +43,6 @@ Table of contents
 
 .. toctree::
     :maxdepth: 2
-    :caption: Contents:
 
     getting_started
     reference
