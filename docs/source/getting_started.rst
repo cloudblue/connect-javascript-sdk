@@ -18,7 +18,7 @@ To install the Connect Javascript SDK at the command prompt enter:
 
 .. code-block:: sh
 
-    $ npm install connect-javascript-sdk --save
+    $ npm install @cloudblueconnect/connect-javascript-sdk --save
 
 Usage
 -----
@@ -27,7 +27,7 @@ Create an instance of the `ConnectClient` class:
 
 .. code-block:: js
 
-    const { ConnectClient } = require('connect-javascript-sdk');
+    const { ConnectClient } = require('@cloudblueconnect/connect-javascript-sdk');
 
     const client = new ConnectClient('<api_endpoint>', '<api_key>');
 

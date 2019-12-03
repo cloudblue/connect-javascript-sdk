@@ -41,7 +41,7 @@ Connect Javascript SDK also depends on:
 To install the Connect Javascript SDK from a terminal window type:
 
 ```sh
-$ npm install --save connect-javascript-sdk
+$ npm install --save @cloudblueconnect/connect-javascript-sdk
 ```
 
 ## Documentation
@@ -68,7 +68,7 @@ Once in the `Token` view, click on the button `CREATE TOKEN` on the upper right 
 ```js
 
 // import the ConnectClient class
-const { ConnectClient } = require('connect-javascript-sdk');
+const { ConnectClient } = require('@cloudblueconnect/connect-javascript-sdk');
 
 // create an instance of the ConnectClient class
 const client = new ConnectClient('https://<your api endpoint>/', '<your api key>');

@@ -1,12 +1,11 @@
 {
-  "name": "connect-javascript-sdk",
+  "name": "@cloudblueconnect/connect-javascript-sdk",
   "version": "19.0.0",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
-    "cover": "nyc --reporter=html mocha --recursive",
-    "docs": "jsdoc lib -r -d docs/"
+    "cover": "nyc --reporter=html mocha --recursive"
   },
   "repository": {
     "type": "git",
