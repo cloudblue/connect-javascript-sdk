@@ -13,8 +13,10 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import os
 import sphinx_rtd_theme
 
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
 # -- Project information -----------------------------------------------------
 
 project = 'Connect Javascript SDK'
@@ -61,4 +63,6 @@ html_static_path = ['_static']
 # sphinx-js configuration
 jsdoc_config_path = './jsdoc.conf.json'
 js_source_path = '../lib'
+if on_rtd:
+    js_source_path = '../../lib'
 primary_domain = 'js'
