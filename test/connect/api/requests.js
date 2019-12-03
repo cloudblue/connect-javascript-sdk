@@ -114,7 +114,7 @@ describe('Connect Javascript SDK - Requests', () => {
         const client = new ConnectClient('https://localhost', '1234567890');
 
         await client.requests.updateRequestParameters('PR-0000-0000-0000-000', [], 'Test note')
-            .should.be.rejectedWith(HttpError, {status: 400, message: JSON.stringify(responses.requests.update_parameters_error)});
+            .should.be.rejectedWith(HttpError, { status: 400, message: JSON.stringify(responses.requests.update_parameters_error) });
     });
     it('approve request', async () => {
         nock('https://localhost')
@@ -125,5 +125,17 @@ describe('Connect Javascript SDK - Requests', () => {
         const response = await client.requests.approveWithTemplate('PR-0000-0000-0000-000', 'TL-000-000-000');
         response.should.be.an.Object();
         response.should.have.property('status').eql('approved');
+    });
+    it('create request', async () => {
+        nock('https://localhost')
+            .post('/requests')
+            .reply(200, responses.requests.create_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.create({});
+        response.should.be.an.Object();
+        response.should.have.property('id');
+        response.should.have.property('status').eql('pending');
+        response.should.have.property('asset').not.empty();
+
     });
 });

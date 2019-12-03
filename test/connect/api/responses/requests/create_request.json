@@ -1,0 +1,9 @@
+{
+    "id": "PR-4661-4474-4631-001",
+    "type": "purchase",
+    "status": "pending",
+    "asset": {
+        "id": "AS-4661-4474-4631",
+        "external_uid": "ccec4301-a8fc-4c6c-8bdf-aefd2ff147f5"
+    }
+}

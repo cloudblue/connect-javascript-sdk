@@ -11,5 +11,6 @@ module.exports = {
     update_parameters: require('./update_parameters.json'),
     update_parameters_without_note: require('./update_parameters_without_note.json'),
     update_parameters_error: require('./update_parameters_error.json'),
-    approve_request: require('./approve_request.json')
+    approve_request: require('./approve_request.json'),
+    create_request: require('./create_request.json')
 }
