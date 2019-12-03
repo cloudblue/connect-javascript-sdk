@@ -1,0 +1,30 @@
+[
+    {
+        "id": "private-phoenixes-cssj",
+        "name": "admin_email",
+        "title": "Admin account email",
+        "description": "Enter the email for the admin account to receive the activation link",
+        "type": "text",
+        "scope": "asset",
+        "phase": "ordering",
+        "constraints": {
+            "hidden": false,
+            "required": true,
+            "unique": false
+        }
+    },
+    {
+        "id": "classy-cats-fycp",
+        "name": "activation_link",
+        "title": "Activation link",
+        "description": "The link to activate the account",
+        "type": "text",
+        "scope": "asset",
+        "phase": "fulfillment",
+        "constraints": {
+            "hidden": false,
+            "required": true,
+            "unique": false
+        }
+    }
+]

@@ -27,36 +27,7 @@ describe('Connect Javascript SDK - Products', () => {
     it('returns the list of parameters configured for a product by product', async () => {
         nock('https://localhost')
             .get('/products/PRD-000-000-000/parameters')
-            .reply(200,[
-                {
-                  "id": "private-phoenixes-cssj",
-                  "name": "admin_email",
-                  "title": "Admin account email",
-                  "description": "Enter the email for the admin account to receive the activation link",
-                  "type": "text",
-                  "scope": "asset",
-                  "phase": "ordering",
-                  "constraints": {
-                    "hidden": false,
-                    "required": true,
-                    "unique": false
-                  }
-                },
-                {
-                  "id": "classy-cats-fycp",
-                  "name": "activation_link",
-                  "title": "Activation link",
-                  "description": "The link to activate the account",
-                  "type": "text",
-                  "scope": "asset",
-                  "phase": "fulfillment",
-                  "constraints": {
-                    "hidden": false,
-                    "required": true,
-                    "unique": false
-                  }
-                }
-              ]);
+            .reply(200,responses.products.product_parameters);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.products.getParametersByProduct('PRD-000-000-000')        
         response.should.be.an.Array();
@@ -65,6 +36,18 @@ describe('Connect Javascript SDK - Products', () => {
         response[0].should.have.property('scope');
         response[0].should.have.property('phase');
     });
+    it('returns the list of parameters of scope asset and phase fulfillment configured for a product by product', async () => {
+      nock('https://localhost')
+          .get('/products/PRD-000-000-000/parameters')
+          .reply(200,responses.products.product_parameters);
+      const client = new ConnectClient('https://localhost', '1234567890');
+      const response = await client.products.getAssetParametersForFulfillmentByProduct('PRD-000-000-000')        
+      response.should.be.an.Array();
+      response.should.have.size(1);
+      response[0].should.have.property('id');
+      response[0].should.have.property('scope').eql('asset');
+      response[0].should.have.property('phase').eql('fulfillment');
+  });
     it('returns a list of templates configured for the product', async () => {
         nock('https://localhost')
             .get('/products/PRD-000-000-000/templates')

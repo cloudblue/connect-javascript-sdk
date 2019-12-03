@@ -6,5 +6,6 @@
 
 module.exports = {
     templates_by_product: require('./templates_by_product.json'),
-    published_products: require('./published_products.json')
+    published_products: require('./published_products.json'),
+    product_parameters: require('./product_parameters.json')
 }

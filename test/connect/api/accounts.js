@@ -31,6 +31,5 @@ describe('Connect Javascript SDK - Accounts', () => {
             .reply(500, 'Internal server error');
         const client = new ConnectClient('https://localhost', '1234567890');
         await client.accounts.list().should.be.rejectedWith(HttpError, {status: 500, message: 'Internal server error'});
-
     });
 });
