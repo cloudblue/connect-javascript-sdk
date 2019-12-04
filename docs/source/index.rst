@@ -62,4 +62,4 @@ License
 
 |copy| |year| Ingram Micro Inc. All right reserved.
 
-The Connect Javascript SDK is licensed under the `GNU Lesser General Public License v3.0 <https://www.gnu.org/licenses/lgpl-3.0.txt>`_.
+The Connect Javascript SDK is licensed under the `Apache License 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_.

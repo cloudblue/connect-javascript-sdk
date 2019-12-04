@@ -84,6 +84,6 @@ If you want to contribute to the Connect Javascript SDK development feel free to
 
 ## License
 
-The Connect Javascript SDK is licensed under the [*GNU Lesser General Public License v3.0*](https://www.gnu.org/licenses/lgpl-3.0.txt).
+The Connect Javascript SDK is licensed under the [*Apache License 2.0*](http://www.apache.org/licenses/LICENSE-2.0).
 
 

@@ -16,8 +16,8 @@
     "cloudblue",
     "connect"
   ],
-  "author": "Ingram Micro",
-  "license": "LGPL-3.0-or-later",
+  "author": "Ingram Micro Inc",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ingrammicro/connect-javascript-sdk/issues"
   },
