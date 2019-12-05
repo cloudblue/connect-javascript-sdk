@@ -57,7 +57,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .put('/requests/PR-5426-9883-2189-001')
             .reply(200, responses.requests.update_parameters);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const parameters = {'param_a': 'Not valid'};
+        const parameters = { 'param_a': 'Not valid' };
         const response = await client.requests.inquireRequest('PR-5426-9883-2189-001', 'Reason to reject', 'TL-827-840-476', parameters);
         response.should.be.an.Object();
         response.should.have.property('id').eql('PR-5426-9883-2189-001');
@@ -69,29 +69,13 @@ describe('Connect Javascript SDK - Requests', () => {
             .put('/requests/PR-0000-0000-0000-000')
             .reply(200, responses.requests.update_parameters_root);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const params = [
-            {
-                reason: 'the reason',
-                note: 'this note'
-            }
-        ]
-        const response = await client.requests.updateRequest('PR-0000-0000-0000-000', params, 'this note');
+        const request = {
+            note: 'this note'
+        };
+        const response = await client.requests.updateRequest('PR-0000-0000-0000-000', request);
         response.should.be.an.Object();
         response.should.have.property('id').eql('PR-0000-0000-0000-000');
         response.should.have.property('note').eql('this note');
-        response.should.have.property('asset');
-        response.asset.should.have.property('params');
-        const obj = {
-            name: 'activation_link',
-            value_choices: [],
-            title: 'Activation link',
-            value_error: '',
-            type: 'text',
-            id: 'activation_link',
-            value: 'https://1pwd.com/activate',
-            description: 'The link to activate the account'
-        };
-        response.asset.params.should.containEql(obj);
     });
     it('updates request parameters', async () => {
         nock('https://localhost')
