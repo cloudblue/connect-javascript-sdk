@@ -1,0 +1,46 @@
+{
+  "name": "@cloudblueconnect/connect-javascript-sdk",
+  "version": "19.0.0",
+  "description": "Cloud Blue Connect Javascript SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "cover": "nyc --reporter=html mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ingrammicro/connect-javascript-sdk.git"
+  },
+  "keywords": [
+    "sdk",
+    "cloudblue",
+    "connect"
+  ],
+  "author": "Ingram Micro Inc",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ingrammicro/connect-javascript-sdk/issues"
+  },
+  "homepage": "https://github.com/ingrammicro/connect-javascript-sdk#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jsdoc": "^3.6.3",
+    "mocha": "^6.2.2",
+    "nock": "^11.7.0",
+    "nyc": "^14.1.1",
+    "should": "^13.2.3"
+  },
+  "mocha": {
+    "slow": 200
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

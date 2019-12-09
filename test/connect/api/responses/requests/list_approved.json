@@ -1,0 +1,1746 @@
+[
+    {
+      "id": "PR-7065-3044-3371-001",
+      "type": "purchase",
+      "note": "",
+      "asset": {
+        "id": "AS-7065-3044-3371",
+        "status": "active",
+        "external_id": "SQJC9H5JFF",
+        "external_uid": "4bfec828-5bbd-4df9-9a14-467487dee752",
+        "product": {
+          "id": "PRD-546-534-461",
+          "icon": "/media/VA-322-392/PRD-546-534-461/media/PRD-546-534-461-logo_yCCjXqE.png",
+          "name": "Amazon AWS",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-19T13:38:04+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T11:40:41+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "S3",
+            "item_type": "PPU",
+            "mpn": "MPN-B",
+            "type": "GB*Month",
+            "id": "SKU_B",
+            "global_id": "PRD-546-534-461-0002",
+            "quantity": "-1"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "EC2",
+            "item_type": "PPU",
+            "mpn": "MPN-A",
+            "type": "MHz*H",
+            "id": "SKU_A",
+            "global_id": "PRD-546-534-461-0001",
+            "quantity": "-1"
+          }
+        ],
+        "params": [],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {}
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T11:40:41+00:00",
+      "updated": "2019-11-19T13:38:04+00:00",
+      "answered": false,
+      "assignee": "",
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is \n* The value of **param_b** is \n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is \n* The value of **param_b** is \n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-4073-0282-5184-001",
+      "type": "purchase",
+      "note": "",
+      "asset": {
+        "id": "AS-4073-0282-5184",
+        "status": "active",
+        "external_id": "GTF95A09FL",
+        "external_uid": "42dbfab9-f57d-43fb-8071-535ef26d66aa",
+        "product": {
+          "id": "PRD-546-534-461",
+          "icon": "/media/VA-322-392/PRD-546-534-461/media/PRD-546-534-461-logo_yCCjXqE.png",
+          "name": "Amazon AWS",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T10:59:49+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T10:55:19+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "S3",
+            "item_type": "PPU",
+            "mpn": "MPN-B",
+            "type": "GB*Month",
+            "id": "SKU_B",
+            "global_id": "PRD-546-534-461-0002",
+            "quantity": "-1"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "EC2",
+            "item_type": "PPU",
+            "mpn": "MPN-A",
+            "type": "MHz*H",
+            "id": "SKU_A",
+            "global_id": "PRD-546-534-461-0001",
+            "quantity": "-1"
+          }
+        ],
+        "params": [],
+        "tiers": {
+          "customer": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {}
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T10:55:19+00:00",
+      "updated": "2019-11-18T10:59:49+00:00",
+      "answered": false,
+      "assignee": "",
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is \n* The value of **param_b** is \n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is \n* The value of **param_b** is \n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-4766-8557-9657-001",
+      "type": "purchase",
+      "note": "",
+      "asset": {
+        "id": "AS-4766-8557-9657",
+        "status": "active",
+        "external_id": "RGGMUXGQQ9",
+        "external_uid": "560d551a-f03b-4c84-9c67-9b2a13e20e4a",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T10:06:52+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:37:32+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "3"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "3"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "fgfdgdfg",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "dfgdfgdf",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:37:33+00:00",
+      "updated": "2019-11-18T10:06:52+00:00",
+      "answered": false,
+      "assignee": "",
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-2646-3528-8229-005",
+      "type": "resume",
+      "note": "",
+      "asset": {
+        "id": "AS-2646-3528-8229",
+        "status": "active",
+        "external_id": "W6DTH19OP1",
+        "external_uid": "c4833252-33f4-4664-a29f-340e50eba3f3",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T09:35:53+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:26:25+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "2",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "2"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "1",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "1"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "etreterter",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "erterterr",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:35:34+00:00",
+      "updated": "2019-11-18T09:35:53+00:00",
+      "answered": false,
+      "assignee": {
+        "email": "ffaraone@gmail.com",
+        "id": "UR-870-106-057",
+        "name": "Francesco Faraone Vendor"
+      },
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-2646-3528-8229-004",
+      "type": "suspend",
+      "note": "",
+      "asset": {
+        "id": "AS-2646-3528-8229",
+        "status": "active",
+        "external_id": "W6DTH19OP1",
+        "external_uid": "c4833252-33f4-4664-a29f-340e50eba3f3",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T09:35:53+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:26:25+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "2",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "2"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "1",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "1"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "etreterter",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "erterterr",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:34:53+00:00",
+      "updated": "2019-11-18T09:35:16+00:00",
+      "answered": false,
+      "assignee": {
+        "email": "ffaraone@gmail.com",
+        "id": "UR-870-106-057",
+        "name": "Francesco Faraone Vendor"
+      },
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-2646-3528-8229-003",
+      "type": "change",
+      "note": "",
+      "asset": {
+        "id": "AS-2646-3528-8229",
+        "status": "active",
+        "external_id": "W6DTH19OP1",
+        "external_uid": "c4833252-33f4-4664-a29f-340e50eba3f3",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T09:35:53+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:26:25+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "38",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "2"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "26",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "1"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "etreterter",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "erterterr",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:33:50+00:00",
+      "updated": "2019-11-18T09:34:16+00:00",
+      "answered": false,
+      "assignee": {
+        "email": "ffaraone@gmail.com",
+        "id": "UR-870-106-057",
+        "name": "Francesco Faraone Vendor"
+      },
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-2646-3528-8229-002",
+      "type": "billing",
+      "note": "",
+      "asset": {
+        "id": "AS-2646-3528-8229",
+        "status": "active",
+        "external_id": "W6DTH19OP1",
+        "external_uid": "c4833252-33f4-4664-a29f-340e50eba3f3",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T09:35:53+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:26:25+00:00"
+          }
+        },
+        "items": [
+          {
+            "mpn": "The Team Plan",
+            "period": "Monthly",
+            "old_quantity": "38",
+            "id": "THE_TEAM_PLAN",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "renewal": {
+              "period_delta": 1,
+              "to": "2020-01-18T08:31:05.000Z",
+              "from": "2019-12-18T08:31:05.000Z",
+              "period_uom": "month"
+            },
+            "global_id": "PRD-350-146-687-0002",
+            "item_type": "Reservation",
+            "params": [],
+            "type": "Users",
+            "quantity": "38"
+          },
+          {
+            "mpn": "The Basic subscription plan",
+            "period": "Monthly",
+            "old_quantity": "26",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "renewal": {
+              "period_delta": 1,
+              "to": "2020-01-18T08:31:05.000Z",
+              "from": "2019-12-18T08:31:05.000Z",
+              "period_uom": "month"
+            },
+            "global_id": "PRD-350-146-687-0001",
+            "item_type": "Reservation",
+            "params": [],
+            "type": "Users",
+            "quantity": "26"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "etreterter",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "erterterr",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:32:02+00:00",
+      "updated": "2019-11-18T09:32:02+00:00",
+      "answered": true,
+      "assignee": "",
+      "activation_key": "",
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-2646-3528-8229-001",
+      "type": "purchase",
+      "note": "",
+      "asset": {
+        "id": "AS-2646-3528-8229",
+        "status": "active",
+        "external_id": "W6DTH19OP1",
+        "external_uid": "c4833252-33f4-4664-a29f-340e50eba3f3",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-18T09:35:53+00:00"
+          },
+          "created": {
+            "at": "2019-11-18T09:26:25+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "38"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "26"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "etreterter",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "erterterr",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "01f3020f-9a20-4f1e-9237-94974731731f",
+            "external_id": "27648",
+            "id": "TA-6877-3774-3365",
+            "name": "Witting Inc",
+            "contact_info": {
+              "address_line2": "Eliseo Motorway",
+              "city": "Meta",
+              "address_line1": "Laurine Ville",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Kadin",
+                "last_name": "Gibson",
+                "email": "ffaraone+Kadin_Gibson@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier1": {
+            "external_uid": "ffad29ed-8715-4104-8cc5-cab3b1cea16a",
+            "id": "TA-7292-9691-1403",
+            "name": "Koelpin Inc",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Albert",
+                "last_name": "Einstein",
+                "email": "ffaraone+Albert_Einstein@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          },
+          "tier2": {
+            "external_uid": "e85a2231-0cca-47b2-8b16-d4e01df80d18",
+            "id": "TA-7259-2593-8257",
+            "name": "Veum LLC",
+            "contact_info": {
+              "address_line2": "Franecki Plaza",
+              "city": "Meta",
+              "address_line1": "Chelsie Place",
+              "country": "IT",
+              "state": "Abruzzi",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "5558312",
+                  "area_code": "368",
+                  "extension": "",
+                  "country_code": "+39"
+                },
+                "first_name": "Peppe",
+                "last_name": "Lanzetta",
+                "email": "ffaraone+Peppe_Lanzetta@gmail.com"
+              },
+              "postal_code": "67030"
+            }
+          }
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-06105",
+          "name": "ToItaly",
+          "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-18T09:26:26+00:00",
+      "updated": "2019-11-18T09:31:05+00:00",
+      "answered": false,
+      "assignee": {
+        "email": "francesco.faraone@ingrammicro.com",
+        "id": "UR-322-877-822",
+        "name": "Francesco"
+      },
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-06105",
+        "name": "ToItaly",
+        "icon": "/media/PA-781-184/marketplaces/MP-06105/icon.png"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    },
+    {
+      "id": "PR-5637-0776-2429-001",
+      "type": "purchase",
+      "note": "",
+      "asset": {
+        "id": "AS-5637-0776-2429",
+        "status": "active",
+        "external_id": "700LQ3QSEG",
+        "external_uid": "ce3c4664-7861-49b8-aa12-33945cb5c68a",
+        "product": {
+          "id": "PRD-350-146-687",
+          "icon": "/media/VA-322-392/PRD-350-146-687/media/PRD-350-146-687-logo_xYmEUml.png",
+          "name": "FlyMeToTheHost",
+          "status": "published"
+        },
+        "connection": {
+          "type": "preview",
+          "vendor": {
+            "id": "VA-322-392",
+            "name": "FF Test Vendor 1"
+          },
+          "id": "CT-0000-0000-0000",
+          "hub": {
+            "id": "HB-0000-0000",
+            "name": "ACME Hub"
+          },
+          "provider": {
+            "id": "PA-781-184",
+            "name": "FF Test Provider"
+          }
+        },
+        "events": {
+          "updated": {
+            "at": "2019-11-13T15:34:20+00:00"
+          },
+          "created": {
+            "at": "2019-11-13T15:33:36+00:00"
+          }
+        },
+        "items": [
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost - Team Plan",
+            "item_type": "Reservation",
+            "mpn": "The Team Plan",
+            "params": [
+              {
+                "value": "val2",
+                "events": {
+                  "updated": {
+                    "at": "2019-11-14T08:55:55+00:00"
+                  },
+                  "created": {
+                    "at": "2019-11-14T08:55:55+00:00",
+                    "by": {
+                      "id": "UR-870-106-057",
+                      "name": "Francesco Faraone Vendor"
+                    }
+                  }
+                },
+                "id": "test_config_param",
+                "title": "Test config param",
+                "description": "Hdsfjsiofjoisd",
+                "type": "dropdown",
+                "scope": "item_marketplace",
+                "phase": "configuration",
+                "constraints": {
+                  "hidden": false,
+                  "required": true,
+                  "unique": false,
+                  "choices": [
+                    {
+                      "value": "val_1",
+                      "label": "Label1"
+                    },
+                    {
+                      "value": "val2",
+                      "label": "Label2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "type": "Users",
+            "id": "THE_TEAM_PLAN",
+            "global_id": "PRD-350-146-687-0002",
+            "quantity": "96"
+          },
+          {
+            "period": "Monthly",
+            "old_quantity": "0",
+            "display_name": "FlyMeToTheHost Basic Plan",
+            "item_type": "Reservation",
+            "mpn": "The Basic subscription plan",
+            "params": [
+              {
+                "value": "val_1",
+                "events": {
+                  "updated": {
+                    "at": "2019-11-14T08:55:47+00:00"
+                  },
+                  "created": {
+                    "at": "2019-11-14T08:55:47+00:00",
+                    "by": {
+                      "id": "UR-870-106-057",
+                      "name": "Francesco Faraone Vendor"
+                    }
+                  }
+                },
+                "id": "test_config_param",
+                "title": "Test config param",
+                "description": "Hdsfjsiofjoisd",
+                "type": "dropdown",
+                "scope": "item_marketplace",
+                "phase": "configuration",
+                "constraints": {
+                  "hidden": false,
+                  "required": true,
+                  "unique": false,
+                  "choices": [
+                    {
+                      "value": "val_1",
+                      "label": "Label1"
+                    },
+                    {
+                      "value": "val2",
+                      "label": "Label2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "type": "Users",
+            "id": "THE_BASIC_SUBSCRIPTION_PLAN",
+            "global_id": "PRD-350-146-687-0001",
+            "quantity": "2"
+          }
+        ],
+        "params": [
+          {
+            "name": "admin_email",
+            "value_choices": [],
+            "title": "Admin email address",
+            "value_error": "",
+            "type": "text",
+            "id": "admin_email",
+            "value": "admin@example.com",
+            "description": "The admin email address needed to create the admin account"
+          },
+          {
+            "name": "company_name",
+            "value_choices": [],
+            "title": "Company name",
+            "value_error": "",
+            "type": "text",
+            "id": "company_name",
+            "value": "Test customer",
+            "description": "The Company name for this subscription"
+          }
+        ],
+        "tiers": {
+          "customer": {
+            "external_uid": "dc6f7d7a-4141-44a2-abf3-fd32c8c62e05",
+            "external_id": "54270",
+            "id": "TA-8851-5240-9579",
+            "name": "Ebert, Zulauf and Littel",
+            "contact_info": {
+              "address_line2": "Millie Land",
+              "city": "Ceuta",
+              "address_line1": "Marlene Extensions",
+              "country": "ES",
+              "state": "Ceuta",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "",
+                  "area_code": "",
+                  "extension": "",
+                  "country_code": ""
+                },
+                "first_name": "Marco",
+                "last_name": "Hartmann",
+                "email": "ffaraone+Marco_Hartmann@gmail.com"
+              },
+              "postal_code": "51004"
+            }
+          },
+          "tier1": {
+            "external_uid": "e477f0e8-8590-4bf6-aa6b-e1c780a4c287",
+            "external_id": "92979",
+            "id": "TA-4487-1987-3778",
+            "name": "Jacobson, Moore and Shields",
+            "contact_info": {
+              "address_line2": "Maci Manors",
+              "city": "Ceuta",
+              "address_line1": "Felicity Walk",
+              "country": "ES",
+              "state": "Ceuta",
+              "contact": {
+                "phone_number": {
+                  "phone_number": "",
+                  "area_code": "",
+                  "extension": "",
+                  "country_code": ""
+                },
+                "first_name": "Gussie",
+                "last_name": "Luettgen",
+                "email": "ffaraone+Gussie_Luettgen@gmail.com"
+              },
+              "postal_code": "51004"
+            }
+          },
+          "tier2": {}
+        },
+        "configuration": {
+          "params": []
+        },
+        "marketplace": {
+          "id": "MP-74941",
+          "name": "Direct commerce",
+          "icon": "/media/PA-781-184/marketplaces/MP-74941/icon.jpg"
+        },
+        "contract": {
+          "id": "CRD-00000-00000-00000",
+          "name": "ACME Distribution Contract"
+        }
+      },
+      "reason": "",
+      "status": "approved",
+      "created": "2019-11-13T15:33:36+00:00",
+      "updated": "2019-11-13T15:34:20+00:00",
+      "answered": false,
+      "assignee": {
+        "email": "ffaraone@gmail.com",
+        "id": "UR-870-106-057",
+        "name": "Francesco Faraone Vendor"
+      },
+      "activation_key": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)",
+      "template": {
+        "message": "# Sample Activation Template\n\nActivation template is used to share details of the **successful** asset creation with the user. Once purchase request is approved, this template is used to generate user-visible notification.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which has scope 'Asset'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "marketplace": {
+        "id": "MP-74941",
+        "name": "Direct commerce",
+        "icon": "/media/PA-781-184/marketplaces/MP-74941/icon.jpg"
+      },
+      "contract": {
+        "id": "CRD-00000-00000-00000",
+        "name": "ACME Distribution Contract"
+      }
+    }
+  ]

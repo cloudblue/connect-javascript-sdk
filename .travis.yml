@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- 8
+- 10
+- 12
+script:
+- npx nyc --reporter=lcov npm test && npx codecov
+deploy:
+  provider: npm
+  email: francesco.faraone@ingrammicro.com
+  api_key:
+    secure: bvwJdcv8VEOyC1g91tsvYdkvar9EaLG4KJk4Z1mAzjcgRQxZ+h2Oo8QHhuZyaFlfulqv1kF2dxIrSV9ezcVnRhS4gH6GGR1hlkTtzm2i2dOAyQ031/hFzuJNDH3elKz+McdqKso95ZlMqoG1H2pFErhgef/y/HLM5hraTVuTHjbpolBf24B2aMQ6HW6rRGnnAW3OsbnDOrfVWYSkK1ntK4vNNixwWLhTCuffZvMbA4dLrsnUp5AN+ytVqL5BGNaNToojfo23Qk3I4ojEjVYH3VhWMQm/dmGyiZ93cP9EeHjWkIHpIEmBjUz+seLcEtcIacmHJKL51CMzzvusvEUEqLveEoXEuTz88SCAwa8SaOH7lkPqGUWWfhMv7H2+ly/7o5lIy4LL1hjTUEQAikV5blcAiJCoLv5l2l7oTAHKpK3Ws0yiB+POF2bA3HZJm/7dh3eeN2fxzT8Qh8sQY4FK0NiS2RPk8YwJP3I0q4wRYtRGpN+NmaRsiUjX9l/raYv4RMfSNn/S94PeUrmNEPGNOa0MAno7HI4PiLfugljpd0wApjzgCpMLlCfj/LTV23wqD8/EmFa0XGlfWyRkbAzDvK/D70HmOsQRelxp5Q2SB8hCL6HA+nD2qsh7NbcJASk0fxZ/pnaMd9qRWjNTjLrjoGEz3F6UIC5eSNKVwSMvyqU=
+  on:
+    repo: ingrammicro/connect-javascript-sdk
+    branch: master
