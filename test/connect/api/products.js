@@ -61,4 +61,18 @@ describe('Connect Javascript SDK - Products', () => {
             element.should.have.property('title');
         });
     });
+    it('returns a list of templates configured for the product with scope="asset"', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/templates')
+            .reply(200, responses.products.templates_by_product);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getProductAssetTemplates('PRD-000-000-000');        
+        response.should.be.an.Array();
+        response.should.have.size(2);
+        response.forEach(element => {
+            element.should.have.property('id');
+            element.should.have.property('title');
+            element.should.have.property('scope').eql('asset');
+        });
+    });
 });

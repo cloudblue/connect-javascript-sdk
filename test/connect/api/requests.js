@@ -49,6 +49,34 @@ describe('Connect Javascript SDK - Requests', () => {
         response.should.have.property('status').eql('failed');
 
     });
+    it('Set error in parameters and put a request in Inquire, returns the object request ', async () => {
+        nock('https://localhost')
+            .post(`/requests/PR-5426-9883-2189-001/inquire`)
+            .reply(200, responses.requests.result_inquire_request);
+        nock('https://localhost')
+            .put('/requests/PR-5426-9883-2189-001')
+            .reply(200, responses.requests.update_parameters);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const parameters = { 'param_a': 'Not valid' };
+        const response = await client.requests.inquireRequest('PR-5426-9883-2189-001', 'Reason to reject', 'TL-827-840-476', parameters);
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-5426-9883-2189-001');
+        response.should.have.property('status').eql('inquiring');
+
+    });
+    it('updates request root parameters', async () => {
+        nock('https://localhost')
+            .put('/requests/PR-0000-0000-0000-000')
+            .reply(200, responses.requests.update_parameters_root);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const request = {
+            note: 'this note'
+        };
+        const response = await client.requests.updateRequest('PR-0000-0000-0000-000', request);
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-0000-0000-0000-000');
+        response.should.have.property('note').eql('this note');
+    });
     it('updates request parameters', async () => {
         nock('https://localhost')
             .put('/requests/PR-0000-0000-0000-000')
@@ -114,7 +142,7 @@ describe('Connect Javascript SDK - Requests', () => {
         const client = new ConnectClient('https://localhost', '1234567890');
 
         await client.requests.updateRequestParameters('PR-0000-0000-0000-000', [], 'Test note')
-            .should.be.rejectedWith(HttpError, {status: 400, message: JSON.stringify(responses.requests.update_parameters_error)});
+            .should.be.rejectedWith(HttpError, { status: 400, message: JSON.stringify(responses.requests.update_parameters_error) });
     });
     it('approve request', async () => {
         nock('https://localhost')
@@ -125,5 +153,17 @@ describe('Connect Javascript SDK - Requests', () => {
         const response = await client.requests.approveWithTemplate('PR-0000-0000-0000-000', 'TL-000-000-000');
         response.should.be.an.Object();
         response.should.have.property('status').eql('approved');
+    });
+    it('create request', async () => {
+        nock('https://localhost')
+            .post('/requests')
+            .reply(200, responses.requests.create_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.create({});
+        response.should.be.an.Object();
+        response.should.have.property('id');
+        response.should.have.property('status').eql('pending');
+        response.should.have.property('asset').not.empty();
+
     });
 });
