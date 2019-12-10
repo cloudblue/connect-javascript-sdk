@@ -12,30 +12,48 @@ const { ConnectClient, HttpError } = require('../../../index');
 
 describe('Connect Javascript SDK - Requests', () => {
     afterEach(done => { nock.cleanAll(); done(); });
-    it('returns a list of purchase requests filtered by status', async () => {
+    it('returns a list of purchase requests filtered by single status', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved' })
+            .query({ status: 'approved' })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list(['approved']);
+        const response = await client.requests.list({status: 'approved'});
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
         });
     });
-    it('returns a list of purchase requests filtered by statuses and product', async () => {
+    it('returns a list of purchase requests filtered by list of statuses', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved,pending', product_id__in: 'PRD-000-000-000' })
-            .reply(200, responses.requests.list_approved_pending_product);
+            .query({ status__in: 'approved,pending' })
+            .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list(['approved', 'pending'], ['PRD-000-000-000']);
+        const response = await client.requests.list({status: ['approved', 'pending']});
         response.should.be.an.Array();
         response.forEach(element => {
+            element.should.have.property('status').eql('approved');
+        });
+    });
+    it('returns a list of purchase requests filtered by status and product', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ status__in: 'approved,pending', 'asset.product.id__in': 'PRD-000-000-000,PRD-000-000-001' })
+            .reply(200, responses.requests.list_approved_pending_product);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({
+            status: ['approved', 'pending'],
+            assetProductId: ['PRD-000-000-000', 'PRD-000-000-001']
+        });
+        response.should.be.an.Array();
+        response.forEach(element => {
+            element.should.have.property('status');
+            ['approved', 'pending'].should.containEql(element.status);
             element.should.have.property('asset');
-            element.asset.should.have.property('product')
-            element.asset.product.should.have.property('id').eql('PRD-000-000-000');
+            element.asset.should.have.property('product');
+            element.asset.product.should.have.property('id');
+            ['PRD-000-000-000', 'PRD-000-000-001'].should.containEql(element.asset.product.id);
         });
     });
     it('reject a request and returns the object request ', async () => {
