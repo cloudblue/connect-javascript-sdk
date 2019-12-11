@@ -4,7 +4,7 @@
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "mocha --recursive --timeout 10000",
     "cover": "nyc --reporter=html mocha --recursive"
   },
   "repository": {

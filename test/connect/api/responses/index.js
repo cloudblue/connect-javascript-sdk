@@ -7,5 +7,7 @@
 module.exports = {
     requests: require('./requests'),
     products: require('./products'),
-    accounts: require('./accounts')
+    accounts: require('./accounts'),
+    conversations: require('./conversations')
+
 }
