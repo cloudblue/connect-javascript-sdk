@@ -8,6 +8,7 @@ module.exports = {
     requests: require('./requests'),
     products: require('./products'),
     accounts: require('./accounts'),
-    conversations: require('./conversations')
-
+    conversations: require('./conversations'),
+    hubs: require('./hubs'),
+    tierAccounts: require('./tierAccounts')
 }
