@@ -164,7 +164,7 @@ describe('Connect Javascript SDK - Requests', () => {
     });
     it('approve request', async () => {
         nock('https://localhost')
-            .post('/requests/PR-0000-0000-0000-000/approve')
+            .post('/requests/PR-0000-0000-0000-000/approve', {template_id: 'TL-000-000-000'})
             .reply(200, responses.requests.approve_request);
         const client = new ConnectClient('https://localhost', '1234567890');
 
