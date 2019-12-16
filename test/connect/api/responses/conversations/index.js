@@ -6,5 +6,7 @@
 
 module.exports = {
     conversation_id: require('./conversation_id.json'),
-    message_response: require('./message_response.json')
+    message_response: require('./message_response.json'),
+    messages: require('./messages.json')
+
 }
