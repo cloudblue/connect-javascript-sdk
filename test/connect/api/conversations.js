@@ -55,10 +55,7 @@ describe('Connect Javascript SDK - Conversations', () => {
         const client = new ConnectClient('https://localhost', '1234567890');
         //const client = new ConnectClient('https://api.cnct.tech/public/v1', 'ApiKey SU-769-717-535:dbb7843a212f3414f7e0cd34bccbbb757410643f');
         const response = await client.conversations.getMessages('PR-3767-7014-3540-001');
-        console.log('===============Test==============');
-        console.log(response.messages);
-        console.log('=================================');
-        response.should.be.an.Object;
+        response.should.be.an.Object();
     });
 
 });
