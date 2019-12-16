@@ -1,15 +1,15 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.0.2",
+  "version": "19.0.3",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "mocha --recursive --timeout 10000",
     "cover": "nyc --reporter=html mocha --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ingrammicro/connect-javascript-sdk.git"
+    "url": "https://github.com/cloudblue/connect-javascript-sdk.git"
   },
   "keywords": [
     "sdk",
@@ -19,11 +19,10 @@
   "author": "Ingram Micro Inc",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ingrammicro/connect-javascript-sdk/issues"
+    "url": "https://github.com/cloudblue/connect-javascript-sdk/issues"
   },
-  "homepage": "https://github.com/ingrammicro/connect-javascript-sdk#readme",
+  "homepage": "https://github.com/cloudblue/connect-javascript-sdk#readme",
   "dependencies": {
-    "axios": "^0.19.0",
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0"
   },

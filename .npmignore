@@ -1,0 +1,5 @@
+docs
+test
+coverage
+.nyc_output
+yarn.lock
