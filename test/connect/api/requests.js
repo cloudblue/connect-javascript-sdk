@@ -61,116 +61,11 @@ describe('Connect Javascript SDK - Requests', () => {
             .post(`/requests/PR-5426-9883-2189-001/fail`)
             .reply(200, responses.requests.result_reject_request);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.rejectRequest('PR-5426-9883-2189-001', 'Reason to reject');
+        const response = await client.requests.fail('PR-5426-9883-2189-001', 'Reason to reject');
         response.should.be.an.Object();
         response.should.have.property('id').eql('PR-5426-9883-2189-001');
         response.should.have.property('status').eql('failed');
 
-    });
-    it('Set error in parameters and put a request in Inquire, returns the object request ', async () => {
-        nock('https://localhost')
-            .post(`/requests/PR-5426-9883-2189-001/inquire`)
-            .reply(200, responses.requests.result_inquire_request);
-        nock('https://localhost')
-            .put('/requests/PR-5426-9883-2189-001')
-            .reply(200, responses.requests.update_parameters);
-        const client = new ConnectClient('https://localhost', '1234567890');
-        const parameters = { 'param_a': 'Not valid' };
-        const response = await client.requests.inquireRequest('PR-5426-9883-2189-001', 'Reason to reject', 'TL-827-840-476', parameters);
-        response.should.be.an.Object();
-        response.should.have.property('id').eql('PR-5426-9883-2189-001');
-        response.should.have.property('status').eql('inquiring');
-
-    });
-    it('updates request root parameters', async () => {
-        nock('https://localhost')
-            .put('/requests/PR-0000-0000-0000-000')
-            .reply(200, responses.requests.update_parameters_root);
-        const client = new ConnectClient('https://localhost', '1234567890');
-        const request = {
-            note: 'this note'
-        };
-        const response = await client.requests.updateRequest('PR-0000-0000-0000-000', request);
-        response.should.be.an.Object();
-        response.should.have.property('id').eql('PR-0000-0000-0000-000');
-        response.should.have.property('note').eql('this note');
-    });
-    it('updates request parameters', async () => {
-        nock('https://localhost')
-            .put('/requests/PR-0000-0000-0000-000')
-            .reply(200, responses.requests.update_parameters);
-        const client = new ConnectClient('https://localhost', '1234567890');
-        const params = [
-            {
-                id: 'activation_link',
-                value: 'https://1pwd.com/activate'
-            }
-        ]
-        const response = await client.requests.updateRequestParameters('PR-0000-0000-0000-000', params, 'Test note');
-        response.should.be.an.Object();
-        response.should.have.property('id').eql('PR-0000-0000-0000-000');
-        response.should.have.property('note').eql('Test note');
-        response.should.have.property('asset');
-        response.asset.should.have.property('params');
-        const obj = {
-            name: 'activation_link',
-            value_choices: [],
-            title: 'Activation link',
-            value_error: '',
-            type: 'text',
-            id: 'activation_link',
-            value: 'https://1pwd.com/activate',
-            description: 'The link to activate the account'
-        };
-        response.asset.params.should.containEql(obj);
-    });
-    it('updates request parameters without note', async () => {
-        nock('https://localhost')
-            .put('/requests/PR-0000-0000-0000-000')
-            .reply(200, responses.requests.update_parameters_without_note);
-        const client = new ConnectClient('https://localhost', '1234567890');
-        const params = [
-            {
-                id: 'activation_link',
-                value: 'https://1pwd.com/activate'
-            }
-        ]
-        const response = await client.requests.updateRequestParameters('PR-0000-0000-0000-000', params);
-        response.should.be.an.Object();
-        response.should.have.property('id').eql('PR-0000-0000-0000-000');
-        response.should.have.property('note').empty();
-        response.should.have.property('asset');
-        response.asset.should.have.property('params');
-        const obj = {
-            name: 'activation_link',
-            value_choices: [],
-            title: 'Activation link',
-            value_error: '',
-            type: 'text',
-            id: 'activation_link',
-            value: 'https://1pwd.com/activate',
-            description: 'The link to activate the account'
-        };
-        response.asset.params.should.containEql(obj);
-    });
-    it('update request parameters fails', async () => {
-        nock('https://localhost')
-            .put('/requests/PR-0000-0000-0000-000')
-            .reply(400, responses.requests.update_parameters_error);
-        const client = new ConnectClient('https://localhost', '1234567890');
-
-        await client.requests.updateRequestParameters('PR-0000-0000-0000-000', [], 'Test note')
-            .should.be.rejectedWith(HttpError, { status: 400, message: JSON.stringify(responses.requests.update_parameters_error) });
-    });
-    it('approve request', async () => {
-        nock('https://localhost')
-            .post('/requests/PR-0000-0000-0000-000/approve', {template_id: 'TL-000-000-000'})
-            .reply(200, responses.requests.approve_request);
-        const client = new ConnectClient('https://localhost', '1234567890');
-
-        const response = await client.requests.approveWithTemplate('PR-0000-0000-0000-000', 'TL-000-000-000');
-        response.should.be.an.Object();
-        response.should.have.property('status').eql('approved');
     });
     it('create request', async () => {
         nock('https://localhost')

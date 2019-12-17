@@ -11,6 +11,14 @@ Client
    :exclude-members: addEndpointPrefix, addAuthorizationHeader
 
 
+Operations
+----------
+
+.. js:autoclass:: fulfillment.Fulfillment
+   :members:
+
+
+
 Services
 --------
 
