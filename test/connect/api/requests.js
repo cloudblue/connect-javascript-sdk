@@ -15,7 +15,7 @@ describe('Connect Javascript SDK - Requests', () => {
     it('returns a list of purchase requests filtered by single status', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status: 'approved' })
+            .query({ status: 'approved', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list({status: 'approved'});
@@ -27,7 +27,7 @@ describe('Connect Javascript SDK - Requests', () => {
     it('returns a list of purchase requests filtered by list of statuses', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved,pending' })
+            .query({ status__in: 'approved,pending', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list({status: ['approved', 'pending']});
@@ -39,7 +39,7 @@ describe('Connect Javascript SDK - Requests', () => {
     it('returns a list of purchase requests filtered by status and product', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved,pending', 'asset.product.id__in': 'PRD-000-000-000,PRD-000-000-001' })
+            .query({ status__in: 'approved,pending', 'asset.product.id__in': 'PRD-000-000-000,PRD-000-000-001', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list({
@@ -182,6 +182,22 @@ describe('Connect Javascript SDK - Requests', () => {
         response.should.have.property('id');
         response.should.have.property('status').eql('pending');
         response.should.have.property('asset').not.empty();
-
+    });
+    it('returns a list of purchase requests paged', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 5, offset: 0 })
+            .reply(200, responses.requests.requests_page_1);
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 5, offset: 5 })
+            .reply(200, responses.requests.requests_page_2);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({}, 5, 0);
+        response.should.be.an.Array();
+        response.should.have.size(5);
+        const response2 = await client.requests.list({}, 5, 5);
+        response2.should.be.an.Array();
+        response2.should.not.be.eql(response);
     });
 });
