@@ -25,3 +25,11 @@ Services
    :members:
 
    
+Errors
+------
+
+.. js:autoclass:: HttpError
+   :members:
+
+.. js:autoclass:: APIError
+   :members:
