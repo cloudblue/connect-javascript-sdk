@@ -204,10 +204,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({}, 5, 0);
+        const response = await ff.listRequests({}, null, 5, 0);
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.listRequests({}, 5, 5);
+        const response2 = await ff.listRequests({}, null, 5, 5);
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });

@@ -88,11 +88,29 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 5 })
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({}, 5, 0);
+        const response = await client.requests.list({}, null, 5, 0);
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await client.requests.list({}, 5, 5);
+        const response2 = await client.requests.list({}, null, 5, 5);
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
+    });
+    it('returns a list of purchase requests (first page) ordered by createdat desc', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 5, offset: 0, order_by: '-createdat' })
+            .reply(200, responses.requests.requests_page_1);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({}, '-createdat', 5, 0);
+        response.should.be.an.Array();
+    });
+    it('returns a list of purchase requests (first page) ordered by createdat desc, product_id asc', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 5, offset: 0, order_by: '-createdat,product_id' })
+            .reply(200, responses.requests.requests_page_1);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({}, ['-createdat', 'product_id'], 5, 0);
+        response.should.be.an.Array();
     });
 });
