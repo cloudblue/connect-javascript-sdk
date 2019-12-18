@@ -14,6 +14,7 @@ module.exports = {
     update_parameters_error: require('./update_parameters_error.json'),
     approve_request: require('./approve_request.json'),
     create_request: require('./create_request.json'),
-    result_inquire_request: require('./result_inquire_request')
-
+    result_inquire_request: require('./result_inquire_request'),
+    requests_page_1: require('./requests_page_1.json'),
+    requests_page_2: require('./requests_page_2.json'),
 }

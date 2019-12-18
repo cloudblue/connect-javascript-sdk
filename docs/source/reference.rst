@@ -11,6 +11,14 @@ Client
    :exclude-members: addEndpointPrefix, addAuthorizationHeader
 
 
+Operations
+----------
+
+.. js:autoclass:: fulfillment.Fulfillment
+   :members:
+
+
+
 Services
 --------
 
@@ -24,4 +32,14 @@ Services
 .. js:autoclass:: requests.RequestService
    :members:
 
+.. js:autoclass:: conversations.ConversationService
+   :members:
    
+Errors
+------
+
+.. js:autoclass:: HttpError
+   :members:
+
+.. js:autoclass:: APIError
+   :members:

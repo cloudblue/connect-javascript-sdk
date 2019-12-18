@@ -13,7 +13,9 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import json
 import os
+
 import sphinx_rtd_theme
 
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
@@ -23,8 +25,11 @@ project = 'Connect Javascript SDK'
 copyright = '2019, Ingram Micro Inc'
 author = 'Ingram Micro Inc'
 
+with open('../../package.json', 'r') as f:
+    pkg_json = json.load(f)
+
 # The full version, including alpha/beta/rc tags
-release = '19.0.0'
+release = pkg_json['version']
 
 
 # -- General configuration ---------------------------------------------------
