@@ -32,6 +32,8 @@ Services
 .. js:autoclass:: requests.RequestService
    :members:
 
+.. js:autoclass:: conversations.ConversationService
+   :members:
    
 Errors
 ------
