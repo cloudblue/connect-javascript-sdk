@@ -19,17 +19,8 @@ describe('Connect Javascript SDK - Conversations', () => {
             .query({ instance_id: 'PR-3767-7014-3540-001' })
             .reply(200, responses.conversations.conversation_id);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.conversations.getConversation('PR-3767-7014-3540-001');
+        const response = await client.conversations.getConversationsByObjectId('PR-3767-7014-3540-001');
         response.should.be.an.Object();
-    });
-    it('get a conversation ID of a request', async () => {
-        nock('https://localhost')
-            .get('/conversations')
-            .query({ instance_id: 'PR-3767-7014-3540-001' })
-            .reply(200, []);
-        const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.conversations.getConversation('PR-3767-7014-3540-001');
-        should.equal(response, null);
     });
     it('put a message in a conversation of the request', async () => {
         nock('https://localhost')
@@ -44,7 +35,7 @@ describe('Connect Javascript SDK - Conversations', () => {
             .get('/conversations/CO-000-000-000')
             .reply(200, responses.conversations.messages);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.conversations.getMessages('CO-000-000-000');
+        const response = await client.conversations.getConversation('CO-000-000-000');
         response.should.be.an.Object();
     });
 
