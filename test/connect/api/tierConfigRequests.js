@@ -28,6 +28,17 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });
+    it('returns a list of unassigned tier configuration requests', async () => {
+        nock('https://localhost')
+            .get('/tier/config-requests')
+            .query({ limit: 100, offset: 0, unassigned: true })
+            .reply(200, responses.tierConfigRequests.list);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.tierConfigRequests.list({ unassigned: true });
+        spy.should.be.calledWith();
+        response.should.be.an.Array();
+    });
     it('returns a list of tier configuration requests ordered by status desc', async () => {
         nock('https://localhost')
             .get('/tier/config-requests')
