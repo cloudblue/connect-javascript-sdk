@@ -35,6 +35,11 @@ Services
 .. js:autoclass:: conversations.ConversationService
    :members:
    
+
+.. js:autoclass:: conversations.TierConfigRequestService
+   :members:
+
+
 Errors
 ------
 
