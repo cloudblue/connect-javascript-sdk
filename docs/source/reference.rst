@@ -36,9 +36,11 @@ Services
    :members:
    
 
-.. js:autoclass:: conversations.TierConfigRequestService
+.. js:autoclass:: tierConfigRequests.TierConfigRequestService
    :members:
 
+.. js:autoclass:: productActions.ActionService
+   :members:
 
 Errors
 ------

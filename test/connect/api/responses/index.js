@@ -11,5 +11,6 @@ module.exports = {
     conversations: require('./conversations'),
     hubs: require('./hubs'),
     tierAccounts: require('./tierAccounts'),
-    tierConfigRequests: require('./tierConfigRequests')
+    tierConfigRequests: require('./tierConfigRequests'),
+    productActions: require('./productActions'),
 }

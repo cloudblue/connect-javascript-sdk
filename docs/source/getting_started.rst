@@ -23,6 +23,30 @@ To install the Connect Javascript SDK at the command prompt enter:
 Usage
 -----
 
+The ``connect-javascript-sdk`` allow you to consume the Connect public API
+directly or using specialized methods to achieve tasks related to a specific
+workflow.
+
+High-level Usage
+^^^^^^^^^^^^^^^^
+
+.. code-block:: js
+
+    const { ConnectClient, Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
+    const client = new ConnectClient('<api_endpoint>', '<api_key>');
+    const fulfillment = new Fulfillment(client);
+
+    const response = await fulfillment.approveRequestWithTemplate('<request_id>', '<template_id>');
+
+
+
+Low-level Usage
+^^^^^^^^^^^^^^^
+
+You can access the API endpoints directly through the ``ConnectClient``.
+
+The ``ConnectClient`` groups operations by the resource they access.
+
 Create an instance of the `ConnectClient` class:
 
 .. code-block:: js
@@ -32,7 +56,7 @@ Create an instance of the `ConnectClient` class:
     const client = new ConnectClient('<api_endpoint>', '<api_key>');
 
 
-The `ConnectClient` groups operations by the resource they access.
+
 For example to invoke the list operation for the `Product` resource:
 
 .. code-block:: js
