@@ -4,7 +4,13 @@ node_js:
   - 10
   - 12
 script:
+  - sonar-scanner
   - npx nyc --reporter=lcov npm test && npx codecov
+addons:
+  sonarcloud:
+    organization: "cloudbluesonarcube"
+    token:
+      secure: "M3ZKS/TuRPasPTP/GJLuU1+EWR+DJG2BYfCCTVYjrGy6CynDPr1hXTF2gLalvurejln5NuPbA16QjQ0jLZBBFfoG5u8a9afed+VwOdyTRHtRGkNLkOo7mXdV/A7Y0/1BUpIrDimnlaVXisQ1tnAv9QBUgNUHSn2Ahe27heJ4ejmODc6Re7/3e9H4I2wJR/ufKYkPlQXaPJQBQKjJ9+4gpYW9a3gewpUNZwxQSFfoG2EN8CU8n+ry4T4Lf7v6UkFG/ENKyx4RZtuRomOvSS13GAGG3PNHhXUcvMwchFnl4e7XxCMyrMFuX55uEAcwp2up4sPkYhRO14GYv2Z29vXv9B/iVfWfRwOwgasdz0ppuj0yMbbiVgwU9+zX/BD4YFaxc/QQQOCB6r0Etrkc57jnVvyLULXlHlHRd/XJ2QVXdBavllpTa5Ght5nIRWjZOF+ak4iJuHPPl6tja5tCA4hBIngwDrHMG/JIWH4S2oeVXLnSiAV2uhh2SVc6eYLLfu2ZFTd4DpA9Tinxg6AiJ4tU0ep3dzFoXSuhAze4VqhPwfFW8hZp5SQy2cennpW6z3OvKM5zPTCwSBS8a+aRWinJwWdLUEj988fZ6I1FbCJtVt61strpYttUlMdL7PKPFjIlTHeMNcjFY0OXLuTVMXODnr1FgMicJJYVRzFBjG3ZnNE="
 deploy:
   provider: npm
   email: francesco.faraone@ingrammicro.com
@@ -13,3 +19,4 @@ deploy:
   on:
     repo: cloudblue/connect-javascript-sdk
     branch: master
+
