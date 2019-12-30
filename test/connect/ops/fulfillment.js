@@ -6,12 +6,16 @@
 
 const should = require('should');
 const nock = require('nock');
+const sinon = require('sinon');
 const responses = require('../api/responses');
 
 const { ConnectClient, Fulfillment, HttpError } = require('../../../index');
+const { TierConfigRequestService } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Fulfillment', () => {
-    afterEach(done => { nock.cleanAll(); done(); });
+    let sandbox;
+    before(() => { sandbox = sinon.createSandbox(); });
+    afterEach(done => { nock.cleanAll(); sandbox.restore(); done(); });
     it('returns a list of purchase requests filtered by single status', async () => {
         nock('https://localhost')
             .get('/requests')
@@ -210,5 +214,133 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         const response2 = await ff.listRequests({}, null, 5, 5);
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
+    });
+    // TCR
+    it('updates tier config request parameters', async () => {
+        const body = {
+            notes: 'Hello notes',
+            params: [
+                {
+                    id: 'gift_code',
+                    value: 'abcdef'
+                }
+            ]
+        };
+        nock('https://localhost')
+            .put('/tier/config-requests/TCR-000-000-000-000', body)
+            .reply(200, responses.tierConfigRequests.update);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'update');
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.updateTierConfigRequestParameters('TCR-000-000-000-000', body.params, body.notes);
+        spy.should.have.been.calledWith('TCR-000-000-000-000', body);
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('TCR-000-000-000-000');
+        response.should.have.property('notes').eql(body.notes);
+    });
+    it('updates tier config request parameters without notes', async () => {
+        const body = {
+            params: [
+                {
+                    id: 'gift_code',
+                    value: 'abcdef'
+                }
+            ]
+        };
+        nock('https://localhost')
+            .put('/tier/config-requests/TCR-000-000-000-000', body)
+            .reply(200, responses.tierConfigRequests.update);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'update');
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.updateTierConfigRequestParameters('TCR-000-000-000-000', body.params);
+        spy.should.have.been.calledWith('TCR-000-000-000-000', body);
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('TCR-000-000-000-000');
+    });
+    it('updates tier config request set its status to fail', async () => {
+        const body = { reason: 'reason' };
+        nock('https://localhost')
+            .post('/tier/config-requests/TCR-000-000-000-000/fail', body)
+            .reply(200, responses.tierConfigRequests.update);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'fail');
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.failTierConfigRequest('TCR-000-000-000-000', body.reason);
+        spy.should.have.been.calledWith('TCR-000-000-000-000', body.reason);
+        should(response).not.be.ok();
+    });
+    it('approves tier config request', async () => {
+        const body = {
+            template: {
+                id: 'TL-173-949-255'
+            }
+        };
+        nock('https://localhost')
+            .post('/tier/config-requests/TCR-000-000-000-000/approve', body)
+            .reply(200, responses.tierConfigRequests.approve);
+
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'approve');
+        const response = await ff.approveTierConfigRequestWithTemplate('TCR-000-000-000-000', 'TL-173-949-255');
+        spy.should.be.calledWith('TCR-000-000-000-000', body);
+        response.should.be.an.Object();
+        response.should.have.property('template');
+        response.template.should.have.property('id').eql('TL-173-949-255');
+    });
+    it('returns a list of purchase requests paged', async () => {
+        nock('https://localhost')
+            .get('/tier/config-requests')
+            .query({ limit: 5, offset: 0 })
+            .reply(200, responses.tierConfigRequests.list_page1);
+        nock('https://localhost')
+            .get('/tier/config-requests')
+            .query({ limit: 5, offset: 5 })
+            .reply(200, responses.tierConfigRequests.list_page2);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.listTierConfigRequests({}, null, 5, 0);
+        response.should.be.an.Array();
+        response.should.have.size(5);
+        const response2 = await ff.listTierConfigRequests({}, null, 5, 5);
+        response2.should.be.an.Array();
+        response2.should.have.size(1);
+        response2.should.not.be.eql(response);
+    });
+    it('creates tier config request', async () => {
+        const body =     {
+            configuration: {
+              product: {
+                "id": "PRD-000-000-000"
+              },
+              connection: { 
+                 id: "CT-0000-0000-0000"
+              },
+              account: { 
+                id: 'TA-1-000-000-000',
+                external_uid: 'd121dqe1123'
+              },
+              parent_account: { 
+                id: 'TA-1-000-000-001',
+                external_uid: 'd121dqe1124'
+              },
+              tier_level: 1
+            },
+            params: [{
+              id: 'param_a',
+              value: 'param_a_value'
+            }]
+          };
+        nock('https://localhost')
+            .post('/tier/config-requests', body)
+            .reply(200, responses.tierConfigRequests.approve);
+
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const spy = sandbox.spy(TierConfigRequestService.prototype, 'create');
+        const response = await ff.createTierConfigRequest(body);
+        spy.should.be.calledWith(body);
+        response.should.be.an.Object();
     });
 });
