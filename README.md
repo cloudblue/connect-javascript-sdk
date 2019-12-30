@@ -5,6 +5,7 @@
 [![codecov](https://codecov.io/gh/cloudblue/connect-javascript-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/cloudblue/connect-javascript-sdk)
 [![npm](https://img.shields.io/npm/v/@cloudblueconnect/connect-javascript-sdk)](https://img.shields.io/npm/v/@cloudblueconnect/connect-javascript-sdk)
 [![rtd](https://readthedocs.org/projects/connect-javascript-sdk/badge/?version=latest&style=flat)](https://readthedocs.org/projects/connect-javascript-sdk/badge/?version=latest&style=flat)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cloudblue_connect-javascript-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cloudblue_connect-javascript-sdk)
 
 
 CloudBlue Connect is a supply automation platform that manages your products and services, contracts, 
