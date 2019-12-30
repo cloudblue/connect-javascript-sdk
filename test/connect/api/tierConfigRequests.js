@@ -24,7 +24,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.list();
+        const response = await client.tierConfigRequests.list({});
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });
