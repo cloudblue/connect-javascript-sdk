@@ -15,6 +15,11 @@ describe('Connect Javascript SDK - BaseService', () => {
         const url = base.addParams('/app');
         url.should.be.eql('/app');
     });
+    it('addParams append params to querystring if url already has qs params', () => {
+        const base = new BaseService();
+        const url = base.addParams('/app?myparam=myvalue', {mysecondparam: 'mysecondvalue'});
+        url.should.be.eql('/app?myparam=myvalue&mysecondparam=mysecondvalue');
+    });
     it('addParams returns url unmodified if no params', () => {
         const base = new BaseService();
         const url = base.addParams('/app', {});
