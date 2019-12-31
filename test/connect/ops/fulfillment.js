@@ -90,7 +90,6 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         response.should.be.an.Object();
         response.should.have.property('id').eql('PR-5426-9883-2189-001');
         response.should.have.property('status').eql('inquiring');
-
     });
     it('updates request root parameters', async () => {
         nock('https://localhost')
@@ -342,5 +341,58 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         const response = await ff.createTierConfigRequest(body);
         spy.should.be.calledWith(body);
         response.should.be.an.Object();
+    });
+    it('changes the status of a request to pending and returns the request', async () => {
+        nock('https://localhost')
+            .post(`/requests/PR-0000-0000-0000-000/pend`)
+            .reply(200, responses.requests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.pendingRequest('PR-0000-0000-0000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-0000-0000-0000-000');
+    });
+    it('returns a request identified by its id', async () => {
+        nock('https://localhost')
+            .get(`/requests/PR-0000-0000-0000-000`)
+            .reply(200, responses.requests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.getRequest('PR-0000-0000-0000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-0000-0000-0000-000');
+    });
+    it('changes the status of a tier config request to pending and returns the request', async () => {
+        nock('https://localhost')
+            .post(`/tier/config-requests/TCR-000-000-000-000/pend`)
+            .reply(200, responses.tierConfigRequests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.pendingTierConfigRequest('TCR-000-000-000-000');
+        should(response).not.be.ok();
+    });
+    it('returns a request identified by its id', async () => {
+        nock('https://localhost')
+            .get(`/tier/config-requests/TCR-000-000-000-000`)
+            .reply(200, responses.tierConfigRequests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.getTierConfigRequest('TCR-000-000-000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('TCR-000-000-000-000');
+    });
+    it('set error in parameters and put a tier config request in inquire, returns the object request', async () => {
+        nock('https://localhost')
+            .post(`/tier/config-requests/TCR-000-000-000-000/inquire`)
+            .reply(204);
+        nock('https://localhost')
+            .put('/tier/config-requests/TCR-000-000-000-000')
+            .reply(200, responses.tierConfigRequests.update);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const params = [{ id: 'param_a', value_error: 'Not valid' }];
+        const response = await ff.inquireTierConfigRequest(
+            'TCR-000-000-000-000', params, 'notes');
+        should(response).not.be.ok();
     });
 });

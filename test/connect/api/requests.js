@@ -113,4 +113,22 @@ describe('Connect Javascript SDK - Requests', () => {
         const response = await client.requests.list({}, ['-createdat', 'product_id'], 5, 0);
         response.should.be.an.Array();
     });
+    it('returns a request identified by its id', async () => {
+        nock('https://localhost')
+            .get('/requests/PR-0000-0000-0000-000')
+            .reply(200, responses.requests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.get('PR-0000-0000-0000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-0000-0000-0000-000');
+    });
+    it('changes the status of a request to pending and returns the request', async () => {
+        nock('https://localhost')
+            .post('/requests/PR-0000-0000-0000-000/pend')
+            .reply(200, responses.requests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.pend('PR-0000-0000-0000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('PR-0000-0000-0000-000');
+    });
 });

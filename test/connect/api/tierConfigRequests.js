@@ -97,4 +97,13 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         response.should.have.property('template');
         response.template.should.have.property('id').eql('TL-173-949-255');
     });
+    it('returns a request identified by its id', async () => {
+        nock('https://localhost')
+            .get('/tier/config-requests/TCR-000-000-000-000')
+            .reply(200, responses.tierConfigRequests.get_request);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.tierConfigRequests.get('TCR-000-000-000-000');
+        response.should.be.an.Object();
+        response.should.have.property('id').eql('TCR-000-000-000-000');
+    });
 });

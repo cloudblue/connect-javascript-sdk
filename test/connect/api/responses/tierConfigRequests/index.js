@@ -9,5 +9,6 @@ module.exports = {
     approve: require('./approve.json'),
     update: require('./update.json'),
     list_page1: require('./page1.json'),
-    list_page2: require('./page2.json'),    
+    list_page2: require('./page2.json'),
+    get_request: require('./get_request'),
 }

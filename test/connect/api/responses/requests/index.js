@@ -17,4 +17,5 @@ module.exports = {
     result_inquire_request: require('./result_inquire_request'),
     requests_page_1: require('./requests_page_1.json'),
     requests_page_2: require('./requests_page_2.json'),
+    get_request: require('./get_request.json'),
 }
