@@ -1,0 +1,37 @@
+{
+    "id": "TA-0000-0000-0000",
+    "environment": "preview",
+    "name": "Ebert, Zulauf and Littel",
+    "external_id": "54270",
+    "external_uid": "dc6f7d7a-4141-44a2-abf3-fd32c8c62e05",
+    "events": {
+        "updated": {
+            "at": "2019-11-15T11:47:55+00:00",
+            "by": {
+                "id": "UR-870-106-057",
+                "name": "Francesco Faraone Vendor"
+            }
+        },
+        "created": {
+            "at": "2019-11-13T15:33:36+00:00",
+            "by": {
+                "id": "UR-870-106-057",
+                "name": "Francesco Faraone Vendor"
+            }
+        }
+    },
+    "scopes": [
+        "customer",
+        "tier1",
+        "tier2"
+    ],
+    "marketplace": {
+        "id": "MP-74941",
+        "name": "Direct commerce",
+        "icon": "/media/PA-781-184/marketplaces/MP-74941/icon.jpg"
+    },
+    "hub": {
+        "id": "HB-0000-0000",
+        "name": "ACME Hub"
+    }
+}

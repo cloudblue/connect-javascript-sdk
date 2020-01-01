@@ -17,7 +17,8 @@ Operations
 .. js:autoclass:: fulfillment.Fulfillment
    :members:
 
-
+.. js:autoclass:: directory.Directory
+   :members:
 
 Services
 --------
@@ -40,6 +41,9 @@ Services
    :members:
 
 .. js:autoclass:: productActions.ActionService
+   :members:
+
+.. js:autoclass:: tierAccounts.TierAccountService
    :members:
 
 Errors

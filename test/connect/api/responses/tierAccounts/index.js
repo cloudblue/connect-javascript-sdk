@@ -6,4 +6,5 @@
 
 module.exports = {
     tier_accounts_list: require('./tier_accounts_list.json'),
+    tier_account: require('./tier_account.json')
 }
