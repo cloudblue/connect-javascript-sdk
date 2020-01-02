@@ -6,7 +6,7 @@ const responses = require('../api/responses');
 const { ConnectClient, Directory } = require('../../../index');
 const { TierAccountService } = require('../../../lib/connect/api');
 
-describe('Connect Javascript SDK - Fulfillment', () => {
+describe('Connect Javascript SDK - Directory', () => {
   let sandbox;
   before(() => { sandbox = sinon.createSandbox(); });
   afterEach(done => { nock.cleanAll(); sandbox.restore(); done(); });
@@ -17,7 +17,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
       .reply(200, responses.tierAccounts.tier_accounts_list);
     const client = new ConnectClient('https://localhost', '1234567890');
     const d = new Directory(client);
-    const response = await d.listTierAccounts();
+    const response = await d.listTierAccounts({limit: 100, offset: 0});
     response.should.be.an.Array();
   });
   it('returns a tier account by its id', async () => {

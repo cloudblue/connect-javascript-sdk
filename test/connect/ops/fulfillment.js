@@ -8,7 +8,7 @@ const should = require('should');
 const nock = require('nock');
 const sinon = require('sinon');
 const responses = require('../api/responses');
-
+const { Query } = require('rql/query');
 const { ConnectClient, Fulfillment, HttpError } = require('../../../index');
 const { TierConfigRequestService } = require('../../../lib/connect/api');
 
@@ -23,7 +23,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({status: 'approved'});
+        const response = await ff.listRequests({query: new Query().eq('status', 'approved')});
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -36,7 +36,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({status: ['approved', 'pending']});
+        const response = await ff.listRequests({query: new Query().in('status', ['approved', 'pending'])});
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -50,8 +50,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
         const response = await ff.listRequests({
-            status: ['approved', 'pending'],
-            assetProductId: ['PRD-000-000-000', 'PRD-000-000-001']
+            query: new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
         });
         response.should.be.an.Array();
         response.forEach(element => {
@@ -207,10 +206,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({}, null, 5, 0);
+        const response = await ff.listRequests({limit: 5, offset: 0});
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.listRequests({}, null, 5, 5);
+        const response2 = await ff.listRequests({limit: 5, offset: 5});
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });

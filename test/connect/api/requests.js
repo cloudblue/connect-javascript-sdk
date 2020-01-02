@@ -7,6 +7,7 @@
 const should = require('should');
 const nock = require('nock');
 const responses = require('./responses');
+const { Query } = require('rql/query');
 
 const { ConnectClient, HttpError } = require('../../../index');
 
@@ -18,7 +19,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ status: 'approved', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({status: 'approved'});
+        const response = await client.requests.list({query : new Query().eq('status', 'approved') });
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -30,7 +31,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ status__in: 'approved,pending', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({status: ['approved', 'pending']});
+        const response = await client.requests.list({query: new Query().in('status', ['approved', 'pending'])});
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -43,8 +44,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.list({
-            status: ['approved', 'pending'],
-            assetProductId: ['PRD-000-000-000', 'PRD-000-000-001']
+            query: new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
         });
         response.should.be.an.Array();
         response.forEach(element => {
@@ -88,10 +88,10 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 5 })
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({}, null, 5, 0);
+        const response = await client.requests.list({limit: 5, offset: 0});
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await client.requests.list({}, null, 5, 5);
+        const response2 = await client.requests.list({limit: 5, offset: 5});
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });
@@ -101,7 +101,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 0, order_by: '-createdat' })
             .reply(200, responses.requests.requests_page_1);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({}, '-createdat', 5, 0);
+        const response = await client.requests.list({orderBy: '-createdat', limit: 5, offset: 0});
         response.should.be.an.Array();
     });
     it('returns a list of purchase requests (first page) ordered by createdat desc, product_id asc', async () => {
@@ -110,7 +110,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 0, order_by: '-createdat,product_id' })
             .reply(200, responses.requests.requests_page_1);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({}, ['-createdat', 'product_id'], 5, 0);
+        const response = await client.requests.list({orderBy: ['-createdat', 'product_id'], limit: 5, offset: 0});
         response.should.be.an.Array();
     });
     it('returns a request identified by its id', async () => {

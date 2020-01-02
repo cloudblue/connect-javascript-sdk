@@ -35,7 +35,7 @@ describe('Connect Javascript SDK - Conversations', () => {
             .get('/conversations/CO-000-000-000')
             .reply(200, responses.conversations.messages);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.conversations.getConversation('CO-000-000-000');
+        const response = await client.conversations.get('CO-000-000-000');
         response.should.be.an.Object();
     });
 

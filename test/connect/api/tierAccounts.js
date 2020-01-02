@@ -21,7 +21,7 @@ describe('Connect Javascript SDK - Tier Accounts', () => {
             .query({ limit: 100, offset: 0 })
             .reply(200, responses.tierAccounts.tier_accounts_list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierAccounts.list();        
+        const response = await client.tierAccounts.list({limit: 100, offset: 0});        
         response.should.be.an.Array();
     });
     it('returns a list of tier accounts filtered by scopes and external_uid', async () => {
@@ -36,7 +36,7 @@ describe('Connect Javascript SDK - Tier Accounts', () => {
                 offset: '0' })
             .reply(200, responses.tierAccounts.tier_accounts_list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierAccounts.list(q);        
+        const response = await client.tierAccounts.list({ query: q, limit: 100, offset: 0 });        
         response.should.be.an.Array();
     });
     it('returns a TierAccount object by its id', async () => {
