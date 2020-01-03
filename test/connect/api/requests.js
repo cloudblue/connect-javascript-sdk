@@ -37,6 +37,42 @@ describe('Connect Javascript SDK - Requests', () => {
             element.should.have.property('status').eql('approved');
         });
     });
+    it('returns a list of purchase requests created within a date range (bounds inclusive)', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ created__lte: '2019-12-31', created__gte: '2019-12-01', limit: 100, offset: 0 })
+            .reply(200, responses.requests.list_approved);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({query: new Query().le('created', '2019-12-31').ge('created', '2019-12-01')});
+        response.should.be.an.Array();
+        response.forEach(element => {
+            element.should.have.property('status').eql('approved');
+        });
+    });
+    it('returns a list of purchase requests created within a date range (bounds exclusive)', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ created__lt: '2019-12-31', created__gt: '2019-12-01', limit: 100, offset: 0 })
+            .reply(200, responses.requests.list_approved);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({query: new Query().lt('created', '2019-12-31').gt('created', '2019-12-01')});
+        response.should.be.an.Array();
+        response.forEach(element => {
+            element.should.have.property('status').eql('approved');
+        });
+    });
+    it('returns a list of purchase requests created within a date range (bounds exclusive)', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ created__lt: '2019-12-31', created__gt: '2019-12-01', limit: 100, offset: 0 })
+            .reply(200, responses.requests.list_approved);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.list({query: new Query().lt('created', '2019-12-31').gt('created', '2019-12-01')});
+        response.should.be.an.Array();
+        response.forEach(element => {
+            element.should.have.property('status').eql('approved');
+        });
+    });
     it('returns a list of purchase requests filtered by status and product', async () => {
         nock('https://localhost')
             .get('/requests')

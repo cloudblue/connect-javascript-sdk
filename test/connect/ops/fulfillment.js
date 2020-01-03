@@ -287,7 +287,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         response.should.have.property('template');
         response.template.should.have.property('id').eql('TL-173-949-255');
     });
-    it('returns a list of purchase requests paged', async () => {
+    it('returns a list of tier config requests paged', async () => {
         nock('https://localhost')
             .get('/tier/config-requests')
             .query({ limit: 5, offset: 0 })
@@ -298,10 +298,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.tierConfigRequests.list_page2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listTierConfigRequests({}, null, 5, 0);
+        const response = await ff.listTierConfigRequests({ limit: 5, offset: 0 });
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.listTierConfigRequests({}, null, 5, 5);
+        const response2 = await ff.listTierConfigRequests({ limit: 5, offset: 5});
         response2.should.be.an.Array();
         response2.should.have.size(1);
         response2.should.not.be.eql(response);

@@ -23,7 +23,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .query({ limit: 100, offset: 0 })
             .reply(200, responses.productActions.list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.list('PRD-150-215-020');
+        const response = await client.products.actions('PRD-150-215-020').list();
         response.should.be.an.Array();
     });
     it('returns a list of product actions for product version', async () => {
@@ -32,7 +32,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .query({ limit: 100, offset: 0 })
             .reply(200, responses.productActions.list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.list('PRD-150-215-020', '1');
+        const response = await client.products.versions('PRD-150-215-020').actions('1').list();
         response.should.be.an.Array();
     });
     it('get a product action by its id', async () => {
@@ -40,7 +40,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .get('/products/PRD-150-215-020/actions/sso_action')
             .reply(200, responses.productActions.get);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.get('sso_action', 'PRD-150-215-020')
+        const response = await client.products.actions('PRD-150-215-020').get('sso_action');
         response.should.be.an.Object();
     });
     it('get a product action by its id for product version', async () => {
@@ -48,7 +48,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .get('/products/PRD-150-215-020/versions/1/actions/sso_action')
             .reply(200, responses.productActions.get);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.get('sso_action', 'PRD-150-215-020', '1')
+        const response = await client.products.versions('PRD-150-215-020').actions('1').get('sso_action');
         response.should.be.an.Object();
     });
     it('get a product action link by its id', async () => {
@@ -57,7 +57,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .query({asset_id: 'AS-0126-3396-8831'})
             .reply(200, responses.productActions.link);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.link('sso_action', 'PRD-150-215-020', null, 'AS-0126-3396-8831')
+        const response = await client.products.actions('PRD-150-215-020').link('sso_action', 'AS-0126-3396-8831');
         response.should.be.an.Object();
         response.should.have.property('link');
     });
@@ -67,7 +67,7 @@ describe('Connect Javascript SDK - Product actions', () => {
             .query({asset_id: 'AS-0126-3396-8831'})
             .reply(200, responses.productActions.link);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.actions.link('sso_action', 'PRD-150-215-020', '1', 'AS-0126-3396-8831')
+        const response = await client.products.versions('PRD-150-215-020').actions('1').link('sso_action', 'AS-0126-3396-8831');
         response.should.be.an.Object();
         response.should.have.property('link');
     });

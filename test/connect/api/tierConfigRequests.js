@@ -8,9 +8,11 @@ const should = require('should');
 const shouldsinon = require('should-sinon');
 const sinon = require('sinon');
 const nock = require('nock');
+const { Query } = require('rql/query');
 const responses = require('./responses');
 
-const { ConnectClient, HttpError } = require('../../../index');
+
+const { ConnectClient } = require('../../../index');
 const { TierConfigRequestService } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Tier Configuration Requests', () => {
@@ -24,7 +26,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.list({});
+        const response = await client.tierConfigRequests.list();
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });
@@ -35,7 +37,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.list({ unassigned: true });
+        const response = await client.tierConfigRequests.list({ query: new Query().eq('unassigned', true) });
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });
@@ -46,8 +48,8 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.list({}, '-status');
-        spy.should.be.calledWith({}, '-status');
+        const response = await client.tierConfigRequests.list({ orderBy: '-status'});
+        spy.should.be.calledWith({ orderBy: '-status'});
         response.should.be.an.Array();
     });
     it('changes the tier configuration request status to fail', async () => {

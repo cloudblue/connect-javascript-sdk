@@ -44,12 +44,6 @@ describe('Connect Javascript SDK - BaseService', () => {
                 'test error message'
             ]
         };
-        // const response = {
-        //     ok: false,
-        //     status: 400,
-        //     headers: {'content-type': 'application/json'},
-        //     text: () => Promise.resolve(JSON.stringify(error))
-        // };
         nock('https://localhost')
             .get('/')
             .reply(400, JSON.stringify(error), {'content-type': 'application/json'});
