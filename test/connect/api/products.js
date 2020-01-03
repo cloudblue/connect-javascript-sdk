@@ -31,55 +31,65 @@ describe('Connect Javascript SDK - Products', () => {
         response[0].should.have.property('id').eql('PRD-000-000-000');
         response[0].should.have.property('name').eql('Product');
     });
-//     it('returns the list of parameters configured for a product by product', async () => {
-//         nock('https://localhost')
-//             .get('/products/PRD-000-000-000/parameters')
-//             .reply(200,responses.products.product_parameters);
-//         const client = new ConnectClient('https://localhost', '1234567890');
-//         const response = await client.products.getParametersByProduct('PRD-000-000-000')        
-//         response.should.be.an.Array();
-//         response.should.have.size(2);
-//         response[0].should.have.property('id');
-//         response[0].should.have.property('scope');
-//         response[0].should.have.property('phase');
-//     });
-//     it('returns the list of parameters of scope asset and phase fulfillment configured for a product by product', async () => {
-//       nock('https://localhost')
-//           .get('/products/PRD-000-000-000/parameters')
-//           .reply(200,responses.products.product_parameters);
-//       const client = new ConnectClient('https://localhost', '1234567890');
-//       const response = await client.products.getAssetParametersForFulfillmentByProduct('PRD-000-000-000')        
-//       response.should.be.an.Array();
-//       response.should.have.size(1);
-//       response[0].should.have.property('id');
-//       response[0].should.have.property('scope').eql('asset');
-//       response[0].should.have.property('phase').eql('fulfillment');
-//   });
-//     it('returns a list of templates configured for the product', async () => {
-//         nock('https://localhost')
-//             .get('/products/PRD-000-000-000/templates')
-//             .reply(200, responses.products.templates_by_product);
-//         const client = new ConnectClient('https://localhost', '1234567890');
-//         const response = await client.products.getProductTemplates('PRD-000-000-000');        
-//         response.should.be.an.Array();
-//         response.should.have.size(4);
-//         response.forEach(element => {
-//             element.should.have.property('id');
-//             element.should.have.property('title');
-//         });
-//     });
-//     it('returns a list of templates configured for the product with scope="asset"', async () => {
-//         nock('https://localhost')
-//             .get('/products/PRD-000-000-000/templates')
-//             .reply(200, responses.products.templates_by_product);
-//         const client = new ConnectClient('https://localhost', '1234567890');
-//         const response = await client.products.getProductAssetTemplates('PRD-000-000-000');        
-//         response.should.be.an.Array();
-//         response.should.have.size(2);
-//         response.forEach(element => {
-//             element.should.have.property('id');
-//             element.should.have.property('title');
-//             element.should.have.property('scope').eql('asset');
-//         });
-//     });
+    it('returns the list of parameters configured for a product by product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/parameters')
+            .reply(200,responses.products.product_parameters);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getParameters('PRD-000-000-000')        
+        response.should.be.an.Array();
+        response.should.have.size(2);
+        response[0].should.have.property('id');
+        response[0].should.have.property('scope');
+        response[0].should.have.property('phase');
+    });
+    it('returns the list of items configured of a product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/items')
+            .reply(200,responses.products.product_items);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getItems('PRD-000-000-000')        
+        response.should.be.an.Array();
+        response.should.have.size(1);
+        response[0].should.have.property('id');
+        response[0].should.have.property('mpn');
+        response[0].should.have.property('local_id');
+    });
+    it('returns the list of connections configured of a product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/connections')
+            .reply(200,responses.products.product_connections);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getConnections('PRD-000-000-000')        
+        response.should.be.an.Array();
+        response.should.have.size(2);
+        response[0].should.have.property('id');
+        response[0].should.have.property('type');
+        response[0].should.have.property('hub');
+    });
+    it('returns the list of configuration related to a product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/configurations')
+            .query({limit: 100, offset: 0})
+            .reply(200,responses.products.product_configurations);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.configurations('PRD-000-000-000').list();       
+        response.should.be.an.Array();
+        response.should.have.size(1);
+        response[0].should.have.property('value');
+        response[0].should.have.property('parameter');
+    });
+    it('returns a list of templates configured for the product', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/templates')
+            .reply(200, responses.products.templates_by_product);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.products.getTemplates('PRD-000-000-000');        
+        response.should.be.an.Array();
+        response.should.have.size(4);
+        response.forEach(element => {
+            element.should.have.property('id');
+            element.should.have.property('title');
+        });
+    });
 });

@@ -29,14 +29,31 @@ describe('Connect Javascript SDK - BaseService', () => {
         const url = base.appendToQuerystring('/app', {});
         url.should.be.eql('/app');
     });
-    it('checkResponse should throw a HttpError if content type is not JSON', async () => {
+    it('appendToQuerystring should throw a Error if params is of unsupported type', async () => {
+        const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
+        should(() => base.appendToQuerystring('http://localhost', ['a', 'b'])).throw(Error);      
+    });
+    it('addQuery should throw a Error if query is of unsupported type', async () => {
+        const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
+        should(() => base.addQuery('http://localhost', ['a', 'b'])).throw(Error);      
+    });
+    it('addSorting should throw a Error if criteria is of unsupported type', async () => {
+        const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
+        should(() => base.addSorting('http://localhost', {})).throw(Error);      
+    }); 
+    it('addPaging should return an unmodified url if limit and/or offset are not numbers', async () => {
+        const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
+        const url = base.addPaging('http://localhost', {}, 0);
+        url.should.be.eql('http://localhost');
+    });    
+    it('fetch should throw a HttpError if content type is not JSON', async () => {
         const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
         nock('https://localhost')
             .get('/')
             .reply(400, 'text', {'content-type': 'text/plain'});
         await base.fetch('/').should.be.rejectedWith(HttpError, {status: 400, message: 'text'});        
     });
-    it('checkResponse should throw a APIError if content type is JSON', async () => {
+    it('fetch should throw a APIError if content type is JSON', async () => {
         const base = new BaseService(new ConnectClient('https://localhost', '1234567890'));
         const error = {
             error_code: 'SYS_001',

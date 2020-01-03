@@ -7,5 +7,8 @@
 module.exports = {
     templates_by_product: require('./templates_by_product.json'),
     published_products: require('./published_products.json'),
-    product_parameters: require('./product_parameters.json')
+    product_parameters: require('./product_parameters.json'),
+    product_items: require('./product_items'),
+    product_connections: require('./product_connections.json'),
+    product_configurations: require('./product_configurations.json'),
 }
