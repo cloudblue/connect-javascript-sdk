@@ -20,14 +20,26 @@ Operations
 .. js:autoclass:: directory.Directory
    :members:
 
+.. js:autoclass:: inventory.Inventory
+   :members:
+
 Services
 --------
 
+
+.. js:autoclass:: base.BaseService
+   :members:
 
 .. js:autoclass:: accounts.AccountService
    :members:
 
 .. js:autoclass:: products.ProductService
+   :members:
+
+.. js:autoclass:: products.ProductVersionService
+   :members:
+
+.. js:autoclass:: products.ProductActionService
    :members:
 
 .. js:autoclass:: requests.RequestService
@@ -36,11 +48,7 @@ Services
 .. js:autoclass:: conversations.ConversationService
    :members:
    
-
 .. js:autoclass:: tierConfigRequests.TierConfigRequestService
-   :members:
-
-.. js:autoclass:: productActions.ActionService
    :members:
 
 .. js:autoclass:: tierAccounts.TierAccountService
