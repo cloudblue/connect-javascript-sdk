@@ -16,6 +16,16 @@ describe('Connect Javascript SDK - Fulfillment', () => {
     let sandbox;
     before(() => { sandbox = sinon.createSandbox(); });
     afterEach(done => { nock.cleanAll(); sandbox.restore(); done(); });
+    it('returns a list of purchase requests with default filtering and ordering', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 100, offset: 0 })
+            .reply(200, responses.requests.list_approved);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.listRequests();
+        response.should.be.an.Array();
+    });
     it('returns a list of purchase requests filtered by single status', async () => {
         nock('https://localhost')
             .get('/requests')
