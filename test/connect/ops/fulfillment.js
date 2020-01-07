@@ -351,6 +351,27 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         spy.should.be.calledWith(body);
         response.should.be.an.Object();
     });
+    it('creates tier config request of type update', async () => {
+        const body =   {
+            configuration: {
+              id: 'TC-000-000-000'
+            },
+            params: [{
+              id: 'param_a',
+              value: 'param_a_value'
+            }]
+          };
+        nock('https://localhost')
+            .post('/tier/config-requests', body)
+            .reply(200, responses.tierConfigRequests.approve);
+
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'create');
+        const response = await ff.createUpdateTierConfigRequest('TC-000-000-000', body.params);
+        spy.should.be.calledWith(body);
+        response.should.be.an.Object();
+    });
     it('changes the status of a request to pending and returns the request', async () => {
         nock('https://localhost')
             .post(`/requests/PR-0000-0000-0000-000/pend`)
