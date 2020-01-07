@@ -4,7 +4,7 @@ const sinon = require('sinon');
 const responses = require('../api/responses');
 
 const { ConnectClient, Inventory } = require('../../../index');
-const { TierAccountService } = require('../../../lib/connect/api');
+const { TierAccountResource } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Inventory', () => {
   let sandbox;

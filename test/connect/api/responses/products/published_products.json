@@ -12,8 +12,8 @@
             "requires_reseller_information": true
         },
         "customer_ui_settings": {
-            "description": "We are happy to provide you the Cloud Service - an ultimate solution for your company. Stop using the legacy on-premises solution on your computer. Move to the cloud with our help.",
-            "getting_started": "You are now ready to use the Cloud Service and migrate the files from your local computer and mobile devices to the cloud. Download apps for Windows Desktop, Windows Phone, Mac OS or Android following one of the links below, or access the service web interface directly.",
+            "description": "We are happy to provide you the Cloud Resource - an ultimate solution for your company. Stop using the legacy on-premises solution on your computer. Move to the cloud with our help.",
+            "getting_started": "You are now ready to use the Cloud Resource and migrate the files from your local computer and mobile devices to the cloud. Download apps for Windows Desktop, Windows Phone, Mac OS or Android following one of the links below, or access the service web interface directly.",
             "download_links": [
                 {
                     "title": "Windows",

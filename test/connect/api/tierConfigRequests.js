@@ -13,7 +13,7 @@ const responses = require('./responses');
 
 
 const { ConnectClient } = require('../../../index');
-const { TierConfigRequestService } = require('../../../lib/connect/api');
+const { TierConfigRequestResource } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Tier Configuration Requests', () => {
     let sandbox;
@@ -24,7 +24,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .get('/tier/config-requests')
             .query({ limit: 100, offset: 0 })
             .reply(200, responses.tierConfigRequests.list);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.list();
         spy.should.be.calledWith();
@@ -35,7 +35,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .get('/tier/config-requests')
             .query({ limit: 100, offset: 0, unassigned: true })
             .reply(200, responses.tierConfigRequests.list);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.list({ query: new Query().eq('unassigned', true) });
         spy.should.be.calledWith();
@@ -46,7 +46,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .get('/tier/config-requests')
             .query({ limit: 100, offset: 0, order_by: '-status' })
             .reply(200, responses.tierConfigRequests.list);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'list');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'list');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.list({ orderBy: '-status'});
         spy.should.be.calledWith({ orderBy: '-status'});
@@ -56,7 +56,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         nock('https://localhost')
             .post('/tier/config-requests/TCR-000-000-000-000/fail', {reason: 'test'})
             .reply(204);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'fail');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'fail');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.fail('TCR-000-000-000-000', 'test');
         spy.should.be.calledWith('TCR-000-000-000-000', 'test');
@@ -66,7 +66,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         nock('https://localhost')
             .post('/tier/config-requests/TCR-000-000-000-000/inquire')
             .reply(204);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'inquire');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'inquire');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.inquire('TCR-000-000-000-000');
         spy.should.be.calledWith('TCR-000-000-000-000');
@@ -76,7 +76,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         nock('https://localhost')
             .post('/tier/config-requests/TCR-000-000-000-000/pend')
             .reply(204);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'pending');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'pending');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.pending('TCR-000-000-000-000');
         spy.should.be.calledWith('TCR-000-000-000-000');
@@ -91,7 +91,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
         nock('https://localhost')
             .post('/tier/config-requests/TCR-000-000-000-000/approve', body)
             .reply(200, responses.tierConfigRequests.approve);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'approve');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'approve');
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.tierConfigRequests.approve('TCR-000-000-000-000', body);
         spy.should.be.calledWith('TCR-000-000-000-000', body);

@@ -23,35 +23,35 @@ Operations
 .. js:autoclass:: inventory.Inventory
    :members:
 
-Services
---------
+Resources
+---------
 
 
-.. js:autoclass:: base.BaseService
+.. js:autoclass:: base.GenericResource
    :members:
 
-.. js:autoclass:: accounts.AccountService
+.. js:autoclass:: accounts.AccountResource
    :members:
 
-.. js:autoclass:: products.ProductService
+.. js:autoclass:: products.ProductResource
    :members:
 
-.. js:autoclass:: products.ProductVersionService
+.. js:autoclass:: products.ProductVersionResource
    :members:
 
-.. js:autoclass:: products.ProductActionService
+.. js:autoclass:: products.ProductActionResource
    :members:
 
-.. js:autoclass:: requests.RequestService
+.. js:autoclass:: requests.RequestResource
    :members:
 
-.. js:autoclass:: conversations.ConversationService
+.. js:autoclass:: conversations.ConversationResource
    :members:
    
-.. js:autoclass:: tierConfigRequests.TierConfigRequestService
+.. js:autoclass:: tierConfigRequests.TierConfigRequestResource
    :members:
 
-.. js:autoclass:: tierAccounts.TierAccountService
+.. js:autoclass:: tierAccounts.TierAccountResource
    :members:
 
 Errors

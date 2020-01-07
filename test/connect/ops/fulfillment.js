@@ -10,7 +10,7 @@ const sinon = require('sinon');
 const responses = require('../api/responses');
 const { Query } = require('rql/query');
 const { ConnectClient, Fulfillment, HttpError } = require('../../../index');
-const { TierConfigRequestService } = require('../../../lib/connect/api');
+const { TierConfigRequestResource } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Fulfillment', () => {
     let sandbox;
@@ -237,7 +237,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         nock('https://localhost')
             .put('/tier/config-requests/TCR-000-000-000-000', body)
             .reply(200, responses.tierConfigRequests.update);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'update');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'update');
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
         const response = await ff.updateTierConfigRequestParameters('TCR-000-000-000-000', body.params, body.notes);
@@ -258,7 +258,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         nock('https://localhost')
             .put('/tier/config-requests/TCR-000-000-000-000', body)
             .reply(200, responses.tierConfigRequests.update);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'update');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'update');
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
         const response = await ff.updateTierConfigRequestParameters('TCR-000-000-000-000', body.params);
@@ -271,7 +271,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
         nock('https://localhost')
             .post('/tier/config-requests/TCR-000-000-000-000/fail', body)
             .reply(200, responses.tierConfigRequests.update);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'fail');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'fail');
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
         const response = await ff.failTierConfigRequest('TCR-000-000-000-000', body.reason);
@@ -290,7 +290,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
 
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'approve');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'approve');
         const response = await ff.approveTierConfigRequestWithTemplate('TCR-000-000-000-000', 'TL-173-949-255');
         spy.should.be.calledWith('TCR-000-000-000-000', body);
         response.should.be.an.Object();
@@ -346,7 +346,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
 
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const spy = sandbox.spy(TierConfigRequestService.prototype, 'create');
+        const spy = sandbox.spy(TierConfigRequestResource.prototype, 'create');
         const response = await ff.createTierConfigRequest(body);
         spy.should.be.calledWith(body);
         response.should.be.an.Object();

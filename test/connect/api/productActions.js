@@ -11,7 +11,7 @@ const nock = require('nock');
 const responses = require('./responses');
 
 const { ConnectClient } = require('../../../index');
-const { ActionService } = require('../../../lib/connect/api');
+const { ActionResource } = require('../../../lib/connect/api');
 
 describe('Connect Javascript SDK - Product actions', () => {
     let sandbox;
