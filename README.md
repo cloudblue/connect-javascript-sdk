@@ -41,7 +41,9 @@ Connect Javascript SDK work with Node.js version 8 or later.
 Connect Javascript SDK also depends on:
 
 * [lodash](https://lodash.com/) version 4.17.15
-* [node-fetch](https://www.npmjs.com/package/node-fetch) version 2.6.0
+* [node-fetch](https://github.com/node-fetch/node-fetch) version 2.6.0
+* [rql](https://github.com/persvr/rql) version 0.3.3
+
 
 
 ## Install

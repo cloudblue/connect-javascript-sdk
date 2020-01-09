@@ -7,7 +7,8 @@ Requirements
 The Cloud Blue Connect Javascript SDK depends on the following 3rd party packages:
 
 * `lodash <https://lodash.com/>`_ version 4.17.15
-* `node-fetch <https://www.npmjs.com/package/node-fetch>`_ version 2.6.0
+* `node-fetch <https://github.com/node-fetch/node-fetch>`_ version 2.6.0
+* `rql <https://github.com/persvr/rql>`_ version 0.3.3
 
 Installation
 ------------
