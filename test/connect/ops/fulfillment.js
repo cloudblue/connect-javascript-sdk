@@ -425,4 +425,24 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             'TCR-000-000-000-000', params, 'notes');
         should(response).not.be.ok();
     });
+    it('get a connection id from a product id and a hub id', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/connections')
+            .reply(200,responses.products.product_connections);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.getConnectionIdByProductAndHub(
+            'PRD-000-000-000', 'HB-1346-8670');
+        response.should.be.eql('CT-3018-4011');
+    });
+    it('returns null search for a connection from a product id and a hub id', async () => {
+        nock('https://localhost')
+            .get('/products/PRD-000-000-000/connections')
+            .reply(200,responses.products.product_connections);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const ff = new Fulfillment(client);
+        const response = await ff.getConnectionIdByProductAndHub(
+            'PRD-000-000-000', 'HB-1346-000');
+        should(response).be.null();
+    });
 });
