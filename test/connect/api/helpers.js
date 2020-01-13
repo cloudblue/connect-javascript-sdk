@@ -7,17 +7,17 @@
 
 const should = require('should');
 const { Query } = require('rql/query');
-const { rql2legacy } = require('../../../lib/connect/api/utils');
+const { rql2drf } = require('../../../lib/connect/api/helpers');
 
 
 
 describe('Connect Javascript SDK - Utils', () => {
-  it('rql2legacy throw an error if there is an unsupported operator', (done) => {
-    should(() => rql2legacy(new Query().or(new Query().eq('a', 0), new Query().eq('b', 1)))).throw(Error);
+  it('rql2drf throw an error if there is an unsupported operator', (done) => {
+    should(() => rql2drf(new Query().or(new Query().eq('a', 0), new Query().eq('b', 1)))).throw(Error);
     done();
   });
-  it('rql2legacy accept string input', (done) => {
-    const params = rql2legacy('and(eq(a,0),eq(b,1),eq(test,ok),eq(bool,true))');
+  it('rql2drf accept string input', (done) => {
+    const params = rql2drf('and(eq(a,0),eq(b,1),eq(test,ok),eq(bool,true))');
     params.should.be.an.Object();
     params.should.have.property('a').eql(0);
     params.should.have.property('b').eql(1);
