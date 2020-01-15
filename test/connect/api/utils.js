@@ -37,4 +37,9 @@ describe('Connect Javascript SDK - utils', () => {
     should(() => buildUrl('http://example.com', 3)).throw();
     done();
   });
+  it('buildUrl append to qs if url already has querystring params', (done) => {
+    const computed = buildUrl('http://example.com?a=0', {b: 1});
+    computed.should.be.eql('http://example.com?a=0&b=1');
+    done();
+  });
 });

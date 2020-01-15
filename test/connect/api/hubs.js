@@ -17,10 +17,9 @@ describe('Connect Javascript SDK - Hubs', () => {
     it('returns a list of hubs', async () => {
         nock('https://localhost')
             .get('/hubs')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.hubs.hubs_list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.hubs.list();        
+        const response = await client.hubs.search();        
         response.should.be.an.Array();
     });
 });

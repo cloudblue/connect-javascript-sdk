@@ -20,19 +20,17 @@ describe('Connect Javascript SDK - Product actions', () => {
     it('returns a list of product actions', async () => {
         nock('https://localhost')
             .get('/products/PRD-150-215-020/actions')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.productActions.list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.products.actions('PRD-150-215-020').list();
+        const response = await client.products.actions('PRD-150-215-020').search();
         response.should.be.an.Array();
     });
     it('returns a list of product actions for product version', async () => {
         nock('https://localhost')
             .get('/products/PRD-150-215-020/versions/1/actions')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.productActions.list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.products.versions('PRD-150-215-020').actions('1').list();
+        const response = await client.products.versions('PRD-150-215-020').actions('1').search();
         response.should.be.an.Array();
     });
     it('get a product action by its id', async () => {

@@ -19,11 +19,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
     it('returns a list of purchase requests with default filtering and ordering', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests();
+        const response = await ff.searchRequests();
         response.should.be.an.Array();
     });
     it('returns a list of purchase requests filtered by single status', async () => {
@@ -33,7 +32,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({query: new Query().eq('status', 'approved')});
+        const response = await ff.searchRequests(new Query().eq('status', 'approved').limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -42,11 +41,11 @@ describe('Connect Javascript SDK - Fulfillment', () => {
     it('returns a list of purchase requests filtered by list of statuses', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved,pending', limit: 100, offset: 0 })
+            .query({ status__in: 'approved,pending' })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({query: new Query().in('status', ['approved', 'pending'])});
+        const response = await ff.searchRequests(new Query().in('status', ['approved', 'pending']));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -59,9 +58,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({
-            query: new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
-        });
+        const response = await ff.searchRequests(
+            new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
+                .limit(100)
+        );
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status');
@@ -216,10 +216,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listRequests({limit: 5, offset: 0});
+        const response = await ff.searchRequests(new Query().limit(5));
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.listRequests({limit: 5, offset: 5});
+        const response2 = await ff.searchRequests(new Query().limit(5, 5));
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });
@@ -308,10 +308,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.tierConfigRequests.list_page2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.listTierConfigRequests({ limit: 5, offset: 0 });
+        const response = await ff.searchTierConfigRequests(new Query().limit(5));
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.listTierConfigRequests({ limit: 5, offset: 5});
+        const response2 = await ff.searchTierConfigRequests(new Query().limit(5, 5));
         response2.should.be.an.Array();
         response2.should.have.size(1);
         response2.should.not.be.eql(response);

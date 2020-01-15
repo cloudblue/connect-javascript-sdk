@@ -19,7 +19,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ status: 'approved', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({query : new Query().eq('status', 'approved') });
+        const response = await client.requests.search(new Query().eq('status', 'approved').limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -28,7 +28,6 @@ describe('Connect Javascript SDK - Requests', () => {
     it('returns a list of purchase requests', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const response = await client.requests.search();
@@ -43,7 +42,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ status__in: 'approved,pending', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({query: new Query().in('status', ['approved', 'pending'])});
+        const response = await client.requests.search(new Query().in('status', ['approved', 'pending']).limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -55,7 +54,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ created__lte: '2019-12-31', created__gte: '2019-12-01', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({query: new Query().le('created', '2019-12-31').ge('created', '2019-12-01')});
+        const response = await client.requests.search(new Query().le('created', '2019-12-31').ge('created', '2019-12-01').limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -67,7 +66,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ created__lt: '2019-12-31', created__gt: '2019-12-01', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({query: new Query().lt('created', '2019-12-31').gt('created', '2019-12-01')});
+        const response = await client.requests.search(new Query().lt('created', '2019-12-31').gt('created', '2019-12-01').limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -79,7 +78,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ created__lt: '2019-12-31', created__gt: '2019-12-01', limit: 100, offset: 0 })
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({query: new Query().lt('created', '2019-12-31').gt('created', '2019-12-01')});
+        const response = await client.requests.search(new Query().lt('created', '2019-12-31').gt('created', '2019-12-01').limit(100));
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -88,12 +87,12 @@ describe('Connect Javascript SDK - Requests', () => {
     it('returns a list of purchase requests filtered by status and product', async () => {
         nock('https://localhost')
             .get('/requests')
-            .query({ status__in: 'approved,pending', 'asset.product.id__in': 'PRD-000-000-000,PRD-000-000-001', limit: 100, offset: 0 })
+            .query({ status__in: 'approved,pending', 'asset.product.id__in': 'PRD-000-000-000,PRD-000-000-001'})
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({
-            query: new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
-        });
+        const response = await client.requests.search(
+            new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
+        );
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status');
@@ -136,10 +135,10 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 5 })
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({limit: 5, offset: 0});
+        const response = await client.requests.search(new Query().limit(5, 0));
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await client.requests.list({limit: 5, offset: 5});
+        const response2 = await client.requests.search(new Query().limit(5, 5));
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });
@@ -149,7 +148,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 0, order_by: '-createdat' })
             .reply(200, responses.requests.requests_page_1);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({orderBy: '-createdat', limit: 5, offset: 0});
+        const response = await client.requests.search(new Query().limit(5).sort('-createdat'));
         response.should.be.an.Array();
     });
     it('returns a list of purchase requests (first page) ordered by createdat desc, product_id asc', async () => {
@@ -158,7 +157,7 @@ describe('Connect Javascript SDK - Requests', () => {
             .query({ limit: 5, offset: 0, order_by: '-createdat,product_id' })
             .reply(200, responses.requests.requests_page_1);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.requests.list({orderBy: ['-createdat', 'product_id'], limit: 5, offset: 0});
+        const response = await client.requests.search(new Query().sort('-createdat', 'product_id').limit(5));
         response.should.be.an.Array();
     });
     it('returns a request identified by its id', async () => {

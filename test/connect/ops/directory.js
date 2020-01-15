@@ -13,11 +13,10 @@ describe('Connect Javascript SDK - Directory', () => {
   it('returns a list of tier accounts', async () => {
     nock('https://localhost')
       .get('/tier/accounts')
-      .query({ limit: 100, offset: 0 })
       .reply(200, responses.tierAccounts.tier_accounts_list);
     const client = new ConnectClient('https://localhost', '1234567890');
     const d = new Directory(client);
-    const response = await d.listTierAccounts({limit: 100, offset: 0});
+    const response = await d.searchTierAccounts();
     response.should.be.an.Array();
   });
   it('returns a tier account by its id', async () => {

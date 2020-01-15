@@ -25,4 +25,30 @@ describe('Connect Javascript SDK - Utils', () => {
     params.should.have.property('bool').eql(true);
     done();
   });
+  it('rql2drf accept limit', (done) => {
+    const params = rql2drf('limit(100)');
+    params.should.be.an.Object();
+    params.should.have.property('limit').eql(100);
+    params.should.have.property('offset').eql(0);
+    done();
+  });
+  it('rql2drf accept limit and offset', (done) => {
+    const params = rql2drf('limit(100,20)');
+    params.should.be.an.Object();
+    params.should.have.property('limit').eql(100);
+    params.should.have.property('offset').eql(20);
+    done();
+  });
+  it('rql2drf accept sort', (done) => {
+    const params = rql2drf('sort(+a)');
+    params.should.be.an.Object();
+    params.should.have.property('order_by').eql('+a');
+    done();
+  });
+  it('rql2drf accept sort on multiple columns', (done) => {
+    const params = rql2drf('sort(+a,-b)');
+    params.should.be.an.Object();
+    params.should.have.property('order_by').eql('+a,-b');
+    done();
+  });
 });

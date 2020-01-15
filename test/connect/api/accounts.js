@@ -17,10 +17,9 @@ describe('Connect Javascript SDK - Accounts', () => {
     it('returns a list of 1 element with the account info', async () => {
         nock('https://localhost')
             .get('/accounts')
-            .query({ limit: 100, offset: 0 })
             .reply(200, responses.accounts.vendor_account);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.accounts.list();        
+        const response = await client.accounts.search();        
         response.should.be.an.Array();
         response.should.have.size(1);
         response[0].should.have.property('id').eql('VA-000-000');
@@ -29,9 +28,8 @@ describe('Connect Javascript SDK - Accounts', () => {
     it('should be rejected if internal server error', async () => {
         nock('https://localhost')
             .get('/accounts')
-            .query({ limit: 100, offset: 0 })
             .reply(500, 'Internal server error');
         const client = new ConnectClient('https://localhost', '1234567890');
-        await client.accounts.list().should.be.rejectedWith(HttpError, {status: 500, message: 'Internal server error'});
+        await client.accounts.search().should.be.rejectedWith(HttpError, {status: 500, message: 'Internal server error'});
     });
 });

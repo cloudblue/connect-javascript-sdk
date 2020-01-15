@@ -19,13 +19,11 @@ describe('Connect Javascript SDK - Products', () => {
             .query({
                     'eq(status,published)': '',
                     'eq(latest,true)': '',
-                    limit: 100,
-                    offset: 0
                 }
             )
             .reply(200, responses.products.published_products);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.products.list({query: new Query().eq('status', 'published').eq('latest', true)});        
+        const response = await client.products.search(new Query().eq('status', 'published').eq('latest', true));        
         response.should.be.an.Array();
         response.should.have.size(1);
         response[0].should.have.property('id').eql('PRD-000-000-000');
@@ -70,10 +68,9 @@ describe('Connect Javascript SDK - Products', () => {
     it('returns the list of configuration related to a product', async () => {
         nock('https://localhost')
             .get('/products/PRD-000-000-000/configurations')
-            .query({limit: 100, offset: 0})
             .reply(200,responses.products.product_configurations);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.products.configurations('PRD-000-000-000').list();       
+        const response = await client.products.configurations('PRD-000-000-000').search();       
         response.should.be.an.Array();
         response.should.have.size(1);
         response[0].should.have.property('value');
