@@ -25,6 +25,18 @@ describe('Connect Javascript SDK - Requests', () => {
             element.should.have.property('status').eql('approved');
         });
     });
+    it('returns a list of purchase requests', async () => {
+        nock('https://localhost')
+            .get('/requests')
+            .query({ limit: 100, offset: 0 })
+            .reply(200, responses.requests.list_approved);
+        const client = new ConnectClient('https://localhost', '1234567890');
+        const response = await client.requests.search();
+        response.should.be.an.Array();
+        response.forEach(element => {
+            element.should.have.property('status').eql('approved');
+        });
+    });
     it('returns a list of purchase requests filtered by list of statuses', async () => {
         nock('https://localhost')
             .get('/requests')
