@@ -25,6 +25,7 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
+    "ramda": "^0.26.1",
     "rql": "^0.3.3"
   },
   "devDependencies": {
