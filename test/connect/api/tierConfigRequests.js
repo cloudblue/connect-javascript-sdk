@@ -8,7 +8,6 @@ const should = require('should');
 const shouldsinon = require('should-sinon');
 const sinon = require('sinon');
 const nock = require('nock');
-const { Query } = require('rql/query');
 const responses = require('./responses');
 
 
@@ -36,7 +35,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestResource.prototype, 'search');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.search(new Query().eq('unassigned', true).limit(100, 0));
+        const response = await client.tierConfigRequests.search({ limit: 100, offset: 0, unassigned: true });
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });
@@ -47,7 +46,7 @@ describe('Connect Javascript SDK - Tier Configuration Requests', () => {
             .reply(200, responses.tierConfigRequests.list);
         const spy = sandbox.spy(TierConfigRequestResource.prototype, 'search');
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierConfigRequests.search(new Query().sort('-status'));
+        const response = await client.tierConfigRequests.search({ order_by: '-status' });
         spy.should.be.calledWith();
         response.should.be.an.Array();
     });

@@ -90,7 +90,6 @@ describe('#filterToQuery', () => {
 
     const filterWithNOTQuery = 'not(eq(name,vasya))&not(eq(name,"pet;ya"))&not(eq(age,10))&not(in(age,(1,2,3)))';
 
-
     // Filter with OR
     const filterWithOR = {
         color: {

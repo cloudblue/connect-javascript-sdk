@@ -8,7 +8,6 @@ const should = require('should');
 const nock = require('nock');
 const sinon = require('sinon');
 const responses = require('../api/responses');
-const { Query } = require('rql/query');
 const { ConnectClient, Fulfillment, HttpError } = require('../../../index');
 const { TierConfigRequestResource } = require('../../../lib/connect/api');
 
@@ -32,7 +31,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.searchRequests(new Query().eq('status', 'approved').limit(100));
+        const response = await ff.searchRequests({ status: 'approved', limit: 100, offset: 0 });
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -45,7 +44,7 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.searchRequests(new Query().in('status', ['approved', 'pending']));
+        const response = await ff.searchRequests({status__in: ['approved', 'pending']});
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status').eql('approved');
@@ -58,10 +57,12 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.list_approved_pending_product);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.searchRequests(
-            new Query().in('status', ['approved', 'pending']).in('asset.product.id', ['PRD-000-000-000', 'PRD-000-000-001'])
-                .limit(100)
-        );
+        const response = await ff.searchRequests({
+            status__in: ['approved', 'pending'],
+            'asset.product.id__in': ['PRD-000-000-000', 'PRD-000-000-001'],
+            limit: 100,
+            offset: 0
+        });
         response.should.be.an.Array();
         response.forEach(element => {
             element.should.have.property('status');
@@ -216,10 +217,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.requests.requests_page_2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.searchRequests(new Query().limit(5));
+        const response = await ff.searchRequests({ limit: 5, offset: 0 });
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.searchRequests(new Query().limit(5, 5));
+        const response2 = await ff.searchRequests({ limit: 5, offset: 5 });
         response2.should.be.an.Array();
         response2.should.not.be.eql(response);
     });
@@ -308,10 +309,10 @@ describe('Connect Javascript SDK - Fulfillment', () => {
             .reply(200, responses.tierConfigRequests.list_page2);
         const client = new ConnectClient('https://localhost', '1234567890');
         const ff = new Fulfillment(client);
-        const response = await ff.searchTierConfigRequests(new Query().limit(5));
+        const response = await ff.searchTierConfigRequests({ limit: 5, offset: 0 });
         response.should.be.an.Array();
         response.should.have.size(5);
-        const response2 = await ff.searchTierConfigRequests(new Query().limit(5, 5));
+        const response2 = await ff.searchTierConfigRequests({ limit: 5, offset: 5 });
         response2.should.be.an.Array();
         response2.should.have.size(1);
         response2.should.not.be.eql(response);

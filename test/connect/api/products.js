@@ -6,7 +6,6 @@
 
 const should = require('should');
 const nock = require('nock');
-const { Query } = require('rql/query');
 const responses = require('./responses');
 
 const ConnectClient = require('../../../index').ConnectClient;
@@ -17,13 +16,13 @@ describe('Connect Javascript SDK - Products', () => {
         nock('https://localhost')
             .get('/products')
             .query({
-                    'eq(status,published)': '',
-                    'eq(latest,true)': '',
+                    status: 'published',
+                    latest: true,
                 }
             )
             .reply(200, responses.products.published_products);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.products.search(new Query().eq('status', 'published').eq('latest', true));        
+        const response = await client.products.search({status: 'published', latest: true});        
         response.should.be.an.Array();
         response.should.have.size(1);
         response[0].should.have.property('id').eql('PRD-000-000-000');

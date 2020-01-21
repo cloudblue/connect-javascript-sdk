@@ -9,8 +9,6 @@ const nock = require('nock');
 const responses = require('./responses');
 const connect = require('../../../index');
 const ConnectClient = connect.ConnectClient;
-const { parseQuery } = require('rql/parser');
-const { Query } = require('rql/query');
 
 
 describe('Connect Javascript SDK - Tier Accounts', () => {
@@ -24,15 +22,23 @@ describe('Connect Javascript SDK - Tier Accounts', () => {
         response.should.be.an.Array();
     });
     it('returns a list of tier accounts filtered by scopes and external_uid', async () => {
-        const q = new Query();
-        const parsed = parseQuery('and(eq(external_uid,c35f60c5-0e2f-4ffd-9d09-8eab7b49758e),in(scopes,tier1,customer))&limit(100)');
-        Object.assign(q, parsed);
-        console.log(q.toString());
         nock('https://localhost')
-            .get('/tier/accounts?and(eq(external_uid,c35f60c5-0e2f-4ffd-9d09-8eab7b49758e),in(scopes,tier1,customer))&limit(100)')
+            .get('/tier/accounts?(external_uid($eq,c35f60c5-0e2f-4ffd-9d09-8eab7b49758e)&scopes($in,tier1,customer)&limit=100)')
             .reply(200, responses.tierAccounts.tier_accounts_list);
         const client = new ConnectClient('https://localhost', '1234567890');
-        const response = await client.tierAccounts.search(q);        
+        const response = await client.tierAccounts.search({
+            $and: [
+                {
+                    $eq: {
+                        external_uid: 'c35f60c5-0e2f-4ffd-9d09-8eab7b49758e'
+                    },
+                    $in: {
+                        scopes: ['tier1', 'customer']
+                    },
+                    limit: 100
+                }
+            ]
+        });        
         response.should.be.an.Array();
     });
     it('returns a TierAccount object by its id', async () => {
