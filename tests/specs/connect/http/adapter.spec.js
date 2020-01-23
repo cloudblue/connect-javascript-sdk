@@ -3,12 +3,11 @@
  *
  * @copyright (c) 2019. Ingram Micro. All Rights Reserved.
  */
-const { AbstractHttpAdapter, DefaultHttpAdapter } = require('../../../lib/connect/http/adapter');
+const { AbstractHttpAdapter, DefaultHttpAdapter } = require('../../../../lib/connect/http/adapter');
 
 describe('AbstractHttpAdapter', () => {
   it('constructor throw an error', () => {
     expect(() => new AbstractHttpAdapter()).toThrow(Error);
-    // should(() => new AbstractHttpAdapter()).throw(Error);
   });
   it('prepareRequest throw an error if not overridden', () => {
     class TestAdapter extends AbstractHttpAdapter { }
@@ -46,13 +45,6 @@ describe('AbstractHttpAdapter', () => {
     ta.afterResponse = null;
     expect(ta.afterResponse).toEqual([]);
   });
-  // it('afterResponse be an empty array', () => {
-  //   class TestAdapter extends AbstractHttpAdapter { }
-  //   const fetch = TestAdapter.prototype._fetch = jest.fn();
-  //   const ta = new TestAdapter();
-  //   ta.fetch('http://example.com', { method: 'POST', body: { id: 1 } });
-  //   expect(fetch).toHaveBeenCalledWith('http://example.com', { method: 'POST', body: { id: 1 }, headers: {'Content-Type': 'application/json'});
-  // });
 });
 
 describe('DefaultHttpAdapter', () => {

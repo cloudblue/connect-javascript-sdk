@@ -4,7 +4,7 @@
  * @copyright (c) 2019. Ingram Micro. All Rights Reserved.
  */
 
-const { filterToQuery } = require('../../lib/connect/rql');
+const { filterToQuery } = require('../../../lib/connect/rql');
 
 describe('RQL', () => {
   // Simple filter
