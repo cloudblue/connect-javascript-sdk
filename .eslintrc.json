@@ -18,5 +18,9 @@
     "rules": {
         "no-underscore-dangle": "off"
     },
-    "ignorePatterns": ["test/", "node_modules/"]
+    "ignorePatterns": [
+        "jest.config.js",
+        "tests/",
+        "node_modules/"
+    ]
 }
