@@ -22,4 +22,16 @@ describe('ConnectClient', () => {
     const client = new ConnectClient('http://server', '1234567890');
     expect(client[property]).toBeInstanceOf(type);
   });
+  it('append before hook function to the adapter beforeRequest hooks', () => {
+    const client = new ConnectClient('http://server', '1234567890');
+    const myHook = (url, options) => ({url, options});
+    client.addBeforeRequestHook(myHook);
+    expect(client._adapter.beforeRequest).toContain(myHook);
+  });
+  it('append after hook function to the adapter afterResponse hooks', () => {
+    const client = new ConnectClient('http://server', '1234567890');
+    const myHook = (response) => response;
+    client.addAfterResponseHook(myHook);
+    expect(client._adapter.afterResponse).toContain(myHook);
+  });
 });

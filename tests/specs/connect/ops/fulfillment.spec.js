@@ -45,6 +45,12 @@ describe('Fulfillment - Asset Requests', () => {
     await ff.updateRequestParameters('PR-001', [{id: 'param_a', value: 'value_a'}], 'note');
     expect(mockedFn).toHaveBeenCalledWith('PR-001', { asset: { params: [{id: 'param_a', value: 'value_a'}]}, note: 'note' });
   });
+  it('updateRequestParameters invokes update on requests endpoint without note', async () => {
+    const mockedFn = client.requests.update = jest.fn();
+    const ff = new Fulfillment(client);
+    await ff.updateRequestParameters('PR-001', [{id: 'param_a', value: 'value_a'}]);
+    expect(mockedFn).toHaveBeenCalledWith('PR-001', { asset: { params: [{id: 'param_a', value: 'value_a'}]} });
+  });
   it('inquireRequest invokes update and inquire on requests endpoint', async () => {
     const mockedUpdateFn = client.requests.update = jest.fn();
     const mockedInquireFn = client.requests.inquire = jest.fn();
@@ -120,6 +126,12 @@ describe('Fulfillment - Tier Config Requests', () => {
     await ff.updateTierConfigRequestParameters('TCR-001', [{id: 'param_a', value: 'value_a'}], 'note');
     expect(mockedFn).toHaveBeenCalledWith('TCR-001', { params: [{id: 'param_a', value: 'value_a'}], notes: 'note' });
   });
+  it('updateTierConfigRequestParameters invokes update on requests endpoint without note', async () => {
+    const mockedFn = client.tierConfigRequests.update = jest.fn();
+    const ff = new Fulfillment(client);
+    await ff.updateTierConfigRequestParameters('TCR-001', [{id: 'param_a', value: 'value_a'}]);
+    expect(mockedFn).toHaveBeenCalledWith('TCR-001', { params: [{id: 'param_a', value: 'value_a'}] });
+  });
   it('inquireTierConfigRequest invokes update and inquire on TCR endpoint', async () => {
     const mockedUpdateFn = client.tierConfigRequests.update = jest.fn();
     const mockedInquireFn = client.tierConfigRequests.inquire = jest.fn();
@@ -190,6 +202,28 @@ describe('Fulfillment - Others', () => {
     });
     const ff = new Fulfillment(client);
     await expect(ff.getConnectionIdByProductAndHub('PRD-000', 'HB-000')).resolves.toEqual('CT-000');
+    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+  });
+  it('getConnectionIdByProductAndHub returns null if (hub, product) does not exists', async () => {
+    const mockedFn = client.products.getConnections = jest.fn();
+    mockedFn.mockImplementation(async (productId) => {
+      return Promise.resolve([
+        {
+          id: 'CT-000',
+          hub: {
+            id: 'HB-000'
+          }
+        },
+        {
+          id: 'CT-001',
+          hub: {
+            id: 'HB-001'
+          }
+        },        
+      ])
+    });
+    const ff = new Fulfillment(client);
+    await expect(ff.getConnectionIdByProductAndHub('PRD-000', 'HB-003')).resolves.toBeNull();
     expect(mockedFn).toHaveBeenCalledWith('PRD-000');
   });
 });
