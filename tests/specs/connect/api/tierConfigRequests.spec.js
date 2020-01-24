@@ -8,7 +8,7 @@ const TierConfigRequestResource = require('../../../../lib/connect/api/tierConfi
 const { ConnectClient } = require('../../../../index');
 
 
-describe('RequestTierConfigRequestResourceResource', () => {
+describe('TierConfigRequestResource', () => {
   let client;
 
   const contentTypeJson = { 'content-type': 'application/json' };

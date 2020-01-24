@@ -158,6 +158,18 @@ describe('Fulfillment - Tier Config Requests', () => {
     await ff.createUpdateTierConfigRequest('TC-001', [{id: 'param_a', value: 'value_a'}]);
     expect(mockedFn).toHaveBeenCalledWith({configuration: { id: 'TC-001' }, params: [{id: 'param_a', value: 'value_a'}] });
   });
+
+
+});
+describe('Fulfillment - Others', () => {
+  let client;
+
+  beforeAll(() => {
+    client = new ConnectClient('https://localhost', '1234567890');
+  });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
   it('getConnectionIdByProductAndHub invokes getConnections on products endpoint', async () => {
     const mockedFn = client.products.getConnections = jest.fn();
     mockedFn.mockImplementation(async (productId) => {
