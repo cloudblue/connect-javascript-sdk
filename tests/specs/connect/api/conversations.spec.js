@@ -6,7 +6,6 @@
 
 
 const ConversationResource = require('../../../../lib/connect/api/conversations');
-const { HttpError, APIError } = require('../../../../lib/connect/api/errors');
 const { ConnectClient } = require('../../../../index');
 
 describe('ConversationResource', () => {
@@ -20,7 +19,7 @@ describe('ConversationResource', () => {
   beforeEach(() => {
     fetch.resetMocks();
   });
-  it('Returns a list of conversations attached to the business object specified by its id', async () => {
+  it('returns a list of conversations attached to the business object specified by its id', async () => {
     const conv = new ConversationResource(client);
     const conversations = [
       {
@@ -31,5 +30,18 @@ describe('ConversationResource', () => {
     fetch.mockResponseOnce(JSON.stringify(conversations), { status: 200, headers: contentTypeJson });
     await expect(conv.getConversationsByObjectId('PR-001')).resolves.toEqual(conversations);
     expect(fetch).toBeCalledWith('https://localhost/conversations?instance_id=PR-001', expect.anything());
+  });
+
+  it('append a message to a conversation', async () => {
+    const conv = new ConversationResource(client);
+    const obj = {id: 'ME-000', conversation: 'CO-000', text: 'hello'};
+    const body = JSON.stringify(obj);
+    fetch.mockResponseOnce(body, { status: 200, headers: contentTypeJson });
+    await expect(conv.createMessage('CO-000', 'hello')).resolves.toEqual(obj);
+    expect(fetch).toBeCalledWith('https://localhost/conversations/CO-000/messages', {
+      method: 'POST',
+      body: JSON.stringify({text: 'hello'}),
+      headers: expect.objectContaining({'Content-Type': 'application/json'}),
+    });
   });
 });
