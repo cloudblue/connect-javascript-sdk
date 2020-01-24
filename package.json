@@ -4,8 +4,8 @@
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --notify --config=jest.config.js",
-    "cover": "jest --coverage --runInBand --config=jest.config.js"
+    "test": "jest --no-cache",
+    "test:dev": "jest --no-cache --watch"
   },
   "repository": {
     "type": "git",
