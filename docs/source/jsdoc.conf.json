@@ -1,7 +1,13 @@
 {
     "source": {
         "includePattern": ".+\\.js(doc|x)?$",
-        "excludePattern": "(^|\\/|\\\\)_"
+        "excludePattern": "(^|\\/|\\\\)_",
+        "exclude": [
+            "../lib/connect/ops/index.js",
+            "../lib/connect/api/index.js",
+            "../lib/connect/http/index.js",
+            "../lib/connect/index.js"
+        ]
     },
     "opts": {
         "explain": true,

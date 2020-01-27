@@ -1,6 +1,6 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.1.0",
+  "version": "19.2.0",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
@@ -33,9 +33,6 @@
     "jest": "^25.1.0",
     "jest-fetch-mock": "^3.0.1",
     "jsdoc": "^3.6.3"
-  },
-  "mocha": {
-    "slow": 200
   },
   "publishConfig": {
     "access": "public"

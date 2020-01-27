@@ -6,9 +6,9 @@ Requirements
 
 The Cloud Blue Connect Javascript SDK depends on the following 3rd party packages:
 
-* `lodash <https://lodash.com/>`_ version 4.17.15
+* `ramda <https://ramdajs.com/>`_ version 0.26.1
 * `node-fetch <https://github.com/node-fetch/node-fetch>`_ version 2.6.0
-* `rql <https://github.com/persvr/rql>`_ version 0.3.3
+
 
 Installation
 ------------
@@ -58,17 +58,17 @@ Create an instance of the `ConnectClient` class:
 
 
 
-For example to invoke the list operation for the `Product` resource:
+For example to invoke the search action for the `Product` resource:
 
 .. code-block:: js
 
-    client.products.list()
+    client.products.search()
         .then(products => { console.log(products) });
 
 Or if you prefer the async/await syntax:
 
 .. code-block:: js
 
-    const products = await client.products.list();
+    const products = await client.products.search();
     console.log(products);
 
