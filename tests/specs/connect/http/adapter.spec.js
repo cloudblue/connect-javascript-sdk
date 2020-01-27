@@ -52,7 +52,7 @@ describe('DefaultHttpAdapter', () => {
   const prepInvalidBody = { body: new Error('a') };
   const prepInvalidBodyResp = prepInvalidBody;
   const prepEmptyBody = { body: {} };
-  const prepEmptyBodyResp = prepEmptyBody;
+  const prepEmptyBodyResp = { body: "{}", headers: { 'Content-Type': 'application/json' } };
   const prepStringifyArray = { body: [] };
   const prepStringifyArrayResp = { body: '[]', headers: { 'Content-Type': 'application/json' } };
   const prepStringifyObject = { body: { a: 'b' } };
@@ -60,7 +60,7 @@ describe('DefaultHttpAdapter', () => {
 
   it.each([
     ['do nothing if body is neither an array nor a plain object', prepInvalidBody, prepInvalidBodyResp],
-    ['do nothing if empty body', prepEmptyBody, prepEmptyBodyResp],
+    ['do stringify body and add content-type if empty body', prepEmptyBody, prepEmptyBodyResp],
     ['stringify body if it is an array and add content type json', prepStringifyArray, prepStringifyArrayResp],
     ['stringify body if it is a plain object and add content type json', prepStringifyObject, prepStringifyObjectResp],
   ])('prepareRequest %s', (name, options, expected) => {
