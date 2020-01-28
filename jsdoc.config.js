@@ -9,23 +9,47 @@ module.exports = {
     excludePattern: '(^|\\/|\\\\)_',
   },
   templates: {
-    systemName: 'CloudBlue Connect Javascript SDK',
-    sort: true,
-    collapseSymbols: true,
-    outputSourceFiles: false,
-    outputSourcePath: false,
-    theme: 'flatly',
-    copyright: 'CloudBlue Connect',
+    cleverLinks: false,
+    monospaceLinks: false,
+    default: {
+      staticFiles: {
+        include: [
+          './docs-src/statics',
+        ],
+      },
+      outputSourceFiles: false,
+      includeDate: false,
+    },
+    'better-docs': {
+      name: 'CloudBlue Connect Javascript SDK',
+      logo: 'images/connect_logo_fullname.png',
+      homeTitle: 'Welcome!',
+      hideGenerator: false,
+      navigation: [
+        {
+          label: 'Github',
+          href: 'https://github.com/cloudblue/connect-javascript-sdk',
+        },
+        {
+          label: 'CloudBlue Connect',
+          href: 'https://www.cloudblue.com/connect/',
+        },
+      ],
+    },
   },
   tags: {
     allowUnknownTags: true,
   },
   plugins: [
     'plugins/markdown',
+    'better-docs/category',
   ],
   opts: {
-    template: 'node_modules/foodoc/template',
+    template: 'better-docs',
     recurse: true,
+    verbose: true,
+    readme: 'README.md',
     destination: './dist',
+    tutorials: './docs-src/tutorials',
   },
 };
