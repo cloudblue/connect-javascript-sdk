@@ -17,7 +17,8 @@
         "ecmaVersion": 2018
     },
     "rules": {
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "jsdoc/no-undefined-types": "off"
     },
     "settings": {
         "jsdoc": {
