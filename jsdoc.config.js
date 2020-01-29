@@ -20,7 +20,7 @@ module.exports = {
       outputSourceFiles: false,
       includeDate: false,
     },
-    'better-docs': {
+    'connect-jsdoc-theme': {
       name: 'CloudBlue Connect Javascript SDK',
       logo: 'images/connect_logo_fullname.png',
       homeTitle: 'Welcome!',
@@ -42,14 +42,14 @@ module.exports = {
   },
   plugins: [
     'plugins/markdown',
-    'better-docs/category',
+    './node_modules/@cloudblueconnect/connect-jsdoc-theme/category',
   ],
   opts: {
-    template: 'better-docs',
+    template: './node_modules/@cloudblueconnect/connect-jsdoc-theme',
     recurse: true,
     verbose: true,
     readme: 'README.md',
-    destination: './dist',
+    destination: './docs',
     tutorials: './docs-src/tutorials',
   },
 };
