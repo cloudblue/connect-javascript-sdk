@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Querying endpoints</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/connect_logo_fullname.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">CloudBlue Connect Javascript SDK</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/cloudblue/connect-javascript-sdk" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://www.cloudblue.com/connect/" target="_blank">
+                                CloudBlue Connect
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting started</a></li><li><a href="tutorial-searches.html">Querying endpoints</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li><li><a href="APIError.html">APIError</a></li><li><a href="ConnectClient.html">ConnectClient</a></li><li><a href="DefaultHttpAdapter.html">DefaultHttpAdapter</a></li><li><a href="HttpError.html">HttpError</a></li></ul></div><div class="category"><h2>Operations</h2><h3>Classes</h3><ul><li><a href="Directory.html">Directory</a></li><li><a href="Fulfillment.html">Fulfillment</a></li><li><a href="Inventory.html">Inventory</a></li></ul></div><div class="category"><h2>Resources</h2><h3>Classes</h3><ul><li><a href="AccountResource.html">AccountResource</a></li><li><a href="AccountUserResource.html">AccountUserResource</a></li><li><a href="AssetResource.html">AssetResource</a></li><li><a href="ConversationResource.html">ConversationResource</a></li><li><a href="GenericResource.html">GenericResource</a></li><li><a href="HubResource.html">HubResource</a></li><li><a href="ProductActionResource.html">ProductActionResource</a></li><li><a href="ProductConfigurationResource.html">ProductConfigurationResource</a></li><li><a href="ProductResource.html">ProductResource</a></li><li><a href="ProductVersionResource.html">ProductVersionResource</a></li><li><a href="RequestResource.html">RequestResource</a></li><li><a href="TierAccountResource.html">TierAccountResource</a></li><li><a href="TierConfigRequestResource.html">TierConfigRequestResource</a></li><li><a href="WebhookResource.html">WebhookResource</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Tutorial</p>
+                        <h1>Querying endpoints</h1>
+                    </header>
+                    
+                    <section>
+
+<header>
+    
+</header>
+
+<article>
+    <h2>Resource Query Language</h2>
+<p>The <em>CloudBlue Connect</em> public API supports the RQL query language to search, sort and paginate objects.</p>
+<p>A RQL query is a Javascript object that is defined according to the following typescript syntax:</p>
+<pre class="prettyprint source"><code>interface IRQLFilter {
+    $eq?: string|number,
+    $ne?: string|number,
+    $not?: IRQLFilter,
+    $gt?: number,
+    $ge?: number,
+    $lt?: number,
+    $le?: number,
+    $like?: string,
+    $ilike?: string,
+    $empty?: boolean,
+    $null?: boolean,
+    $in?: Array&lt;number|string>,
+    $out?: Array&lt;number|string>,
+    $range?: {
+        min: number,
+        max: number,
+    },
+}
+ 
+ 
+interface IQueryFilters {
+    $or?: Array&lt;IQueryFilters>;
+    $ordering?: Array&lt;string>;
+    limit?: number;
+    offset?: number;
+    [key: string]?: string|number|Array&lt;string|number>|boolean|IRQLFilter;
+}
+</code></pre>
+<h2>Examples</h2>
+<h3>Simple filter</h3>
+<pre class="prettyprint source"><code>const filter = {
+  name: 'eugene',
+  age: 13,
+};
+</code></pre>
+<h3>Filter with text matching</h3>
+<pre class="prettyprint source"><code>const filter = {
+  name: {
+    $like: 'vasya*',
+    $ilike: '***New',
+  },
+};
+</code></pre>
+<h3>Filter with list</h3>
+<pre class="prettyprint source"><code>const filter = {
+  age: {
+    $out: [1, 2],
+  },
+  num: {
+    $in: [3, 4, 5],
+  },
+};
+</code></pre>
+<h3>Filter with range</h3>
+<pre class="prettyprint source"><code>const filter = {
+  age: {
+    $range: {
+      max: 5,
+      min: 9,
+    },
+  },
+};
+</code></pre>
+<h3>Filter with relational</h3>
+<pre class="prettyprint source"><code>const filter = {
+  name: {
+    $eq: 'vasya',
+  },
+  age: {
+    $gt: 1,
+    $lt: 8,
+  },
+  num: {
+    $lte: 9,
+    $gte: 4,
+  },
+};
+</code></pre>
+<h3>Filter with logical NOT</h3>
+<pre class="prettyprint source"><code>const filter = {
+  name: {
+    $not: [{
+      $eq: 'vasya',
+    }, {
+      $eq: 'petya',
+    }],
+  },
+  age: {
+    $not: {
+      $eq: 10,
+      $in: [1, 2, 3],
+    },
+  },
+};
+</code></pre>
+<h3>Filter with logical OR</h3>
+<pre class="prettyprint source"><code>const filter = {
+  // You can use $or inside field
+  color: {
+    $or: [
+      // Inside { } may be some conditions and for all them is used logical operator AND
+      { $eq: 'red' },
+      { $eq: 'blue' },
+      { $eq: 'yellow' },
+    ],
+  },
+ 
+ 
+  // Also you can use $or in root level, then inside must be objects array with fields name
+  $or: [
+    // Inside { } may be some fields with conditions and for all them is used logical operator AND
+    { product: 'TV' },
+    { product: 'Computer' },
+  ],
+};
+</code></pre>
+<h3>Combine AND and OR filter</h3>
+<pre class="prettyprint source"><code>const filter = {
+  $and: [
+    {$or: [
+      {status: 'new'},
+      {type: 'program'}
+    ]},
+    {$or: [
+      {status: 'done'},
+      {type: 'service'}
+    ]},
+  ]
+};
+</code></pre>
+<h3>Filter with control operators</h3>
+<pre class="prettyprint source"><code>const controlFilter = {
+  limit: 100,
+  offset: 0,
+  $ordering: '-created',
+};
+</code></pre>
+<h3>Filter with empty values</h3>
+<pre class="prettyprint source"><code>// If values are empty, null, undefined then they will not be in the query.
+const filter = {
+  $ordering: [],
+  name: '',
+  age: null,
+  $or: [{name: undefined}],
+  type: 'pending',
+};
+</code></pre>
+<h3>Combined</h3>
+<pre class="prettyprint source"><code>const combinationFilter = {
+  offset: 0,
+  limit: 10,
+  $ordering: ['title', '-created'],
+  $or: [
+    {
+      type: 'distribution',
+      owner: { $eq: 'me' },
+    },
+    {
+      type: { $in: ['sourcing', 'service'] },
+      owner: { $not: { $eq: 'me' } },
+    },
+  ],
+  name: {
+    $or: [
+      { $like: 'my test' },
+      { $like: 'my' },
+      { $ilike: '***CONTRACT' },
+    ],
+  },
+};
+</code></pre>
+</article>
+
+</section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+        <p>&copy; 2020 — All Rights Reserved. Ingram Micro Inc.</p>
+        <p class="sidebar-created-by">
+           CloudBlue Connect JSDoc Theme is based on <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a>.
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

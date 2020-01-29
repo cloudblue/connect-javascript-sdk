@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>DefaultHttpAdapter</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/connect_logo_fullname.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">CloudBlue Connect Javascript SDK</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/cloudblue/connect-javascript-sdk" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://www.cloudblue.com/connect/" target="_blank">
+                                CloudBlue Connect
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting started</a></li><li><a href="tutorial-searches.html">Querying endpoints</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li><li><a href="APIError.html">APIError</a></li><li><a href="ConnectClient.html">ConnectClient</a></li><li><a href="DefaultHttpAdapter.html">DefaultHttpAdapter</a></li><li><a href="HttpError.html">HttpError</a></li></ul></div><div class="category"><h2>Operations</h2><h3>Classes</h3><ul><li><a href="Directory.html">Directory</a></li><li><a href="Fulfillment.html">Fulfillment</a></li><li><a href="Inventory.html">Inventory</a></li></ul></div><div class="category"><h2>Resources</h2><h3>Classes</h3><ul><li><a href="AccountResource.html">AccountResource</a></li><li><a href="AccountUserResource.html">AccountUserResource</a></li><li><a href="AssetResource.html">AssetResource</a></li><li><a href="ConversationResource.html">ConversationResource</a></li><li><a href="GenericResource.html">GenericResource</a></li><li><a href="HubResource.html">HubResource</a></li><li><a href="ProductActionResource.html">ProductActionResource</a></li><li><a href="ProductConfigurationResource.html">ProductConfigurationResource</a></li><li><a href="ProductResource.html">ProductResource</a></li><li><a href="ProductVersionResource.html">ProductVersionResource</a></li><li><a href="RequestResource.html">RequestResource</a></li><li><a href="TierAccountResource.html">TierAccountResource</a></li><li><a href="TierConfigRequestResource.html">TierConfigRequestResource</a></li><li><a href="WebhookResource.html">WebhookResource</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Class</p>
+                        <h1>DefaultHttpAdapter</h1>
+                    </header>
+                    
+                    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>DefaultHttpAdapter<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>The <em>DefaultHttpAdapter</em> is the default adapter used in the
+CloudBlue Connect Javascript SDK based on the node-fetch http
+client library.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <h3 class="title"><span>Constructor</span></h3>
+                <div class="members">
+                    <div class="member">
+
+
+    
+    <h4 class="name" id="DefaultHttpAdapter">
+        <a class="href-link" href="#DefaultHttpAdapter">#</a>
+        
+        <span class="code-name">
+            
+                new DefaultHttpAdapter<span class="signature">()</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h3 class="title"><span>Members</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+<h4 class="name" id="beforeRequest">
+    <a class="href-link" href="#beforeRequest">#</a>
+    
+    <span class="code-name">
+        beforeRequest
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Get or set a list of beforeRequest hook functions.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="AbstractHttpAdapter.html#beforeRequest">AbstractHttpAdapter#beforeRequest</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+        <p>&copy; 2020 — All Rights Reserved. Ingram Micro Inc.</p>
+        <p class="sidebar-created-by">
+           CloudBlue Connect JSDoc Theme is based on <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a>.
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

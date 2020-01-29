@@ -4,9 +4,9 @@
 [![Build Status](https://travis-ci.org/cloudblue/connect-javascript-sdk.svg?branch=master)](https://travis-ci.org/cloudblue/connect-javascript-sdk)
 [![codecov](https://codecov.io/gh/cloudblue/connect-javascript-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/cloudblue/connect-javascript-sdk)
 [![npm](https://img.shields.io/npm/v/@cloudblueconnect/connect-javascript-sdk)](https://img.shields.io/npm/v/@cloudblueconnect/connect-javascript-sdk)
-[![rtd](https://readthedocs.org/projects/connect-javascript-sdk/badge/?version=latest&style=flat)](https://connect-javascript-sdk.readthedocs.io/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cloudblue_connect-javascript-sdk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cloudblue_connect-javascript-sdk)
 
+## Introduction
 
 CloudBlue Connect is a supply automation platform that manages your products and services, contracts, 
 ordering and fulfillment, usage and subscriptions. 
@@ -55,24 +55,10 @@ $ npm install --save @cloudblueconnect/connect-javascript-sdk
 
 ## Documentation
 
-The full SDK documentation is available [here](https://connect-javascript-sdk.readthedocs.io/).
+The full SDK documentation is available [here](https://cloudblue.github.io/connect-javascript-sdk).
 
 
-## Usage
-
-### Obtain the API endpoint and an API key
-
-Before you start, you must obtain the API endpoint URL and an API key to access the Cloud Blue Connect Public API.
-
-Go to your portal, from the navbar menu choose the `API` module.
-
-In the `General` section you can find your API endpoint.
-
-In the left side menu, choose `Tokens` to go to the API token view.
-
-Once in the `Token` view, click on the button `CREATE TOKEN` on the upper right corner of the view.
-
-### Example
+## Example
 
 ```js
 
