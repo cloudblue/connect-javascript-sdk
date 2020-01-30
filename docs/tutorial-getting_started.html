@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Getting started</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/connect_logo_fullname.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">CloudBlue Connect Javascript SDK</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/cloudblue/connect-javascript-sdk" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://www.cloudblue.com/connect/" target="_blank">
+                                CloudBlue Connect
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting started</a></li><li><a href="tutorial-searches.html">Querying endpoints</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li><li><a href="APIError.html">APIError</a></li><li><a href="ConnectClient.html">ConnectClient</a></li><li><a href="DefaultHttpAdapter.html">DefaultHttpAdapter</a></li><li><a href="HttpError.html">HttpError</a></li></ul></div><div class="category"><h2>Operations</h2><h3>Classes</h3><ul><li><a href="Directory.html">Directory</a></li><li><a href="Fulfillment.html">Fulfillment</a></li><li><a href="Inventory.html">Inventory</a></li></ul></div><div class="category"><h2>Resources</h2><h3>Classes</h3><ul><li><a href="AccountResource.html">AccountResource</a></li><li><a href="AccountUserResource.html">AccountUserResource</a></li><li><a href="AssetResource.html">AssetResource</a></li><li><a href="ConversationResource.html">ConversationResource</a></li><li><a href="GenericResource.html">GenericResource</a></li><li><a href="HubResource.html">HubResource</a></li><li><a href="ProductActionResource.html">ProductActionResource</a></li><li><a href="ProductConfigurationResource.html">ProductConfigurationResource</a></li><li><a href="ProductResource.html">ProductResource</a></li><li><a href="ProductVersionResource.html">ProductVersionResource</a></li><li><a href="RequestResource.html">RequestResource</a></li><li><a href="TierAccountResource.html">TierAccountResource</a></li><li><a href="TierConfigRequestResource.html">TierConfigRequestResource</a></li><li><a href="WebhookResource.html">WebhookResource</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Tutorial</p>
+                        <h1>Getting started</h1>
+                    </header>
+                    
+                    <section>
+
+<header>
+    
+</header>
+
+<article>
+    <h2>Introduction</h2>
+<p>The <em>CloudBlue Connect Javascript SDK</em> provides programmers with a set of classes that facilitate
+the implementation of certain workflows for the <em>CloudBlue Connect</em> platform as long as direct access to public endpoints.</p>
+<h2>Prerequisites</h2>
+<p>The <em>CloudBlue Connect Javascript SDK</em> has been tested against with <a href="https://nodejs.org">Node.js</a> version 10 or later.</p>
+<p>It also depends on the following 3rd party libraries:</p>
+<ul>
+<li><a href="https://ramdajs.com/">ramda</a> version 4.17.15</li>
+<li><a href="https://github.com/node-fetch/node-fetch">node-fetch</a> version 2.6.0</li>
+</ul>
+<h2>Install</h2>
+<p>To add the <em>CloudBlue Connect Javascript SDK</em> to your project, executes the following command in your project's root folder:</p>
+<pre class="prettyprint source lang-sh"><code>$ npm install --save @cloudblueconnect/connect-javascript-sdk
+</code></pre>
+<h2>Usage with operation classes</h2>
+<p>The <em>CloudBlue Connect Javascript SDK</em> exposes to programmers the following set of &quot;operation&quot; classes:</p>
+<ul>
+<li><a href="Fulfillment.html">Fulfillment</a>: offers methods such as creation, modification and inquiring of parameters for the management of transactional objects namely asset requests as well as tier configuration requests.</li>
+<li><a href="Directory.html">Directory</a>: offers methods to access persistent objects such as assets, tier configurations and accounts.</li>
+<li><a href="Inventory.html">Inventory</a>: offers methods to manage products.</li>
+</ul>
+<p>In order to use the <em>CloudBlue Connect Javascript SDK</em> first of all you must create an instance of the <a href="ConnectClient.html">ConnectClient</a> class.</p>
+<pre class="prettyprint source lang-js"><code>const { ConnectClient } = require('@cloudblueconnect/connect-javascript-sdk');
+
+const client = new ConnectClient(apiUrl, apiKey);
+</code></pre>
+<p>And then you must create an instance of the corresponding operation class:</p>
+<pre class="prettyprint source lang-js"><code>const { Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
+
+const fulfillment = new Fulfillment(client);
+</code></pre>
+<h3>Examples</h3>
+<h4>Create an asset purchase request</h4>
+<pre class="prettyprint source lang-js"><code>const { ConnectClient, Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
+
+const client = new ConnectClient(apiUrl, apiKey);
+const fulfillment = new Fulfillment(client);
+
+const purchaseRequest = await fulfillment.createRequest(requestObj);
+</code></pre>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Please refer to the <em>CloudBlue Connect API</em> documentation to know how a purchase request object is defined.</p>
+</blockquote>
+<h4>Get the first 100 results of pending asset purchase requests</h4>
+<pre class="prettyprint source lang-js"><code>const { ConnectClient, Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
+
+const client = new ConnectClient(apiUrl, apiKey);
+const fulfillment = new Fulfillment(client);
+
+const filter = {
+    status: 'pending',
+    limit: 100,
+    offset: 0
+}
+
+const pendingRequests = await fulfillment.search(filter);
+</code></pre>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  Please see <a href="tutorial-searches.html">Querying endpoints</a> for more informations on how to create filters.</p>
+</blockquote>
+<h2>Direct access to public endpoints</h2>
+<p>Each public endpoint of the <em>CloudBlue Connect API</em> is mapped by a &quot;Resource&quot; class that provides
+basic methods that implement CRUD operations against a resource.</p>
+<p>Moreover each &quot;Resource&quot; class exposes related actions and eventually access to subresources.</p>
+<p>Programmers can access &quot;Resource&quot; classes through the <a href="ConnectClient.html">ConnectClient</a> instance.</p>
+<h3>Examples</h3>
+<h4>Get a list of users belonging to an account.</h4>
+<pre class="prettyprint source lang-js"><code>const { ConnectClient } = require('@cloudblueconnect/connect-javascript-sdk');
+
+const client = new ConnectClient(apiUrl, apiKey);
+
+const users = client.accounts.users('VA-000-000').search();
+</code></pre>
+</article>
+
+</section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+        <p>&copy; 2020 — All Rights Reserved. Ingram Micro Inc.</p>
+        <p class="sidebar-created-by">
+           CloudBlue Connect JSDoc Theme is based on <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a>.
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,11 +1,13 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.0.5",
+  "version": "19.2.0",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --timeout 10000",
-    "cover": "nyc --reporter=html mocha --recursive"
+    "test": "jest --no-cache",
+    "test:dev": "jest --no-cache --watch",
+    "lint": "eslint lib/**",
+    "docs": "jsdoc -c jsdoc.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,24 +25,18 @@
   },
   "homepage": "https://github.com/cloudblue/connect-javascript-sdk#readme",
   "dependencies": {
-    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
-    "rql": "^0.3.3"
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
+    "@cloudblueconnect/connect-jsdoc-theme": "^19.2.1",
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "jsdoc": "^3.6.3",
-    "mocha": "^6.2.2",
-    "nock": "^11.7.0",
-    "nyc": "^14.1.1",
-    "should": "^13.2.3",
-    "should-sinon": "^0.0.6",
-    "sinon": "^7.5.0"
-  },
-  "mocha": {
-    "slow": 200
+    "eslint-plugin-jsdoc": "^21.0.0",
+    "jest": "^25.1.0",
+    "jest-fetch-mock": "^3.0.1",
+    "jsdoc": "^3.6.3"
   },
   "publishConfig": {
     "access": "public"

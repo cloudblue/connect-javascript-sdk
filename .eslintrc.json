@@ -6,7 +6,8 @@
         "node": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:jsdoc/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -16,7 +17,23 @@
         "ecmaVersion": 2018
     },
     "rules": {
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "jsdoc/no-undefined-types": "off"
     },
-    "ignorePatterns": ["test/", "node_modules/"]
+    "settings": {
+        "jsdoc": {
+            "tagNamePreference": {
+                "category": "category",
+                "augments": {
+                  "message": "@extends is to be used over @augments as it is more evocative of classes than @augments",
+                  "replacement": "extends"
+                }
+            }
+        }
+    },
+    "ignorePatterns": [
+        "jest.config.js",
+        "tests/",
+        "node_modules/"
+    ]
 }
