@@ -16,6 +16,7 @@ describe('ConnectClient', () => {
     ['requests', api.RequestResource],
     ['hubs', api.HubResource],
     ['tierAccounts', api.TierAccountResource],
+    ['tierConfigs', api.TierConfigResource],
     ['tierConfigRequests', api.TierConfigRequestResource],
     ['webhooks', api.WebhookResource],
   ])('%s returns an instance of the corresponding endpoint', (property, type) => {

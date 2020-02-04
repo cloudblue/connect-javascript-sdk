@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Directory</title>
+    <title>TierConfigResource</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>Directory</h1>
+                        <h1>TierConfigResource</h1>
                     </header>
                     
                     
@@ -84,10 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Directory<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="Directory.html">Directory</a>}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>TierConfigResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="TierConfigResource.html">TierConfigResource</a>}</span></h2>
         
-            <div class="class-description"><p>The Directory class exposes specialized methods to help
-developers to access the directory (assets, tier configs, tier accounts).</p></div>
+            <div class="class-description"><p>The <em>TierConfigRequestResource</em> class provides methods to access the <em>TierConfig</em>
+endpoint of the Cloud Blue Connect API.</p></div>
         
     
 </header>
@@ -103,12 +103,12 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
 
 
     
-    <h4 class="name" id="Directory">
-        <a class="href-link" href="#Directory">#</a>
+    <h4 class="name" id="TierConfigResource">
+        <a class="href-link" href="#TierConfigResource">#</a>
         
         <span class="code-name">
             
-                new Directory<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="Directory.html">Directory</a>}</span>
+                new TierConfigResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="TierConfigResource.html">TierConfigResource</a>}</span>
             
         </span>
     </h4>
@@ -117,7 +117,7 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
     
     
     <div class="description">
-        <p>Creates an instance of the Directory class.</p>
+        <p>Creates a new instance of the <em>TierConfigResource</em> class.</p>
     </div>
     
 
@@ -242,13 +242,13 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An instance of the Directory class.</p></div>
+    <div class='param-desc column is-7'><p>An instance of the <em>TierConfigResource</em> class.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type"><a href="Directory.html">Directory</a></span>
+<span class="param-type"><a href="TierConfigResource.html">TierConfigResource</a></span>
 
 
     </div>
@@ -270,6 +270,15 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
     </div>
     
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="GenericResource.html">GenericResource</a></li>
+    </ul>
+
 
     
 
@@ -285,6 +294,90 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
 
     
         <div class='vertical-section'>
+            <h3 class="title"><span>Members</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+
+
+    </span>
+
+<h4 class="name" id="baseUri">
+    <a class="href-link" href="#baseUri">#</a>
+    
+    <span class="code-name">
+        baseUri
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the base URI of the resource mapped by this class.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#baseUri">GenericResource#baseUri</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+        <div class='vertical-section'>
             <h3 class="title"><span>Methods</span></h3>
             <div class="members">
             
@@ -292,8 +385,8 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
 
 
     
-    <h4 class="name" id="getAssetsByProductIdExternalId">
-        <a class="href-link" href="#getAssetsByProductIdExternalId">#</a>
+    <h4 class="name" id="create">
+        <a class="href-link" href="#create">#</a>
         
             
                 <span class='tag'>async</span>
@@ -301,7 +394,7 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
         
         <span class="code-name">
             
-                getAssetsByProductIdExternalId<span class="signature">(productId, externalId)</span><span class="type-signature"> &rarr; {Array}</span>
+                create<span class="signature">(obj)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -310,8 +403,7 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
     
     
     <div class="description">
-        <p>Returns a list of <em>Asset</em>objects based on the productId and
-the <em>Asset</em> externalId.</p>
+        <p>Create a new resource.</p>
     </div>
     
 
@@ -349,13 +441,13 @@ the <em>Asset</em> externalId.</p>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>productId</code></td>
+      <td class="name"><code>obj</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
   
@@ -365,32 +457,7 @@ the <em>Asset</em> externalId.</p>
 
   
 
-  <td class="description last"><p>The unique id of the <em>Product</em> related to this <em>Asset</em>.</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>externalId</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The external identifier of the <em>Asset</em>.</p></td>
+  <td class="description last"><p>The resource to create.</p></td>
 </tr>
 
 
@@ -410,6 +477,11 @@ the <em>Asset</em> externalId.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#create">GenericResource#create</a>
+    </li></ul></dd>
     
 
     
@@ -461,13 +533,13 @@ the <em>Asset</em> externalId.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An array of <em>Asset</em> objects.</p></div>
+    <div class='param-desc column is-7'><p>The created resource.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">object</span>
 
 
     </div>
@@ -487,8 +559,8 @@ the <em>Asset</em> externalId.</p>
 
 
     
-    <h4 class="name" id="getTierAccount">
-        <a class="href-link" href="#getTierAccount">#</a>
+    <h4 class="name" id="delete">
+        <a class="href-link" href="#delete">#</a>
         
             
                 <span class='tag'>async</span>
@@ -496,7 +568,7 @@ the <em>Asset</em> externalId.</p>
         
         <span class="code-name">
             
-                getTierAccount<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+                delete<span class="signature">(id)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -505,7 +577,7 @@ the <em>Asset</em> externalId.</p>
     
     
     <div class="description">
-        <p>Retrieve a <em>TierAccount</em> by its id.</p>
+        <p>Delete a resource.</p>
     </div>
     
 
@@ -559,7 +631,7 @@ the <em>Asset</em> externalId.</p>
 
   
 
-  <td class="description last"><p>The unique identifier of the TierAccount object.</p></td>
+  <td class="description last"><p>The unique identifier of the resource to delete.</p></td>
 </tr>
 
 
@@ -579,6 +651,11 @@ the <em>Asset</em> externalId.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#delete">GenericResource#delete</a>
+    </li></ul></dd>
     
 
     
@@ -622,31 +699,6 @@ the <em>Asset</em> externalId.</p>
 
 
 
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>The TierAccount object.</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">object</span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
 
 
 
@@ -656,8 +708,8 @@ the <em>Asset</em> externalId.</p>
 
 
     
-    <h4 class="name" id="searchAssets">
-        <a class="href-link" href="#searchAssets">#</a>
+    <h4 class="name" id="fetch">
+        <a class="href-link" href="#fetch">#</a>
         
             
                 <span class='tag'>async</span>
@@ -665,7 +717,7 @@ the <em>Asset</em> externalId.</p>
         
         <span class="code-name">
             
-                searchAssets<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array}</span>
+                fetch<span class="signature">(url, options)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -674,8 +726,7 @@ the <em>Asset</em> externalId.</p>
     
     
     <div class="description">
-        <p>Returns a list of <em>Asset</em> objects that match the provided
-(optional) query.</p>
+        <p>Fetch the URL and returns a response.</p>
     </div>
     
 
@@ -713,7 +764,32 @@ the <em>Asset</em> externalId.</p>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>query</code></td>
+      <td class="name"><code>url</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the URL to fetch.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
   
 
   <td class="type">
@@ -729,7 +805,7 @@ the <em>Asset</em> externalId.</p>
 
   
 
-  <td class="description last"><p>The optional query to filter results.</p></td>
+  <td class="description last"><p>the request options.</p></td>
 </tr>
 
 
@@ -749,6 +825,11 @@ the <em>Asset</em> externalId.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#fetch">GenericResource#fetch</a>
+    </li></ul></dd>
     
 
     
@@ -792,31 +873,6 @@ the <em>Asset</em> externalId.</p>
 
 
 
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>An array of <em>Asset</em> object optionally matching the provided query.</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Array</span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
 
 
 
@@ -826,8 +882,8 @@ the <em>Asset</em> externalId.</p>
 
 
     
-    <h4 class="name" id="searchTierAccounts">
-        <a class="href-link" href="#searchTierAccounts">#</a>
+    <h4 class="name" id="get">
+        <a class="href-link" href="#get">#</a>
         
             
                 <span class='tag'>async</span>
@@ -835,7 +891,7 @@ the <em>Asset</em> externalId.</p>
         
         <span class="code-name">
             
-                searchTierAccounts<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array}</span>
+                get<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -844,8 +900,7 @@ the <em>Asset</em> externalId.</p>
     
     
     <div class="description">
-        <p>Returns a list of <em>TierAccount</em> objects that match the provided
-(optional) query.</p>
+        <p>Retrieve a resource by its unique identifier.</p>
     </div>
     
 
@@ -883,13 +938,13 @@ the <em>Asset</em> externalId.</p>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>query</code></td>
+      <td class="name"><code>id</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
   
@@ -899,7 +954,7 @@ the <em>Asset</em> externalId.</p>
 
   
 
-  <td class="description last"><p>The optional query to filter results.</p></td>
+  <td class="description last"><p>The unique identifier of the resource to retrieve.</p></td>
 </tr>
 
 
@@ -919,6 +974,11 @@ the <em>Asset</em> externalId.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#get">GenericResource#get</a>
+    </li></ul></dd>
     
 
     
@@ -970,13 +1030,13 @@ the <em>Asset</em> externalId.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An array of <em>TierAccount</em> object optionally matching the provided query.</p></div>
+    <div class='param-desc column is-7'><p>The resource.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">object</span>
 
 
     </div>
@@ -996,8 +1056,8 @@ the <em>Asset</em> externalId.</p>
 
 
     
-    <h4 class="name" id="searchTierConfigurations">
-        <a class="href-link" href="#searchTierConfigurations">#</a>
+    <h4 class="name" id="search">
+        <a class="href-link" href="#search">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1005,7 +1065,7 @@ the <em>Asset</em> externalId.</p>
         
         <span class="code-name">
             
-                searchTierConfigurations<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array}</span>
+                search<span class="signature">(filters)</span><span class="type-signature"> &rarr; {Array}</span>
             
         </span>
     </h4>
@@ -1014,8 +1074,7 @@ the <em>Asset</em> externalId.</p>
     
     
     <div class="description">
-        <p>Returns a list of <em>TierConfiguration</em> objects that match the provided
-(optional) query.</p>
+        <p>Search for a resource.</p>
     </div>
     
 
@@ -1053,7 +1112,7 @@ the <em>Asset</em> externalId.</p>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>query</code></td>
+      <td class="name"><code>filters</code></td>
   
 
   <td class="type">
@@ -1069,7 +1128,7 @@ the <em>Asset</em> externalId.</p>
 
   
 
-  <td class="description last"><p>The optional query to filter results.</p></td>
+  <td class="description last"><p>The query to send to the server as a RQL object.</p></td>
 </tr>
 
 
@@ -1089,6 +1148,11 @@ the <em>Asset</em> externalId.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#search">GenericResource#search</a>
+    </li></ul></dd>
     
 
     
@@ -1140,14 +1204,212 @@ the <em>Asset</em> externalId.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An array of <em>TierConfiguration</em> object optionally
-matching the provided query.</p></div>
+    <div class='param-desc column is-7'><p>An array of resources that match the provided filters.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
 <span class="param-type">Array</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="update">
+        <a class="href-link" href="#update">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                update<span class="signature">(id, obj)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Update a resource.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the resource to update.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>obj</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The eventually partial resource to update.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#update">GenericResource#update</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The updated resource.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
 
 
     </div>
