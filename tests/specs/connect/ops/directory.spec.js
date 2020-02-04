@@ -13,7 +13,19 @@ describe('Directory', () => {
     const mockedFn = client.tierAccounts.search = jest.fn();
     const dir = new Directory(client);
     await dir.searchTierAccounts({ field: 'value'});
+    expect(mockedFn).toHaveBeenCalledWith({field: 'value'});
+  });
+  it('searchAssets invokes search on assets endpoint', async () => {
+    const mockedFn = client.assets.search = jest.fn();
+    const dir = new Directory(client);
+    await dir.searchAssets({ field: 'value'});
     expect(mockedFn).toHaveBeenCalledWith({ field: 'value'});
+  });
+  it('searchTierConfigurations invokes search on tierConfigs endpoint', async () => {
+    const mockedFn = client.tierConfigs.search = jest.fn();
+    const dir = new Directory(client);
+    await dir.searchTierConfigurations({field: 'value'});
+    expect(mockedFn).toHaveBeenCalledWith({field: 'value'});
   });
   it('getTierAccount invokes get on tier accounts endpoint', async () => {
     const mockedFn = client.tierAccounts.get = jest.fn();
