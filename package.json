@@ -1,13 +1,14 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.2.1",
+  "version": "19.2.3",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
     "test": "jest --no-cache",
     "test:dev": "jest --no-cache --watch",
     "lint": "eslint lib/**",
-    "docs": "jsdoc -c jsdoc.config.js"
+    "docs": "jsdoc -c jsdoc.config.js",
+    "mddocs": "node mddocs.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,8 @@
     "eslint-plugin-jsdoc": "^21.0.0",
     "jest": "^25.1.0",
     "jest-fetch-mock": "^3.0.1",
-    "jsdoc": "^3.6.3"
+    "jsdoc": "^3.6.3",
+    "jsdoc-to-markdown": "^5.0.3"
   },
   "publishConfig": {
     "access": "public"

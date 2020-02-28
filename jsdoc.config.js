@@ -47,7 +47,7 @@ module.exports = {
   opts: {
     template: './node_modules/@cloudblueconnect/connect-jsdoc-theme',
     recurse: true,
-    verbose: true,
+    verbose: false,
     readme: 'README.md',
     destination: './docs',
     tutorials: './docs-src/tutorials',
