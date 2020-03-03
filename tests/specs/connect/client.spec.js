@@ -16,6 +16,7 @@ describe('ConnectClient', () => {
     ['requests', api.RequestResource],
     ['hubs', api.HubResource],
     ['tierAccounts', api.TierAccountResource],
+    ['tierAccountRequests', api.TierAccountRequestResource],
     ['tierConfigs', api.TierConfigResource],
     ['tierConfigRequests', api.TierConfigRequestResource],
     ['webhooks', api.WebhookResource],
