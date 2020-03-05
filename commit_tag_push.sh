@@ -16,5 +16,5 @@ git commit -m "[ci skip] Documentation generated for release $GIT_TAG"
 echo "Push generated documentation and tag"
 git tag -a $GIT_TAG -m "Generated tag from TravisCI build"
 echo "Tag $GIT_TAG added"
-git push origin master && git push origin master --tags
+git push origin $TRAVIS_BRANCH && git push origin $TRAVIS_BRANCH --tags
 echo "Version $GIT_TAG successfully tagged!"
