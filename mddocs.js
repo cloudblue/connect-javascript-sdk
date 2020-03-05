@@ -6,6 +6,7 @@
 
 const { promisify } = require('util');
 const { spawn } = require('child_process');
+const exec = promisify(require('child_process').exec);
 const fs = require('fs');
 
 const jsdoc2md = require('jsdoc-to-markdown');
@@ -15,6 +16,7 @@ const pfs = {
   mkdir: promisify(fs.mkdir),
   readdir: promisify(fs.readdir),
   copyFile: promisify(fs.copyFile),
+  readFile: promisify(fs.readFile),
   writeFile: promisify(fs.writeFile),
   unlink: promisify(fs.unlink),
 };
@@ -23,46 +25,81 @@ const path = require('path');
 
 const jsDocConfig = require('./jsdoc.config');
 
+const config = require('./mddocs.config');
 
-const OBJ_TYPES = [
-  'class',
-];
 
 const init = async () => {
-  if (!(await pfs.exists('./mddocs'))) {
-    await pfs.mkdir('./mddocs');
+  if (!(await pfs.exists(config.destPath))) {
+    await pfs.mkdir(config.destPath);
   } else {
-    const files = await pfs.readdir('./mddocs');
+    const files = await pfs.readdir(config.destPath);
     files.forEach(async (f) => {
-      await pfs.unlink(path.join('./mddocs', f));
+      await pfs.unlink(path.join(config.destPath, f));
     });
   }
 };
 
+const getCurrentBranchName = async () => {
+  const { stdout } = await exec('git rev-parse --abbrev-ref HEAD');
+  return stdout;
+};
+
+const getUrlPrefix = async () => {
+  const bs = config.urlPrefix.endsWith('/') ? '' : '/';
+  let currentBranch = await getCurrentBranchName();
+  currentBranch = currentBranch.replace(/\r?\n|\r/g, '');
+  return `${config.urlPrefix}${bs}${path.join(currentBranch, config.destPath)}/`;
+}
+
+
+
 const copyStatics = async () => {
   let idx = 0;
+  const static = {};
   if (jsDocConfig.opts && jsDocConfig.opts.readme) {
-    const fileName = `${('' + idx).padStart(3, '0')}_${jsDocConfig.opts.readme}`;
+    const fileName = `${('' + idx).padStart(3, '0')}_${jsDocConfig.opts.readme}`.replace(' ', '_');
+    const srcFile = path.join('./', jsDocConfig.opts.readme);
     pfs.copyFile(
-      path.join('./', jsDocConfig.opts.readme),
-      path.join('./mddocs', fileName),
+      srcFile,
+      path.join(config.destPath, fileName),
     );
+    static[config.homeTitle] = {
+      name: config.homeTitle,
+      category: 'Home',
+      file: srcFile,
+      idx: '' + idx,
+      outputFileName: fileName,
+    };
     idx++;
   }
   if (jsDocConfig.opts && jsDocConfig.opts.tutorials) {
     const files = await pfs.readdir(jsDocConfig.opts.tutorials);
-    files.forEach((el) => {
-      if (el.endsWith('.md')) {
-        const fileName = `${('' + idx).padStart(3, '0')}_${el}`;
+    for (let el of files) {
+      if (el.endsWith('.json')) {
+        const data = await pfs.readFile(path.join(jsDocConfig.opts.tutorials, el));
+        const tutInfo = JSON.parse(data.toString());
+        const mdFile = `${path.basename(el, path.extname(el))}.md`;
+        const fileName = `${('' + idx).padStart(3, '0')}_${mdFile}`.replace(' ', '_');
+        const srcFile = path.join(jsDocConfig.opts.tutorials, mdFile);
         pfs.copyFile(
-          path.join(jsDocConfig.opts.tutorials, el),
-          path.join('./mddocs', fileName),
+          srcFile,
+          path.join(config.destPath, fileName),
         );
+        static[tutInfo.title] = {
+          name: tutInfo.title,
+          category: 'Tutorials',
+          file: srcFile,
+          idx: '' + idx,
+          outputFileName: fileName,
+        };
         idx++;
       }
-    });
+    }
   }
-  return idx;
+  return {
+    idx,
+    static,
+  };
 };
 
 const generateJsdocJson = () => new Promise((resolve, reject) => {
@@ -89,18 +126,17 @@ const generateJsdocJson = () => new Promise((resolve, reject) => {
 });
 
 
-const parse = async (idx) => {
-  const { stdout } = await generateJsdocJson();
-  const data = JSON.parse(stdout);
+const parse = async (idx, data) => {
   const collected = {};
   const results = {};
   data.forEach((el) => {
-    if (OBJ_TYPES.includes(el.kind)) {
+    if (config.objTypes.includes(el.kind)) {
+      const objType = el.kind.charAt(0).toUpperCase() + el.kind.slice(1);
       if (!collected[el.category]) {
         collected[el.category] = [];
       }
       collected[el.category].push({
-        name: el.name,
+        name: `${objType} ${el.name}`,
         category: el.category,
         file: path.join(el.meta.path, el.meta.filename),
       });
@@ -118,9 +154,12 @@ const parse = async (idx) => {
   return results;
 };
 
-const generateFileNames = (data) => {
+const generateFileNamesAndUrls = async (data) => {
+  const urlPrefix = await getUrlPrefix();
   Object.keys(data).forEach((k) => {
-    data[k].outputFileName = `${data[k].idx.padStart(3, '0')}_${k}.md`;
+    const filename = `${data[k].idx.padStart(3, '0')}_${k}.md`.replace(' ', '_');
+    data[k].outputFileName = filename;
+    data[k].url = `${urlPrefix}${filename}`;
   });
   return data;
 };
@@ -128,26 +167,34 @@ const generateFileNames = (data) => {
 const generateMarkdown = async (data) => {
   Object.keys(data).forEach(async (k) => {
     const obj = data[k];
-    const rendered = await jsdoc2md.render({ files: obj.file });
-    await pfs.writeFile(
-      path.join('./mddocs', obj.outputFileName),
-      rendered,
-    );
+    if (obj.file.endsWith('.js')) {
+      const rendered = await jsdoc2md.render({ files: obj.file });
+      await pfs.writeFile(
+        path.join(config.destPath, obj.outputFileName),
+        rendered,
+      );
+    }
   });
 };
 
 const generateReport = async (info) => {
   await pfs.writeFile(
-    './mddocs/report.json',
+    path.join(config.destPath, 'report.json'),
     JSON.stringify(Object.values(info), null, 4));
 }
 
 const run = async () => {
-  await init();
-  const idx = await copyStatics();
-  const info = await generateFileNames(await parse(idx));
-  await generateMarkdown(info);
-  await generateReport(info);
+    await init();
+    const { idx, static } = await copyStatics();
+    const { stdout } = await generateJsdocJson();
+    const data = JSON.parse(stdout);
+    const parsed = await parse(idx, data);
+    const merged = { ...static, ...parsed };
+    const info = await generateFileNamesAndUrls(merged);
+    await generateMarkdown(info);
+    await generateReport(info);
 };
 
-run().then(() => console.log('Markdown documentation generated!'));
+run()
+  .then(() => console.log('Markdown documentation generated!'))
+  .catch((e) => console.log('Cannot generate docs: ', e));
