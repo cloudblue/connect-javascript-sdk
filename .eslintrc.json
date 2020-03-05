@@ -33,6 +33,7 @@
     },
     "ignorePatterns": [
         "jest.config.js",
+        "mddocs.js",
         "tests/",
         "node_modules/"
     ]

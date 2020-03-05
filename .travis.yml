@@ -1,15 +1,17 @@
 language: node_js
 node_js:
-  - 10
-  - 12
+- 10
+- 12
 script:
-  - npm test && npx codecov
-  - sonar-scanner
+- npm test && npm run mddocs && npm run docs && npx codecov
+- sonar-scanner
+after_success:
+- test $TRAVIS_BRANCH == "master" && "./commit_tag_push.sh"
 addons:
   sonarcloud:
-    organization: "cloudbluesonarcube"
+    organization: cloudbluesonarcube
     token:
-      secure: "M3ZKS/TuRPasPTP/GJLuU1+EWR+DJG2BYfCCTVYjrGy6CynDPr1hXTF2gLalvurejln5NuPbA16QjQ0jLZBBFfoG5u8a9afed+VwOdyTRHtRGkNLkOo7mXdV/A7Y0/1BUpIrDimnlaVXisQ1tnAv9QBUgNUHSn2Ahe27heJ4ejmODc6Re7/3e9H4I2wJR/ufKYkPlQXaPJQBQKjJ9+4gpYW9a3gewpUNZwxQSFfoG2EN8CU8n+ry4T4Lf7v6UkFG/ENKyx4RZtuRomOvSS13GAGG3PNHhXUcvMwchFnl4e7XxCMyrMFuX55uEAcwp2up4sPkYhRO14GYv2Z29vXv9B/iVfWfRwOwgasdz0ppuj0yMbbiVgwU9+zX/BD4YFaxc/QQQOCB6r0Etrkc57jnVvyLULXlHlHRd/XJ2QVXdBavllpTa5Ght5nIRWjZOF+ak4iJuHPPl6tja5tCA4hBIngwDrHMG/JIWH4S2oeVXLnSiAV2uhh2SVc6eYLLfu2ZFTd4DpA9Tinxg6AiJ4tU0ep3dzFoXSuhAze4VqhPwfFW8hZp5SQy2cennpW6z3OvKM5zPTCwSBS8a+aRWinJwWdLUEj988fZ6I1FbCJtVt61strpYttUlMdL7PKPFjIlTHeMNcjFY0OXLuTVMXODnr1FgMicJJYVRzFBjG3ZnNE="
+      secure: M3ZKS/TuRPasPTP/GJLuU1+EWR+DJG2BYfCCTVYjrGy6CynDPr1hXTF2gLalvurejln5NuPbA16QjQ0jLZBBFfoG5u8a9afed+VwOdyTRHtRGkNLkOo7mXdV/A7Y0/1BUpIrDimnlaVXisQ1tnAv9QBUgNUHSn2Ahe27heJ4ejmODc6Re7/3e9H4I2wJR/ufKYkPlQXaPJQBQKjJ9+4gpYW9a3gewpUNZwxQSFfoG2EN8CU8n+ry4T4Lf7v6UkFG/ENKyx4RZtuRomOvSS13GAGG3PNHhXUcvMwchFnl4e7XxCMyrMFuX55uEAcwp2up4sPkYhRO14GYv2Z29vXv9B/iVfWfRwOwgasdz0ppuj0yMbbiVgwU9+zX/BD4YFaxc/QQQOCB6r0Etrkc57jnVvyLULXlHlHRd/XJ2QVXdBavllpTa5Ght5nIRWjZOF+ak4iJuHPPl6tja5tCA4hBIngwDrHMG/JIWH4S2oeVXLnSiAV2uhh2SVc6eYLLfu2ZFTd4DpA9Tinxg6AiJ4tU0ep3dzFoXSuhAze4VqhPwfFW8hZp5SQy2cennpW6z3OvKM5zPTCwSBS8a+aRWinJwWdLUEj988fZ6I1FbCJtVt61strpYttUlMdL7PKPFjIlTHeMNcjFY0OXLuTVMXODnr1FgMicJJYVRzFBjG3ZnNE=
 deploy:
   provider: npm
   email: francesco.faraone@ingrammicro.com
@@ -18,4 +20,6 @@ deploy:
   on:
     repo: cloudblue/connect-javascript-sdk
     branch: master
-
+env:
+  global:
+  - secure: HXKcOT5daeXZS/DvWIsIPeDZWedmlRHCpC0RBqJLhoSyuimACuQ53uWhZDSiKiYbzs2gDzdv991JJ5HEjVgzn0Hq/sM2eSbP8iXGh7PlYCgUFoix0wCNyZIluZ5f7Djh7J0rdoh450lUmzVF7Liv+OSklorMa3N49xBc2lNK4F44Di0QAh4zn49ur+mX43Xd2QRxDwSmrYZJfa/4vEC0c9ZknbPtiYdANs3fwYTs1B931+Scli4Y2Dd8xjMQ2vUIWLlWAMQF7tx/m3z3KUM63k/6vrJVSEDEYfYzjczTRBU+a1XliI8hjOiHrQ9PW4s7TSckviQsLBueTgrCXI/E2k3cyWh7oVt6o4kPpodBZwbZJGgtfgVu1s0GepY7yxAybfWxnGLooIkeQy1jZyfIw5fIul3Xm0fktcmpDzTyBWNbnD3gtd9ZuI5OUv/zNhcNyLlI/aoGoiKfh6kWNuysMtv0C+eNcdBVuQP0F3OWPhHGiXvujuY85knVPl0Xw/PCxhw+DEev57RG0bmm8qk9RQnS6XwxZYt2aP1DGOcWrBcHfo4bqI+Ryy8/OMO3zd/jVpDNJMQL0SEfXVNSowP8dCRhRoMGM2AAddZuzl/2kEqKdxSWuNDZZTvI8quzwKmRTKu5Fs+SnDfEcU0px76JX1+xvXeYaf1TaPp6q4Ww7Q8=

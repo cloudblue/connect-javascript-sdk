@@ -1,7 +1,7 @@
 /**
  * This file is part of the Ingram Micro Cloud Blue Connect SDK.
  *
- * @copyright (c) 2019. Ingram Micro. All Rights Reserved.
+ * @copyright (c) 2020. Ingram Micro. All Rights Reserved.
  */
 
 
@@ -11,11 +11,14 @@ describe('ConnectClient', () => {
   it.each([
     ['accounts', api.AccountResource],
     ['assets', api.AssetResource],
+    ['billingRequests', api.BillingRequestResource],
     ['conversations', api.ConversationResource],
     ['products', api.ProductResource],
     ['requests', api.RequestResource],
     ['hubs', api.HubResource],
+    ['recurringAssets', api.RecurringAssetResource],
     ['tierAccounts', api.TierAccountResource],
+    ['tierAccountRequests', api.TierAccountRequestResource],
     ['tierConfigs', api.TierConfigResource],
     ['tierConfigRequests', api.TierConfigRequestResource],
     ['webhooks', api.WebhookResource],

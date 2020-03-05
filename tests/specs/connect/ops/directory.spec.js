@@ -42,4 +42,41 @@ describe('Directory', () => {
       'product.id': 'PRD-000',
     });
   });
+  it('createTierAccountRequest invokes create on tier account requests endpoint', async () => {
+    const mockedFn = client.tierAccountRequests.create = jest.fn();
+    const dir = new Directory(client);
+    await dir.createTierAccountRequest({});
+    expect(mockedFn).toHaveBeenCalledWith({});
+  });
+  it('searchTierAccountRequest invokes search on tier account requests endpoint', async () => {
+    const mockedFn = client.tierAccountRequests.search = jest.fn();
+    const dir = new Directory(client);
+    await dir.searchTierAccountRequest({ field: 'value'});
+    expect(mockedFn).toHaveBeenCalledWith({ field: 'value'});
+  });
+  it('getTierAccountRequest invokes get on tier account requests endpoint', async () => {
+    const mockedFn = client.tierAccountRequests.get = jest.fn();
+    const dir = new Directory(client);
+    await dir.getTierAccountRequest('TAR-0000');
+    expect(mockedFn).toHaveBeenCalledWith('TAR-0000');
+  });
+  it('acceptTierAccountRequest invokes accept on tier account requests endpoint', async () => {
+    const mockedFn = client.tierAccountRequests.accept = jest.fn();
+    const dir = new Directory(client);
+    await dir.acceptTierAccountRequest('TAR-0000');
+    expect(mockedFn).toHaveBeenCalledWith('TAR-0000');
+  });
+  it('ignoreTierAccountRequest invokes get on tier account requests endpoint', async () => {
+    const mockedFn = client.tierAccountRequests.ignore = jest.fn();
+    const dir = new Directory(client);
+    await dir.ignoreTierAccountRequest('TAR-0000');
+    expect(mockedFn).toHaveBeenCalledWith('TAR-0000');
+  });
+  it('getTierAccountVersion invokes get on tier account requests endpoint', async () => {
+    const accVersionResource = client.tierAccounts.versions('TAR-0000');
+    const mockedFn = accVersionResource.get = jest.fn();
+    const dir = new Directory(client);
+    await dir.getTierAccountVersion('TAR-0000', 1);
+    expect(mockedFn).toHaveBeenCalledWith(1);
+  });
 });
