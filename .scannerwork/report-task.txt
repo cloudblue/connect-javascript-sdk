@@ -2,6 +2,6 @@ organization=cloudbluesonarcube
 projectKey=cloudblue_connect-javascript-sdk
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.5447
-dashboardUrl=https://sonarcloud.io/dashboard?id=cloudblue_connect-javascript-sdk&pullRequest=16
-ceTaskId=AXCrbuA8RKLUjzMW1LLh
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXCrbuA8RKLUjzMW1LLh
+dashboardUrl=https://sonarcloud.io/dashboard?id=cloudblue_connect-javascript-sdk
+ceTaskId=AXCrcY_z2sxIEnSfORME
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXCrcY_z2sxIEnSfORME
