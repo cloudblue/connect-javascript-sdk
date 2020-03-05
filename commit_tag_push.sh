@@ -5,6 +5,8 @@ echo "Commit generated documentation"
 git config --global user.email "builds@travis-ci.org"
 git config --global user.name "Travis CI"
 git config --global push.default simple
+echo "Checkout current branch $TRAVIS_BRANCH"
+git checkout $TRAVIS_BRANCH
 echo "Configure remote"
 git remote set-url origin https://${CONNECT_GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
 echo "Fetching tags from remote"
