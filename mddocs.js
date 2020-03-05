@@ -57,6 +57,7 @@ const getUrlPrefix = async () => {
 
 
 const copyStatics = async () => {
+  const urlPrefix = await getUrlPrefix();
   let idx = 0;
   const staticPages = {};
   if (jsDocConfig.opts && jsDocConfig.opts.readme) {
@@ -72,6 +73,7 @@ const copyStatics = async () => {
       file: srcFile,
       idx: '' + idx,
       outputFileName: fileName,
+      url: `${urlPrefix}${fileName}`,
     };
     idx++;
   }
@@ -94,6 +96,7 @@ const copyStatics = async () => {
           file: srcFile,
           idx: '' + idx,
           outputFileName: fileName,
+          url: `${urlPrefix}${fileName}`,
         };
         idx++;
       }
@@ -195,10 +198,9 @@ const run = async () => {
     const { stdout } = await generateJsdocJson();
     const data = JSON.parse(stdout);
     const parsed = await parse(idx, data);
-    const merged = { ...staticPages, ...parsed };
-    const info = await generateFileNamesAndUrls(merged);
+    const info = await generateFileNamesAndUrls(parsed);
     await generateMarkdown(info);
-    await generateReport(info);
+    await generateReport({ ...staticPages, ...info });
 };
 
 run()
