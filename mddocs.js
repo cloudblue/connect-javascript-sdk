@@ -40,6 +40,9 @@ const init = async () => {
 };
 
 const getCurrentBranchName = async () => {
+  if (process.env.TRAVIS_BRANCH) {
+    return process.env.TRAVIS_BRANCH;
+  }
   const { stdout } = await exec('git rev-parse --abbrev-ref HEAD');
   return stdout;
 };
@@ -180,7 +183,10 @@ const generateMarkdown = async (data) => {
 const generateReport = async (info) => {
   await pfs.writeFile(
     path.join(config.destPath, 'report.json'),
-    JSON.stringify(Object.values(info), null, 4));
+    JSON.stringify({
+      generated: new Date(),
+      pages: Object.values(info),
+    }, null, 4));
 }
 
 const run = async () => {

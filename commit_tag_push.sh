@@ -4,11 +4,12 @@ set -e
 echo "Commit generated documentation"
 git config --global user.email "builds@travis-ci.org"
 git config --global user.name "Travis CI"
+git config --global push.default simple
+git remote add origin https://${CONNECT_GITHUB_TOKEN}@github.com/cloudblue/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
 export GIT_TAG=v$(node -p "require('./package.json').version")
-git commit -am "Documentation generated for release $GIT_TAG"
-echo "Push generated documentation"
-git push --quiet https://$CONNECT_GITHUB_TOKEN@github.com/cloudblue/connect-fulfillment-zapier-app > /dev/null 2>&1
+git add ./mddocs
+git commit -m "Documentation generated for release $GIT_TAG"
+echo "Push generated documentation and tag"
 git tag -a $GIT_TAG -m "Generated tag from TravisCI build"
-echo "Push tag $GIT_TAG"
-git push --quiet --tags https://$CONNECT_GITHUB_TOKEN@github.com/cloudblue/connect-fulfillment-zapier-app > /dev/null 2>&1
+git push origin master && git push origin master --tags
 echo "Version $GIT_TAG successfully tagged!"

@@ -3,10 +3,9 @@ node_js:
 - 10
 - 12
 script:
-- npm test && npx codecov
+- npm test && npm run mddocs && npx codecov
 - sonar-scanner
 after_success:
-- test $TRAVIS_BRANCH != "master" && "yarn run mddocs"
 - test $TRAVIS_BRANCH != "master" && "./commit_tag_push.sh"
 addons:
   sonarcloud:
