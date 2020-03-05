@@ -11,6 +11,7 @@ echo "Get version from package.json"
 export GIT_TAG=v$(node -p "require('./package.json').version")
 echo "Stage generated docs"
 git add ./mddocs
+
 echo "Commit docs"
 git commit -m "[ci skip] Documentation generated for release $GIT_TAG"
 echo "Push generated documentation and tag"
