@@ -1,29 +1,29 @@
 {
-    "generated": "2020-03-05T16:18:21.908Z",
+    "generated": "2020-03-05T19:27:22.519Z",
     "pages": [
         {
             "name": "Welcome",
             "category": "Home",
             "file": "README.md",
             "idx": "0",
-            "outputFileName": "000_Welcome.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/000_Welcome.md"
+            "outputFileName": "000_README.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/000_README.md"
         },
         {
             "name": "Getting started",
             "category": "Tutorials",
             "file": "docs-src/tutorials/getting_started.md",
             "idx": "1",
-            "outputFileName": "001_Getting_started.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/001_Getting_started.md"
+            "outputFileName": "001_getting_started.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/001_getting_started.md"
         },
         {
             "name": "Querying endpoints",
             "category": "Tutorials",
             "file": "docs-src/tutorials/searches.md",
             "idx": "2",
-            "outputFileName": "002_Querying_endpoints.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/002_Querying_endpoints.md"
+            "outputFileName": "002_searches.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/002_searches.md"
         },
         {
             "name": "Class APIError",
