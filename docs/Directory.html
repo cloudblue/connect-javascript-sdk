@@ -64,7 +64,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting started</a></li><li><a href="tutorial-searches.html">Querying endpoints</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li><li><a href="APIError.html">APIError</a></li><li><a href="ConnectClient.html">ConnectClient</a></li><li><a href="DefaultHttpAdapter.html">DefaultHttpAdapter</a></li><li><a href="HttpError.html">HttpError</a></li></ul></div><div class="category"><h2>Operations</h2><h3>Classes</h3><ul><li><a href="Directory.html">Directory</a></li><li><a href="Fulfillment.html">Fulfillment</a></li><li><a href="Inventory.html">Inventory</a></li></ul></div><div class="category"><h2>Resources</h2><h3>Classes</h3><ul><li><a href="AccountResource.html">AccountResource</a></li><li><a href="AccountUserResource.html">AccountUserResource</a></li><li><a href="AssetResource.html">AssetResource</a></li><li><a href="ConversationResource.html">ConversationResource</a></li><li><a href="GenericResource.html">GenericResource</a></li><li><a href="HubResource.html">HubResource</a></li><li><a href="ProductActionResource.html">ProductActionResource</a></li><li><a href="ProductConfigurationResource.html">ProductConfigurationResource</a></li><li><a href="ProductResource.html">ProductResource</a></li><li><a href="ProductVersionResource.html">ProductVersionResource</a></li><li><a href="RequestResource.html">RequestResource</a></li><li><a href="TierAccountResource.html">TierAccountResource</a></li><li><a href="TierConfigRequestResource.html">TierConfigRequestResource</a></li><li><a href="TierConfigResource.html">TierConfigResource</a></li><li><a href="WebhookResource.html">WebhookResource</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting started</a></li><li><a href="tutorial-searches.html">Querying endpoints</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="AbstractHttpAdapter.html">AbstractHttpAdapter</a></li><li><a href="APIError.html">APIError</a></li><li><a href="ConnectClient.html">ConnectClient</a></li><li><a href="DefaultHttpAdapter.html">DefaultHttpAdapter</a></li><li><a href="HttpError.html">HttpError</a></li></ul></div><div class="category"><h2>Operations</h2><h3>Classes</h3><ul><li><a href="Directory.html">Directory</a></li><li><a href="Fulfillment.html">Fulfillment</a></li><li><a href="Inventory.html">Inventory</a></li><li><a href="Subscriptions.html">Subscriptions</a></li></ul></div><div class="category"><h2>Resources</h2><h3>Classes</h3><ul><li><a href="AccountResource.html">AccountResource</a></li><li><a href="AccountUserResource.html">AccountUserResource</a></li><li><a href="AssetResource.html">AssetResource</a></li><li><a href="BillingRequestResource.html">BillingRequestResource</a></li><li><a href="ConversationResource.html">ConversationResource</a></li><li><a href="GenericResource.html">GenericResource</a></li><li><a href="HubResource.html">HubResource</a></li><li><a href="ProductActionResource.html">ProductActionResource</a></li><li><a href="ProductConfigurationResource.html">ProductConfigurationResource</a></li><li><a href="ProductResource.html">ProductResource</a></li><li><a href="ProductVersionResource.html">ProductVersionResource</a></li><li><a href="RecurringAssetResource.html">RecurringAssetResource</a></li><li><a href="RequestResource.html">RequestResource</a></li><li><a href="TierAccountRequestResource.html">TierAccountRequestResource</a></li><li><a href="TierAccountResource.html">TierAccountResource</a></li><li><a href="TierAccountVersionResource.html">TierAccountVersionResource</a></li><li><a href="TierConfigRequestResource.html">TierConfigRequestResource</a></li><li><a href="TierConfigResource.html">TierConfigResource</a></li><li><a href="WebhookResource.html">WebhookResource</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -292,6 +292,344 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
 
 
     
+    <h4 class="name" id="acceptTierAccountRequest">
+        <a class="href-link" href="#acceptTierAccountRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                acceptTierAccountRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Accept the <em>TierAccountRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>TierAccountRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>TierAccountRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="createTierAccountRequest">
+        <a class="href-link" href="#createTierAccountRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                createTierAccountRequest<span class="signature">(request)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Creates a new <em>TierAccountRequest</em></p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>request</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The TierAccountRequest object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The created TierAccountRequest object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
     <h4 class="name" id="getAssetsByProductIdExternalId">
         <a class="href-link" href="#getAssetsByProductIdExternalId">#</a>
         
@@ -310,7 +648,7 @@ developers to access the directory (assets, tier configs, tier accounts).</p></d
     
     
     <div class="description">
-        <p>Returns a list of <em>Asset</em>objects based on the productId and
+        <p>Returns a list of <em>Asset</em> objects based on the productId and
 the <em>Asset</em> externalId.</p>
     </div>
     
@@ -656,6 +994,538 @@ the <em>Asset</em> externalId.</p>
 
 
     
+    <h4 class="name" id="getTierAccountRequest">
+        <a class="href-link" href="#getTierAccountRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                getTierAccountRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Retrieve the <em>TierAccountRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>TierAccountRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>TierAccountRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="getTierAccountVersion">
+        <a class="href-link" href="#getTierAccountVersion">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                getTierAccountVersion<span class="signature">(id, version)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Returns the specified version of the <em>TierAccount</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>TierAccount</em> object.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>version</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The version to be retrieved.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>TierAccount</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="ignoreTierAccountRequest">
+        <a class="href-link" href="#ignoreTierAccountRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                ignoreTierAccountRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Ignore the <em>TierAccountRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>TierAccountRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>TierAccountRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
     <h4 class="name" id="searchAssets">
         <a class="href-link" href="#searchAssets">#</a>
         
@@ -801,6 +1671,177 @@ the <em>Asset</em> externalId.</p>
 <div class="columns">
     
     <div class='param-desc column is-7'><p>An array of <em>Asset</em> object optionally matching the provided query.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Array</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="searchTierAccountRequest">
+        <a class="href-link" href="#searchTierAccountRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                searchTierAccountRequest<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Returns a list of <em>TierAccountRequest</em> objects that match the provided
+filters.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>query</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>A RQL query.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An array of <em>TierAccountRequest</em> objects
+that match the provided filters.</p></div>
     
     
     <div class='column is-5 has-text-left'>

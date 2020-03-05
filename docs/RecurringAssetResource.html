@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>GenericResource</title>
+    <title>RecurringAssetResource</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>GenericResource</h1>
+                        <h1>RecurringAssetResource</h1>
                     </header>
                     
                     
@@ -84,11 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>GenericResource<span class="signature">(client, baseUri)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>RecurringAssetResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="RecurringAssetResource.html">RecurringAssetResource</a>}</span></h2>
         
-            <div class="class-description"><p>The <em>GenericResource</em> map a generic endpoint of the CloudBlue
-Connect API. Each API endpoint should extend this class and
-implements endpoint specific actions and subresources access.</p></div>
+            <div class="class-description"><p>The <em>RecurringAssetResource</em> class provides methods to access the recurring
+assets endpoint of the Cloud Blue Connect API.</p></div>
         
     
 </header>
@@ -104,18 +103,22 @@ implements endpoint specific actions and subresources access.</p></div>
 
 
     
-    <h4 class="name" id="GenericResource">
-        <a class="href-link" href="#GenericResource">#</a>
+    <h4 class="name" id="RecurringAssetResource">
+        <a class="href-link" href="#RecurringAssetResource">#</a>
         
         <span class="code-name">
             
-                new GenericResource<span class="signature">(client, baseUri)</span><span class="type-signature"></span>
+                new RecurringAssetResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="RecurringAssetResource.html">RecurringAssetResource</a>}</span>
             
         </span>
     </h4>
     
 
     
+    
+    <div class="description">
+        <p>Creates a new instance of the <em>RecurringAssetResource</em> class.</p>
+    </div>
     
 
 
@@ -168,32 +171,7 @@ implements endpoint specific actions and subresources access.</p></div>
 
   
 
-  <td class="description last"><p>A <em>ConnectClient</em> instance.</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>baseUri</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The base URI of the resource</p></td>
+  <td class="description last"><p>An instance of the ConnectClient class.</p></td>
 </tr>
 
 
@@ -256,6 +234,31 @@ implements endpoint specific actions and subresources access.</p></div>
 
 
 
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>RecurringAssetResource</em> class.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="RecurringAssetResource.html">RecurringAssetResource</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
 
 
 
@@ -266,6 +269,17 @@ implements endpoint specific actions and subresources access.</p></div>
     
     </div>
     
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="GenericResource.html">GenericResource</a></li>
+    </ul>
+
+
     
 
     
@@ -321,6 +335,11 @@ implements endpoint specific actions and subresources access.</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#baseUri">GenericResource#baseUri</a>
+    </li></ul></dd>
     
 
     
@@ -458,6 +477,11 @@ implements endpoint specific actions and subresources access.</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#create">GenericResource#create</a>
+    </li></ul></dd>
     
 
     
@@ -628,6 +652,11 @@ implements endpoint specific actions and subresources access.</p></div>
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#delete">GenericResource#delete</a>
+    </li></ul></dd>
+    
 
     
 
@@ -797,6 +826,11 @@ implements endpoint specific actions and subresources access.</p></div>
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#fetch">GenericResource#fetch</a>
+    </li></ul></dd>
+    
 
     
 
@@ -940,6 +974,11 @@ implements endpoint specific actions and subresources access.</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#get">GenericResource#get</a>
+    </li></ul></dd>
     
 
     
@@ -1109,6 +1148,11 @@ implements endpoint specific actions and subresources access.</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#search">GenericResource#search</a>
+    </li></ul></dd>
     
 
     
@@ -1303,6 +1347,11 @@ implements endpoint specific actions and subresources access.</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="GenericResource.html#update">GenericResource#update</a>
+    </li></ul></dd>
     
 
     
