@@ -88,7 +88,7 @@ const copyStatics = async () => {
           srcFile,
           path.join(config.destPath, fileName),
         );
-        static[tutInfo.title] = {
+        staticPages[tutInfo.title] = {
           name: tutInfo.title,
           category: 'Tutorials',
           file: srcFile,
