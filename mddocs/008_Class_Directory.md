@@ -15,10 +15,10 @@ developers to access the directory (assets, tier configs, tier accounts).
     * [.getTierAccount(id)](#Directory+getTierAccount) ⇒ <code>object</code>
     * [.getAssetsByProductIdExternalId(productId, externalId)](#Directory+getAssetsByProductIdExternalId) ⇒ <code>Array</code>
     * [.createTierAccountRequest(request)](#Directory+createTierAccountRequest) ⇒ <code>object</code>
-    * [.searchTierAccountRequest(query)](#Directory+searchTierAccountRequest) ⇒ <code>Array</code>
+    * [.searchTierAccountRequests(query)](#Directory+searchTierAccountRequests) ⇒ <code>Array</code>
     * [.getTierAccountRequest(id)](#Directory+getTierAccountRequest) ⇒ <code>object</code>
     * [.acceptTierAccountRequest(id)](#Directory+acceptTierAccountRequest) ⇒ <code>object</code>
-    * [.ignoreTierAccountRequest(id)](#Directory+ignoreTierAccountRequest) ⇒ <code>object</code>
+    * [.ignoreTierAccountRequest(id, reason)](#Directory+ignoreTierAccountRequest) ⇒ <code>object</code>
     * [.getTierAccountVersion(id, version)](#Directory+getTierAccountVersion) ⇒ <code>object</code>
 
 <a name="new_Directory_new"></a>
@@ -110,9 +110,9 @@ Creates a new *TierAccountRequest*
 | --- | --- | --- |
 | request | <code>object</code> | The TierAccountRequest object. |
 
-<a name="Directory+searchTierAccountRequest"></a>
+<a name="Directory+searchTierAccountRequests"></a>
 
-### directory.searchTierAccountRequest(query) ⇒ <code>Array</code>
+### directory.searchTierAccountRequests(query) ⇒ <code>Array</code>
 Returns a list of *TierAccountRequest* objects that match the provided
 filters.
 
@@ -150,7 +150,7 @@ Accept the *TierAccountRequest* object identified by its id.
 
 <a name="Directory+ignoreTierAccountRequest"></a>
 
-### directory.ignoreTierAccountRequest(id) ⇒ <code>object</code>
+### directory.ignoreTierAccountRequest(id, reason) ⇒ <code>object</code>
 Ignore the *TierAccountRequest* object identified by its id.
 
 **Kind**: instance method of [<code>Directory</code>](#Directory)  
@@ -159,6 +159,7 @@ Ignore the *TierAccountRequest* object identified by its id.
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>string</code> | The unique identifier of the *TierAccountRequest* object. |
+| reason | <code>string</code> | The reason for which this request has been ignored. |
 
 <a name="Directory+getTierAccountVersion"></a>
 
