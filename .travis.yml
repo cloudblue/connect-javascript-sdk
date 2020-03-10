@@ -6,7 +6,7 @@ script:
 - npm test && npm run mddocs && npm run docs && npx codecov
 - sonar-scanner
 after_success:
-- test $TRAVIS_BRANCH == "master" && "./commit_tag_push.sh"
+- test $TRAVIS_BRANCH == "develop" && "./commit_tag_push.sh"
 addons:
   sonarcloud:
     organization: cloudbluesonarcube
