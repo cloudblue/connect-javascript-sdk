@@ -1,6 +1,6 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.2.4",
+  "version": "19.2.5",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {

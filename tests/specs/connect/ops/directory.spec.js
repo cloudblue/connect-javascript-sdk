@@ -48,10 +48,10 @@ describe('Directory', () => {
     await dir.createTierAccountRequest({});
     expect(mockedFn).toHaveBeenCalledWith({});
   });
-  it('searchTierAccountRequest invokes search on tier account requests endpoint', async () => {
+  it('searchTierAccountRequests invokes search on tier account requests endpoint', async () => {
     const mockedFn = client.tierAccountRequests.search = jest.fn();
     const dir = new Directory(client);
-    await dir.searchTierAccountRequest({ field: 'value'});
+    await dir.searchTierAccountRequests({ field: 'value'});
     expect(mockedFn).toHaveBeenCalledWith({ field: 'value'});
   });
   it('getTierAccountRequest invokes get on tier account requests endpoint', async () => {
@@ -69,8 +69,8 @@ describe('Directory', () => {
   it('ignoreTierAccountRequest invokes get on tier account requests endpoint', async () => {
     const mockedFn = client.tierAccountRequests.ignore = jest.fn();
     const dir = new Directory(client);
-    await dir.ignoreTierAccountRequest('TAR-0000');
-    expect(mockedFn).toHaveBeenCalledWith('TAR-0000');
+    await dir.ignoreTierAccountRequest('TAR-0000', 'reason');
+    expect(mockedFn).toHaveBeenCalledWith('TAR-0000', 'reason');
   });
   it('getTierAccountVersion invokes get on tier account requests endpoint', async () => {
     const accVersionResource = client.tierAccounts.versions('TAR-0000');
