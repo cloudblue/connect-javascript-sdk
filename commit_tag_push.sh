@@ -19,13 +19,15 @@ if [[ "$TRAVIS_JOB_NUMBER" =~ .*\.1$ ]]; then
     git commit -m "[ci skip] Documentation generated for release $GIT_TAG"
     echo "Push docs commit"
     git push origin $TRAVIS_BRANCH
-    if git tag $GIT_TAG -a -m "Generated tag from TravisCI build" 2>/dev/null; then
-        echo "Create tag tag"
+    CHECK_TAG=$(git tag -l "$GIT_TAG")
+    if [ "$CHECK_TAG" != "$GIT_TAG" ]; then
+        echo "Create tag $GIT_TAG"
         git tag -a $GIT_TAG -m "Generated tag from TravisCI build"
         echo "Tag $GIT_TAG added"
         git push origin $TRAVIS_BRANCH --tags
+    else
+        echo "Tag $GIT_TAG already exists!"
     fi
-
     echo "Done for version $GIT_TAG!"
 else
     echo "Do nothing due to job number > .1 ($TRAVIS_JOB_NUMBER)"
