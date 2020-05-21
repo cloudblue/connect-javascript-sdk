@@ -5,6 +5,7 @@
  */
 const { ConnectClient, Fulfillment, Inventory } = require('@cloudblueconnect/connect-javascript-sdk');
 const fetch = require('node-fetch');
+const config = require('./config.json');
 
 /* eslint-disable no-console */
 
@@ -20,23 +21,22 @@ const fetch = require('node-fetch');
  *
  * @category Operations
  */
-
 const client = new ConnectClient(
-  'https://api.connect.cloudblue.com/public/v1',
-  'ApiKey SU-000-000-000:0000000000000000000000000000000000000000',
+  config.url,
+  config.apiKey,
 );
 const fulfillment = new Fulfillment(client);
 const inventory = new Inventory(client);
 const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
 
 /**
- * Accept Purchase Request into Cloudblue Connect
+ * Process Purchase Request into Cloudblue Connect
  *
  * @param   {object}  element  The request of Cloudblue Connect.
  *
  * @returns {Array}    An array of Template objects.
  */
-function acceptTenant(element) {
+function processRequest(element) {
   const getTemplate = async () => {
     const response = await inventory.getProductTemplates(element.asset.product.id);
     return response;
@@ -76,7 +76,7 @@ function checkTenant(requests) {
       .then((res) => res.json())
       .then((json) => {
         if (json.status === 'ready') {
-          acceptTenant(element);
+          processRequest(element);
         } else {
           throw Error('This Tenant is in process or not exist yet');
         }

@@ -5,6 +5,7 @@
  */
 const { ConnectClient, Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
 const fetch = require('node-fetch');
+const config = require('./config.json');
 
 /* eslint-disable no-console */
 
@@ -20,12 +21,11 @@ const fetch = require('node-fetch');
  *
  * @category Operations
  */
-
 const client = new ConnectClient(
-  'https://api.connect.cloudblue.com/public/v1',
-  'ApiKey SU-000-000-000:0000000000000000000000000000000000000000',
+  config.url,
+  config.apiKey,
 );
-const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
+const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com';
 
 /**
  * Create tenant into Vendor System
@@ -83,7 +83,6 @@ function createTenant(element) {
  */
 function checkTenant(requests) {
   requests.forEach((element) => {
-    // Verificamos si existe el tennant
     const urlGet = `${urlBase}/tenant?externalId=${element.asset.id}`;
     fetch(urlGet)
       .then((res) => res.json())
