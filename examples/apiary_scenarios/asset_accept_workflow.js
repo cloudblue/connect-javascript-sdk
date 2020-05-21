@@ -23,11 +23,11 @@ const fetch = require('node-fetch');
 
 const client = new ConnectClient(
   'https://api.connect.cloudblue.com/public/v1',
-  'ApiKey SU-069-215-193:e3ae33ea2a7ec62b434452d4feb92eb32dbf57d3',
+  'ApiKey SU-000-000-000:0000000000000000000000000000000000000000',
 );
 const fulfillment = new Fulfillment(client);
 const inventory = new Inventory(client);
-const urlBase = 'https://private-368580-vendorexample.apiary-mock.com';
+const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
 
 /**
  * Accept Purchase Request into Cloudblue Connect
