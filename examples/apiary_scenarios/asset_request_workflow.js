@@ -25,7 +25,9 @@ const client = new ConnectClient(
   config.url,
   config.apiKey,
 );
-const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com';
+const fulfillment = new Fulfillment(client);
+const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
+let tenantIdParam;
 
 /**
  * Create tenant into Vendor System
@@ -36,15 +38,14 @@ const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com';
 function createTenant(element) {
   let mpn;
   let quantity;
-  Object.values(element).some((detail) => {
-    if (detail.items && detail.items.length > 0) {
-      mpn = detail.items[0].mpn;
-      quantity = detail.items[0].quantity;
-      return true;
-    }
-    return false;
-  });
-
+  if (element.asset.items && (element.asset.items.length === 1)) {
+    Object.values(element.asset.items).forEach((item) => {
+      mpn = item.mpn;
+      quantity = item.quantity;
+    });
+  } else {
+    throw Error('Malformed request, bad quantity of item');
+  }
   const payload = {
     Attributes: {
       product: { mpn, quantity },
@@ -71,9 +72,17 @@ function createTenant(element) {
     cache: 'no-cache',
   })
     .then((response) => response.json())
-    .then((data) => console.log('data = ', data))
+    .then((data) => {
+      element.asset.params.forEach((param) => {
+        if (param.id === 'tenantId') {
+          fulfillment.updateRequestParameters(element.id, [{ id: 'tenantId', value: data.tenantId }], 'Id of vendor system tenant');
+        }
+      });
+      console.log('data = ', data);
+    })
     .catch((err) => console.error(err));
 }
+
 
 /**
  * Check if the request exist into Vendor Portal
@@ -83,21 +92,25 @@ function createTenant(element) {
  */
 function checkTenant(requests) {
   requests.forEach((element) => {
-    const urlGet = `${urlBase}/tenant?externalId=${element.asset.id}`;
-    fetch(urlGet)
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.externalId !== element.asset.id) {
-          console.log(element);
-          createTenant(element);
-        } else {
-          throw Error('This Tenant exist in vendor');
+    if (element.type === 'purchase') {
+      element.asset.params.forEach((param) => {
+        if (param.id === 'tenantId') {
+          tenantIdParam = param.value;
         }
       });
+      if (tenantIdParam === '') {
+        console.log(element);
+        createTenant(element);
+      } else {
+        throw Error('This Tenant exist in vendor');
+      }
+    } else {
+      console.log('This processor not handle this type of request');
+    }
   });
 }
 
-const fulfillment = new Fulfillment(client);
+
 const getRequests = async () => {
   const requests = await fulfillment.searchRequests();
   return requests;

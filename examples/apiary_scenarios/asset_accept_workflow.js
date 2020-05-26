@@ -3,7 +3,7 @@
  *
  * @copyright (c) 2020. Ingram Micro. All Rights Reserved.
  */
-const { ConnectClient, Fulfillment, Inventory } = require('@cloudblueconnect/connect-javascript-sdk');
+const { ConnectClient, Fulfillment } = require('@cloudblueconnect/connect-javascript-sdk');
 const fetch = require('node-fetch');
 const config = require('./config.json');
 
@@ -26,40 +26,45 @@ const client = new ConnectClient(
   config.apiKey,
 );
 const fulfillment = new Fulfillment(client);
-const inventory = new Inventory(client);
 const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
+let tenantIdParam;
+let templateIdParam;
 
 /**
  * Process Purchase Request into Cloudblue Connect
  *
  * @param   {object}  element  The request of Cloudblue Connect.
  *
- * @returns {Array}    An array of Template objects.
  */
 function processRequest(element) {
-  const getTemplate = async () => {
-    const response = await inventory.getProductTemplates(element.asset.product.id);
-    return response;
-  };
-  getTemplate()
-    .then((response) => {
-      response.forEach((template) => {
-        if (template.type === 'fulfillment') {
-          const body = {
-            template_id: template.id,
-          };
-          const approveRequests = async () => {
-            const responseApprove = await fulfillment.approveRequest(element.id, body);
-            return responseApprove;
-          };
-          approveRequests()
-            .then((responseApprove) => console.log(responseApprove))
-            .catch((e) => console.log(e));
+  if (element.type === 'purchase') {
+    element.asset.params.forEach((param) => {
+      if (param.id === 'tenantId') {
+        tenantIdParam = param.value;
+      }
+    });
+    if (tenantIdParam !== '') {
+      element.asset.configuration.params.forEach((param) => {
+        if (param.id === 'templateId') {
+          templateIdParam = param.value;
         }
       });
-    })
-    .catch((e) => console.log(e));
-  return element;
+      const body = {
+        template_id: templateIdParam,
+      };
+      const approveRequests = async () => {
+        const responseApprove = await fulfillment.approveRequest(element.id, body);
+        return responseApprove;
+      };
+      approveRequests()
+        .then((responseApprove) => console.log(responseApprove))
+        .catch((e) => console.log(e));
+    } else {
+      throw Error('This Tenant not exist in vendor');
+    }
+  } else {
+    console.log('This processor not handle this type of request');
+  }
 }
 
 /**
@@ -83,7 +88,6 @@ function checkTenant(requests) {
       });
   });
 }
-
 
 const getRequests = async () => {
   const requests = await fulfillment.searchRequests();
