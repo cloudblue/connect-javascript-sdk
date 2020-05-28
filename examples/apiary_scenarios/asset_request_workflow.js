@@ -27,6 +27,7 @@ const client = new ConnectClient(
 );
 const fulfillment = new Fulfillment(client);
 const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
+
 let tenantIdParam;
 
 /**
@@ -35,16 +36,16 @@ let tenantIdParam;
  * @param   {object}  element  The request of Cloudblue Connect.
  *
  */
-function createTenant(element) {
+const createTenant = async (element) => {
   let mpn;
   let quantity;
   if (element.asset.items && (element.asset.items.length === 1)) {
-    Object.values(element.asset.items).forEach((item) => {
+    element.asset.items.forEach((item) => {
       mpn = item.mpn;
       quantity = item.quantity;
     });
   } else {
-    throw Error('Malformed request, bad quantity of item');
+    throw new Error('Malformed request, bad quantity of item');
   }
   const payload = {
     Attributes: {
@@ -63,25 +64,22 @@ function createTenant(element) {
       },
     },
   };
-  fetch(`${urlBase}/tenant`, {
+  let data = await fetch(`${urlBase}/tenant`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
     cache: 'no-cache',
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      element.asset.params.forEach((param) => {
-        if (param.id === 'tenantId') {
-          fulfillment.updateRequestParameters(element.id, [{ id: 'tenantId', value: data.tenantId }], 'Id of vendor system tenant');
-        }
-      });
-      console.log('data = ', data);
-    })
-    .catch((err) => console.error(err));
-}
+  });
+  data = await data.json();
+  element.asset.params.forEach(async (param) => {
+    if (param.id === 'tenantId') {
+      const requests = await fulfillment.updateRequestParameters(element.id, [{ id: 'tenantId', value: data.tenantId }], 'Id of vendor system tenant');
+      console.log(requests);
+    }
+  });
+};
 
 
 /**
@@ -90,32 +88,32 @@ function createTenant(element) {
  * @param   {object}  requests  The request of Cloudblue Connect.
  *
  */
-function checkTenant(requests) {
-  requests.forEach((element) => {
+const checkTenant = async (requests) => {
+  requests.forEach(async (element) => {
     if (element.type === 'purchase') {
       element.asset.params.forEach((param) => {
+        console.log('param.id', param.id);
         if (param.id === 'tenantId') {
           tenantIdParam = param.value;
         }
       });
       if (tenantIdParam === '') {
         console.log(element);
-        createTenant(element);
+        await createTenant(element);
       } else {
-        throw Error('This Tenant exist in vendor');
+        throw new Error('This Tenant exist in vendor');
       }
     } else {
       console.log('This processor not handle this type of request');
     }
   });
-}
-
-
-const getRequests = async () => {
-  const requests = await fulfillment.searchRequests();
-  return requests;
 };
 
-getRequests()
-  .then((requests) => checkTenant(requests))
-  .catch((e) => console.log(e));
+
+const main = async () => {
+  const requests = await fulfillment.searchRequests();
+  await checkTenant(requests);
+};
+
+
+main().catch((e) => console.log(e));

@@ -27,6 +27,7 @@ const client = new ConnectClient(
 );
 const fulfillment = new Fulfillment(client);
 const urlBase = 'https://SET_YOUR_OWN_SAMPLE.apiary-mock.com/';
+
 let tenantIdParam;
 let templateIdParam;
 
@@ -36,7 +37,7 @@ let templateIdParam;
  * @param   {object}  element  The request of Cloudblue Connect.
  *
  */
-function processRequest(element) {
+const processRequest = async (element) => {
   if (element.type === 'purchase') {
     element.asset.params.forEach((param) => {
       if (param.id === 'tenantId') {
@@ -52,20 +53,15 @@ function processRequest(element) {
       const body = {
         template_id: templateIdParam,
       };
-      const approveRequests = async () => {
-        const responseApprove = await fulfillment.approveRequest(element.id, body);
-        return responseApprove;
-      };
-      approveRequests()
-        .then((responseApprove) => console.log(responseApprove))
-        .catch((e) => console.log(e));
+      const responseApprove = await fulfillment.approveRequest(element.id, body);
+      console.log(responseApprove);
     } else {
-      throw Error('This Tenant not exist in vendor');
+      throw new Error('This Tenant not exist in vendor');
     }
   } else {
     console.log('This processor not handle this type of request');
   }
-}
+};
 
 /**
  * Check if the request is ready into Vendor Portal
@@ -73,27 +69,24 @@ function processRequest(element) {
  * @param   {object}  requests  The request of Cloudblue Connect.
  *
  */
-function checkTenant(requests) {
-  requests.forEach((element) => {
+const checkTenant = async (requests) => {
+  requests.forEach(async (element) => {
     // Verificamos si existe el tennant
     const urlGet = `${urlBase}/tenant?externalId=${element.asset.id}`;
-    fetch(urlGet)
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.status === 'ready') {
-          processRequest(element);
-        } else {
-          throw Error('This Tenant is in process or not exist yet');
-        }
-      });
+    const res = await fetch(urlGet);
+    const json = await res.json();
+    if (json.status === 'ready') {
+      await processRequest(element);
+    } else {
+      throw new Error('This Tenant is in process or not exist yet');
+    }
   });
-}
-
-const getRequests = async () => {
-  const requests = await fulfillment.searchRequests();
-  return requests;
 };
 
-getRequests()
-  .then((requests) => checkTenant(requests))
-  .catch((e) => console.log(e));
+const main = async () => {
+  const requests = await fulfillment.searchRequests();
+  await checkTenant(requests);
+};
+
+
+main().catch((e) => console.log(e));
