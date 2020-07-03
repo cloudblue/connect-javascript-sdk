@@ -49,7 +49,6 @@ describe('ProductResource', () => {
     await expect(prod.configurations('PRD-000').search()).resolves.toEqual(configs);
     expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/configurations', expect.anything());
   });
-
   it.each([
     ['templates', [{ id: 'TL-000', title: 'test template', body: 'template body' }]],
     ['parameters', [{ id: 'test_param', title: 'test parameter' }]],
@@ -62,5 +61,31 @@ describe('ProductResource', () => {
     const method = prod[methodName].bind(prod);
     await expect(method('PRD-000')).resolves.toEqual(respBody);
     expect(fetch).toBeCalledWith(`https://localhost/products/PRD-000/${objType}`, expect.anything());
+  });
+  it('get parameter for a product', async () => {
+    const prod = new ProductResource(client);
+    fetch.mockResponseOnce(JSON.stringify(), { status: 200, headers: contentTypeJson });
+    await expect(prod.getParameter('PRD-000','PRM-000-000-000-0000'));
+    expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/parameters/PRM-000-000-000-0000', expect.anything());
+  });
+  it('create parameter for a product', async () => {
+    const prod = new ProductResource(client);
+    const configs = require('../data/createParameterRequest.json');
+    fetch.mockResponseOnce(JSON.stringify(configs), { status: 200, headers: contentTypeJson });
+    await expect(prod.createParameter('PRD-000', configs)).resolves.toEqual(configs);
+    expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/parameters', expect.anything());
+  });
+  it('update parameter for a product', async () => {
+    const prod = new ProductResource(client);
+    const configs = [{ value: 'test_val', parameter: { id: 'test_param', title: 'test parameter' } }];
+    fetch.mockResponseOnce(JSON.stringify(configs), { status: 200, headers: contentTypeJson });
+    await expect(prod.updateParameter('PRD-000','PRM-000-000-000-0000',configs)).resolves.toEqual(configs);
+    expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/parameters/PRM-000-000-000-0000', expect.anything());
+  });
+  it('delete parameter for a product', async () => {
+    const prod = new ProductResource(client);
+    fetch.mockResponseOnce(JSON.stringify(), { status: 204 });
+    await expect(prod.deleteParameter('PRD-000','PRM-000-000-000-0000'));
+    expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/parameters/PRM-000-000-000-0000', expect.anything());
   });
 });
