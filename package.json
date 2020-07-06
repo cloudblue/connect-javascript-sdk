@@ -1,6 +1,6 @@
 {
   "name": "@cloudblueconnect/connect-javascript-sdk",
-  "version": "19.2.6",
+  "version": "20.0",
   "description": "Cloud Blue Connect Javascript SDK",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "ramda": "^0.26.1"
   },
   "devDependencies": {
-    "@cloudblueconnect/connect-jsdoc-theme": "^20.0",
+    "@cloudblueconnect/connect-jsdoc-theme": "^19.2.1",
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
