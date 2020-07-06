@@ -30,7 +30,7 @@
     "ramda": "^0.26.1"
   },
   "devDependencies": {
-    "@cloudblueconnect/connect-jsdoc-theme": "^19.2.1",
+    "@cloudblueconnect/connect-jsdoc-theme": "^20.0",
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
