@@ -1,5 +1,5 @@
 {
-    "generated": "2020-07-06T08:43:33.324Z",
+    "generated": "2020-07-08T08:55:28.197Z",
     "pages": [
         {
             "name": "Welcome",
@@ -90,164 +90,188 @@
             "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/010_Class_Inventory.md"
         },
         {
+            "name": "Class Listings",
+            "category": "Operations",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/ops/listings.js",
+            "idx": "11",
+            "outputFileName": "011_Class_Listings.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/011_Class_Listings.md"
+        },
+        {
             "name": "Class Subscriptions",
             "category": "Operations",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/ops/subscriptions.js",
-            "idx": "11",
-            "outputFileName": "011_Class_Subscriptions.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/011_Class_Subscriptions.md"
+            "idx": "12",
+            "outputFileName": "012_Class_Subscriptions.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/012_Class_Subscriptions.md"
         },
         {
             "name": "Class ProductConfigurationResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
-            "idx": "12",
-            "outputFileName": "012_Class_ProductConfigurationResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/012_Class_ProductConfigurationResource.md"
+            "idx": "13",
+            "outputFileName": "013_Class_ProductConfigurationResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/013_Class_ProductConfigurationResource.md"
         },
         {
             "name": "Class AccountUserResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/accounts.js",
-            "idx": "13",
-            "outputFileName": "013_Class_AccountUserResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/013_Class_AccountUserResource.md"
+            "idx": "14",
+            "outputFileName": "014_Class_AccountUserResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/014_Class_AccountUserResource.md"
         },
         {
             "name": "Class AccountResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/accounts.js",
-            "idx": "14",
-            "outputFileName": "014_Class_AccountResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/014_Class_AccountResource.md"
-        },
-        {
-            "name": "Class RecurringAssetResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/recurringAssets.js",
             "idx": "15",
-            "outputFileName": "015_Class_RecurringAssetResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/015_Class_RecurringAssetResource.md"
-        },
-        {
-            "name": "Class GenericResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/base.js",
-            "idx": "16",
-            "outputFileName": "016_Class_GenericResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/016_Class_GenericResource.md"
-        },
-        {
-            "name": "Class BillingRequestResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/billingRequests.js",
-            "idx": "17",
-            "outputFileName": "017_Class_BillingRequestResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/017_Class_BillingRequestResource.md"
-        },
-        {
-            "name": "Class ConversationResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/conversations.js",
-            "idx": "18",
-            "outputFileName": "018_Class_ConversationResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/018_Class_ConversationResource.md"
-        },
-        {
-            "name": "Class AssetResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/assets.js",
-            "idx": "19",
-            "outputFileName": "019_Class_AssetResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/019_Class_AssetResource.md"
-        },
-        {
-            "name": "Class TierAccountRequestResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccountRequests.js",
-            "idx": "20",
-            "outputFileName": "020_Class_TierAccountRequestResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/020_Class_TierAccountRequestResource.md"
-        },
-        {
-            "name": "Class ProductActionResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
-            "idx": "21",
-            "outputFileName": "021_Class_ProductActionResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/021_Class_ProductActionResource.md"
-        },
-        {
-            "name": "Class HubResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/hubs.js",
-            "idx": "22",
-            "outputFileName": "022_Class_HubResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/022_Class_HubResource.md"
-        },
-        {
-            "name": "Class TierAccountVersionResource",
-            "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccounts.js",
-            "idx": "23",
-            "outputFileName": "023_Class_TierAccountVersionResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/023_Class_TierAccountVersionResource.md"
+            "outputFileName": "015_Class_AccountResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/015_Class_AccountResource.md"
         },
         {
             "name": "Class ProductResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
-            "idx": "24",
-            "outputFileName": "024_Class_ProductResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/024_Class_ProductResource.md"
+            "idx": "16",
+            "outputFileName": "016_Class_ProductResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/016_Class_ProductResource.md"
         },
         {
-            "name": "Class TierAccountResource",
+            "name": "Class GenericResource",
             "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccounts.js",
-            "idx": "25",
-            "outputFileName": "025_Class_TierAccountResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/025_Class_TierAccountResource.md"
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/base.js",
+            "idx": "17",
+            "outputFileName": "017_Class_GenericResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/017_Class_GenericResource.md"
         },
         {
-            "name": "Class ProductVersionResource",
+            "name": "Class BillingRequestResource",
             "category": "Resources",
-            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
-            "idx": "26",
-            "outputFileName": "026_Class_ProductVersionResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/026_Class_ProductVersionResource.md"
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/billingRequests.js",
+            "idx": "18",
+            "outputFileName": "018_Class_BillingRequestResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/018_Class_BillingRequestResource.md"
+        },
+        {
+            "name": "Class ConversationResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/conversations.js",
+            "idx": "19",
+            "outputFileName": "019_Class_ConversationResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/019_Class_ConversationResource.md"
+        },
+        {
+            "name": "Class AssetResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/assets.js",
+            "idx": "20",
+            "outputFileName": "020_Class_AssetResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/020_Class_AssetResource.md"
         },
         {
             "name": "Class RequestResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/requests.js",
+            "idx": "21",
+            "outputFileName": "021_Class_RequestResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/021_Class_RequestResource.md"
+        },
+        {
+            "name": "Class ListingRequestResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/listingRequests.js",
+            "idx": "22",
+            "outputFileName": "022_Class_ListingRequestResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/022_Class_ListingRequestResource.md"
+        },
+        {
+            "name": "Class HubResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/hubs.js",
+            "idx": "23",
+            "outputFileName": "023_Class_HubResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/023_Class_HubResource.md"
+        },
+        {
+            "name": "Class TierAccountRequestResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccountRequests.js",
+            "idx": "24",
+            "outputFileName": "024_Class_TierAccountRequestResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/024_Class_TierAccountRequestResource.md"
+        },
+        {
+            "name": "Class ProductVersionResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
+            "idx": "25",
+            "outputFileName": "025_Class_ProductVersionResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/025_Class_ProductVersionResource.md"
+        },
+        {
+            "name": "Class ProductParameterResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
+            "idx": "26",
+            "outputFileName": "026_Class_ProductParameterResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/026_Class_ProductParameterResource.md"
+        },
+        {
+            "name": "Class ProductActionResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
             "idx": "27",
-            "outputFileName": "027_Class_RequestResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/027_Class_RequestResource.md"
+            "outputFileName": "027_Class_ProductActionResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/027_Class_ProductActionResource.md"
+        },
+        {
+            "name": "Class TierAccountResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccounts.js",
+            "idx": "28",
+            "outputFileName": "028_Class_TierAccountResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/028_Class_TierAccountResource.md"
+        },
+        {
+            "name": "Class RecurringAssetResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/recurringAssets.js",
+            "idx": "29",
+            "outputFileName": "029_Class_RecurringAssetResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/029_Class_RecurringAssetResource.md"
+        },
+        {
+            "name": "Class TierAccountVersionResource",
+            "category": "Resources",
+            "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierAccounts.js",
+            "idx": "30",
+            "outputFileName": "030_Class_TierAccountVersionResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/030_Class_TierAccountVersionResource.md"
         },
         {
             "name": "Class TierConfigRequestResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierConfigRequests.js",
-            "idx": "28",
-            "outputFileName": "028_Class_TierConfigRequestResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/028_Class_TierConfigRequestResource.md"
+            "idx": "31",
+            "outputFileName": "031_Class_TierConfigRequestResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/031_Class_TierConfigRequestResource.md"
         },
         {
             "name": "Class TierConfigResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/tierConfigs.js",
-            "idx": "29",
-            "outputFileName": "029_Class_TierConfigResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/029_Class_TierConfigResource.md"
+            "idx": "32",
+            "outputFileName": "032_Class_TierConfigResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/032_Class_TierConfigResource.md"
         },
         {
             "name": "Class WebhookResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/webhooks.js",
-            "idx": "30",
-            "outputFileName": "030_Class_WebhookResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/030_Class_WebhookResource.md"
+            "idx": "33",
+            "outputFileName": "033_Class_WebhookResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/033_Class_WebhookResource.md"
         }
     ]
 }

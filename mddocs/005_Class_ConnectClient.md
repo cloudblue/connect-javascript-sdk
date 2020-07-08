@@ -21,6 +21,7 @@
     * [.tierConfigs](#ConnectClient+tierConfigs) : <code>TierConfigResource</code>
     * [.tierConfigRequests](#ConnectClient+tierConfigRequests) : <code>TierConfigRequestResource</code>
     * [.webhooks](#ConnectClient+webhooks) : <code>WebhookResource</code>
+    * [.listingRequests](#ConnectClient+listingRequests) : <code>ListingRequestResource</code>
 
 <a name="new_ConnectClient_new"></a>
 
@@ -126,5 +127,12 @@ the *TierConfigurationRequest* resource endpoint.
 ### connectClient.webhooks : <code>WebhookResource</code>
 Returns an instance of the *WebhookResource* class to access
 the *Webhook* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+listingRequests"></a>
+
+### connectClient.listingRequests : <code>ListingRequestResource</code>
+Returns an instance of the *ListingRequestResource* class to access
+the *ListingRequest* resource endpoint.
 
 **Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  

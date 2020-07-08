@@ -13,6 +13,8 @@ developers to access the inventory (products, items etc).
     * [.getAssetParametersForFulfillmentByProduct(id)](#Inventory+getAssetParametersForFulfillmentByProduct) ⇒ <code>Array</code>
     * [.getProductTemplates(id)](#Inventory+getProductTemplates) ⇒ <code>Array</code>
     * [.getProductAssetTemplates(id)](#Inventory+getProductAssetTemplates) ⇒ <code>Array</code>
+    * [.getProductActionLink(id, actionId, assetId)](#Inventory+getProductActionLink) ⇒ <code>Array</code>
+    * [.searchProductParameters(productId, query)](#Inventory+searchProductParameters) ⇒ <code>Array</code>
 
 <a name="new_Inventory_new"></a>
 
@@ -73,4 +75,31 @@ Returns the list of templates configured for a product with scope "asset".
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>string</code> | The unique identifier of the product. |
+
+<a name="Inventory+getProductActionLink"></a>
+
+### inventory.getProductActionLink(id, actionId, assetId) ⇒ <code>Array</code>
+Returns the action link for a product action.
+
+**Kind**: instance method of [<code>Inventory</code>](#Inventory)  
+**Returns**: <code>Array</code> - An array of Template objects.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the product. |
+| actionId | <code>string</code> | The unique product action identifier. |
+| assetId | <code>string</code> | The unique asset identifier. |
+
+<a name="Inventory+searchProductParameters"></a>
+
+### inventory.searchProductParameters(productId, query) ⇒ <code>Array</code>
+Search the parameters configured for a product.
+
+**Kind**: instance method of [<code>Inventory</code>](#Inventory)  
+**Returns**: <code>Array</code> - An array with the Parameter objects.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| productId | <code>string</code> | The id of the product for which search parameters. |
+| query | <code>object</code> | The filter query. |
 

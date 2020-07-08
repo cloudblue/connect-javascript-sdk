@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>RecurringAssetResource</title>
+    <title>Listings</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>RecurringAssetResource</h1>
+                        <h1>Listings</h1>
                     </header>
                     
                     
@@ -84,10 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>RecurringAssetResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="RecurringAssetResource.html">RecurringAssetResource</a>}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Listings<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="Listings.html">Listings</a>}</span></h2>
         
-            <div class="class-description"><p>The <em>RecurringAssetResource</em> class provides methods to access the recurring
-assets endpoint of the Cloud Blue Connect API.</p></div>
+            <div class="class-description"><p>The Listings class exposes specialized methods to help
+developers to handle listings and listing requests.</p></div>
         
     
 </header>
@@ -103,12 +103,12 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="RecurringAssetResource">
-        <a class="href-link" href="#RecurringAssetResource">#</a>
+    <h4 class="name" id="Listings">
+        <a class="href-link" href="#Listings">#</a>
         
         <span class="code-name">
             
-                new RecurringAssetResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="RecurringAssetResource.html">RecurringAssetResource</a>}</span>
+                new Listings<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="Listings.html">Listings</a>}</span>
             
         </span>
     </h4>
@@ -117,7 +117,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Creates a new instance of the <em>RecurringAssetResource</em> class.</p>
+        <p>Creates an instance of the Listings class.</p>
     </div>
     
 
@@ -242,13 +242,13 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An instance of the <em>RecurringAssetResource</em> class.</p></div>
+    <div class='param-desc column is-7'><p>An instance of the Listings class.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type"><a href="RecurringAssetResource.html">RecurringAssetResource</a></span>
+<span class="param-type"><a href="Listings.html">Listings</a></span>
 
 
     </div>
@@ -270,15 +270,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     </div>
     
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="GenericResource.html">GenericResource</a></li>
-    </ul>
-
 
     
 
@@ -290,90 +281,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
     
 
-    
-
-    
-        <div class='vertical-section'>
-            <h3 class="title"><span>Members</span></h3>
-            <div class="members">
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">string</span>
-
-
-    </span>
-
-<h4 class="name" id="baseUri">
-    <a class="href-link" href="#baseUri">#</a>
-    
-    <span class="code-name">
-        baseUri
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <p>Returns the base URI of the resource mapped by this class.</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#baseUri">GenericResource#baseUri</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
     
 
     
@@ -385,8 +292,8 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="create">
-        <a class="href-link" href="#create">#</a>
+    <h4 class="name" id="cancelListingRequest">
+        <a class="href-link" href="#cancelListingRequest">#</a>
         
             
                 <span class='tag'>async</span>
@@ -394,7 +301,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                create<span class="signature">(obj)</span><span class="type-signature"> &rarr; {object}</span>
+                cancelListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -403,181 +310,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Create a new resource.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>obj</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">object</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The resource to create.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#create">GenericResource#create</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>The created resource.</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">object</span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="delete">
-        <a class="href-link" href="#delete">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                delete<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Delete a resource.</p>
+        <p>Cancel the <em>ListingRequest</em> object identified by its id.</p>
     </div>
     
 
@@ -631,7 +364,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The unique identifier of the resource to delete.</p></td>
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
 </tr>
 
 
@@ -651,11 +384,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#delete">GenericResource#delete</a>
-    </li></ul></dd>
     
 
     
@@ -699,179 +427,30 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
 
-
-
-
-</div>
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
-                <div class="member">
+                    
 
-
+<div class="columns">
     
-    <h4 class="name" id="fetch">
-        <a class="href-link" href="#fetch">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                fetch<span class="signature">(url, options)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
     
     
-    <div class="description">
-        <p>Fetch the URL and returns a response.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>url</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>the URL to fetch.</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>options</code></td>
-  
-
-  <td class="type">
-  
-      
 <span class="param-type">object</span>
 
 
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>the request options.</p></td>
-</tr>
-
-
+    </div>
     
-    </tbody>
-</table>
+</div>
 
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#fetch">GenericResource#fetch</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
+        </div>
+    </div>
 
 
 
@@ -882,8 +461,8 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="get">
-        <a class="href-link" href="#get">#</a>
+    <h4 class="name" id="completeListingRequest">
+        <a class="href-link" href="#completeListingRequest">#</a>
         
             
                 <span class='tag'>async</span>
@@ -891,7 +470,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                get<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+                completeListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -900,7 +479,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Retrieve a resource by its unique identifier.</p>
+        <p>Complete the <em>ListingRequest</em> object identified by its id.</p>
     </div>
     
 
@@ -954,7 +533,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The unique identifier of the resource to retrieve.</p></td>
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
 </tr>
 
 
@@ -974,11 +553,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#get">GenericResource#get</a>
-    </li></ul></dd>
     
 
     
@@ -1030,7 +604,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The resource.</p></div>
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -1056,8 +630,8 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="search">
-        <a class="href-link" href="#search">#</a>
+    <h4 class="name" id="createListingRequest">
+        <a class="href-link" href="#createListingRequest">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1065,7 +639,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                search<span class="signature">(filters)</span><span class="type-signature"> &rarr; {Array}</span>
+                createListingRequest<span class="signature">(request)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -1074,7 +648,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Search for a resource.</p>
+        <p>Creates a new <em>ListingRequest</em></p>
     </div>
     
 
@@ -1112,7 +686,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>filters</code></td>
+      <td class="name"><code>request</code></td>
   
 
   <td class="type">
@@ -1128,7 +702,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The query to send to the server as a RQL object.</p></td>
+  <td class="description last"><p>The ListingRequest object.</p></td>
 </tr>
 
 
@@ -1148,11 +722,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#search">GenericResource#search</a>
-    </li></ul></dd>
     
 
     
@@ -1204,7 +773,685 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An array of resources that match the provided filters.</p></div>
+    <div class='param-desc column is-7'><p>The created ListingRequest object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="deployListingRequest">
+        <a class="href-link" href="#deployListingRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                deployListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Deploy the <em>ListingRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="getListingRequest">
+        <a class="href-link" href="#getListingRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                getListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Retrieve the <em>ListingRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="refineListingRequest">
+        <a class="href-link" href="#refineListingRequest">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                refineListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Refine the <em>ListingRequest</em> object identified by its id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="searchListingRequests">
+        <a class="href-link" href="#searchListingRequests">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                searchListingRequests<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Returns a list of <em>ListingRequest</em> objects that match the provided
+(optional) query.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>query</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The optional query to filter results.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An array of <em>ListingRequest</em> object optionally matching
+the provided query.</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -1230,8 +1477,8 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="update">
-        <a class="href-link" href="#update">#</a>
+    <h4 class="name" id="submitListingRequest">
+        <a class="href-link" href="#submitListingRequest">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1239,7 +1486,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                update<span class="signature">(id, obj)</span><span class="type-signature"> &rarr; {object}</span>
+                submitListingRequest<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span>
             
         </span>
     </h4>
@@ -1248,7 +1495,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Update a resource.</p>
+        <p>Submit the <em>ListingRequest</em> object identified by its id.</p>
     </div>
     
 
@@ -1302,32 +1549,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The unique identifier of the resource to update.</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>obj</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">object</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The eventually partial resource to update.</p></td>
+  <td class="description last"><p>The unique identifier of the <em>ListingRequest</em> object.</p></td>
 </tr>
 
 
@@ -1347,11 +1569,6 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="GenericResource.html#update">GenericResource#update</a>
-    </li></ul></dd>
     
 
     
@@ -1403,7 +1620,7 @@ assets endpoint of the Cloud Blue Connect API.</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The updated resource.</p></div>
+    <div class='param-desc column is-7'><p>The <em>ListingRequest</em> object.</p></div>
     
     
     <div class='column is-5 has-text-left'>

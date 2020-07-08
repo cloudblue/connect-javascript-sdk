@@ -13,6 +13,10 @@
 <dd><p>The <em>ProductConfigurationResource</em> class provides methods to access the
 <em>ProductConfiguration</em> objects for a product.</p>
 </dd>
+<dt><a href="#ProductParameterResource">ProductParameterResource</a> ⇐ <code>GenericResource</code></dt>
+<dd><p>The <em>ProductParameterResource</em> class provides methods to access the
+<em>ProductConfiguration</em> objects for a product.</p>
+</dd>
 <dt><a href="#ProductResource">ProductResource</a> ⇐ <code>GenericResource</code></dt>
 <dd><p>The <em>ProductResource</em> class provides methods to access the products
 endpoint of the Cloud Blue Connect API.</p>
@@ -90,6 +94,15 @@ The *ProductConfigurationResource* class provides methods to access the
 **Kind**: global class  
 **Extends**: <code>GenericResource</code>  
 **Category**: Resources  
+<a name="ProductParameterResource"></a>
+
+## ProductParameterResource ⇐ <code>GenericResource</code>
+The *ProductParameterResource* class provides methods to access the
+*ProductConfiguration* objects for a product.
+
+**Kind**: global class  
+**Extends**: <code>GenericResource</code>  
+**Category**: Resources  
 <a name="ProductResource"></a>
 
 ## ProductResource ⇐ <code>GenericResource</code>
@@ -105,12 +118,9 @@ endpoint of the Cloud Blue Connect API.
     * [.actions(id)](#ProductResource+actions) ⇒ [<code>ProductActionResource</code>](#ProductActionResource)
     * [.versions(id)](#ProductResource+versions) ⇒ [<code>ProductVersionResource</code>](#ProductVersionResource)
     * [.configurations(id)](#ProductResource+configurations) ⇒ [<code>ProductConfigurationResource</code>](#ProductConfigurationResource)
+    * [.parameters(id)](#ProductResource+parameters) ⇒ [<code>ProductParameterResource</code>](#ProductParameterResource)
     * [.getTemplates(id)](#ProductResource+getTemplates) ⇒ <code>Array</code>
-    * [.getParameters(id)](#ProductResource+getParameters) ⇒ <code>Array</code>
-    * [.getParameter(productId, paramId)](#ProductResource+getParameter) ⇒ <code>Array</code>
-    * [.createParameter(productId, obj)](#ProductResource+createParameter) ⇒ <code>Array</code>
-    * [.updateParameter(productId, paramId, obj)](#ProductResource+updateParameter) ⇒ <code>Array</code>
-    * [.deleteParameter(productId, paramId)](#ProductResource+deleteParameter) ⇒ <code>Array</code>
+    * ~~[.getParameters(id)](#ProductResource+getParameters) ⇒ <code>Array</code>~~
     * [.getItems(id)](#ProductResource+getItems) ⇒ <code>Array</code>
     * [.getConnections(id)](#ProductResource+getConnections) ⇒ <code>Array</code>
 
@@ -164,6 +174,19 @@ Returns an instance of the *ProductConfigurationResource* for a *ProductConfigur
 | --- | --- | --- |
 | id | <code>string</code> | The unique identifier of the *Product*. |
 
+<a name="ProductResource+parameters"></a>
+
+### productResource.parameters(id) ⇒ [<code>ProductParameterResource</code>](#ProductParameterResource)
+Returns an instance of the *ProductParameterResource* for a *Product*.
+
+**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
+**Returns**: [<code>ProductParameterResource</code>](#ProductParameterResource) - An instance of the *ProductParameterResource*
+                                          for the product.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the *Product*. |
+
 <a name="ProductResource+getTemplates"></a>
 
 ### productResource.getTemplates(id) ⇒ <code>Array</code>
@@ -178,7 +201,9 @@ Returns the list of *Template* objects configured for the *Product*.
 
 <a name="ProductResource+getParameters"></a>
 
-### productResource.getParameters(id) ⇒ <code>Array</code>
+### ~~productResource.getParameters(id) ⇒ <code>Array</code>~~
+***Deprecated***
+
 Returns the list of *Parameter* objects configured for the *Product*.
 
 **Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
@@ -187,59 +212,6 @@ Returns the list of *Parameter* objects configured for the *Product*.
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>string</code> | The unique identifier of the *Product*. |
-
-<a name="ProductResource+getParameter"></a>
-
-### productResource.getParameter(productId, paramId) ⇒ <code>Array</code>
-Returns the Parameter object identified by paramId for the product identified with productId.
-
-**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
-**Returns**: <code>Array</code> - The list of *Parameter* objects.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| productId | <code>string</code> | The unique identifier of the *Product*. |
-| paramId | <code>string</code> | The unique identifier of the *Param*. |
-
-<a name="ProductResource+createParameter"></a>
-
-### productResource.createParameter(productId, obj) ⇒ <code>Array</code>
-Create *Parameter* object for the *Product*.
-
-**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
-**Returns**: <code>Array</code> - The list of *Parameter* objects.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| productId | <code>string</code> | The unique identifier of the *Product*. |
-| obj | <code>string</code> | The object that describes the parameter. |
-
-<a name="ProductResource+updateParameter"></a>
-
-### productResource.updateParameter(productId, paramId, obj) ⇒ <code>Array</code>
-Update *Parameter* object for the *Product*.
-
-**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
-**Returns**: <code>Array</code> - The list of *Parameter* objects.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| productId | <code>string</code> | The unique identifier of the *Product*. |
-| paramId | <code>string</code> | The unique identifier of the *Param*. |
-| obj | <code>string</code> | The object that describes the parameter. |
-
-<a name="ProductResource+deleteParameter"></a>
-
-### productResource.deleteParameter(productId, paramId) ⇒ <code>Array</code>
-Delete *Parameter* object for the *Product*.
-
-**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
-**Returns**: <code>Array</code> - The list of *Parameter* objects.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| productId | <code>string</code> | The unique identifier of the *Product*. |
-| paramId | <code>string</code> | The unique identifier of the *Param*. |
 
 <a name="ProductResource+getItems"></a>
 
