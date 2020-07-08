@@ -9,46 +9,26 @@ describe('Inventory', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-  it('getParametersByProduct invokes getParameters on products endpoint', async () => {
-    const mockedFn = client.products.getParameters = jest.fn();
+  it('getParametersByProduct invokes get on product parameters endpoint', async () => {
+    const mockedFn = client.products.parameters('PRD-000').search = jest.fn();
     const inv = new Inventory(client);
     await inv.getParametersByProduct('PRD-000');
-    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+    expect(mockedFn).toHaveBeenCalled();
   });
-  it('getAssetParametersForFulfillmentByProduct invokes this.getParametersByProduct and filter results by scope=asset and phase=fulfillment', async () => {
-    const mockedFn = client.products.getParameters = jest.fn();
-    mockedFn.mockImplementation((id) => Promise.resolve([
-      {
-        id: 'asset_param1',
-        scope: 'asset',
-        phase: 'fulfillment',
-      },
-      {
-        id: 'asset_param2',
-        scope: 'other_scope',
-        phase: 'fulfillment',
-      },
-      {
-        id: 'asset_param3',
-        scope: 'asset',
-        phase: 'other_phase',
-      }
-    ]));
+  it('getAssetParametersForFulfillmentByProduct search parameters with scope=asset and phase=fulfillment', async () => {
+    const mockedFn = client.products.parameters('PRD-000').search = jest.fn();
     const inv = new Inventory(client);
-    await expect(inv.getAssetParametersForFulfillmentByProduct('PRD-000')).resolves.toEqual([
-      {
-        id: 'asset_param1',
-        scope: 'asset',
-        phase: 'fulfillment',
-      }      
-    ]);
-    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+    await inv.getAssetParametersForFulfillmentByProduct('PRD-000');
+    expect(mockedFn).toHaveBeenCalledWith({
+      scope: 'asset',
+      phase: 'fulfillment',
+    });
   });
-  it('getParametersByProduct invokes getParameters on products endpoint', async () => {
-    const mockedFn = client.products.getParameters = jest.fn();
+  it('getParametersByProduct invokes search on the product parameters endpoint', async () => {
+    const mockedFn = client.products.parameters('PRD-000').search = jest.fn();
     const inv = new Inventory(client);
     await inv.getParametersByProduct('PRD-000');
-    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+    expect(mockedFn).toHaveBeenCalled();
   });
   it('getProductTemplates invokes getTemplates on products endpoint', async () => {
     const mockedFn = client.products.getTemplates = jest.fn();
@@ -87,5 +67,15 @@ describe('Inventory', () => {
       }      
     ]);
     expect(inv.getProductTemplates).toHaveBeenCalledWith('PRD-000');
+  });
+  it('searchProductParameters invokes search on the product parameters endpoint', async () => {
+    const mockedFn = client.products.parameters('PRD-000').search = jest.fn();
+    const inv = new Inventory(client);
+    const query = {
+      scope: 'asset',
+      phase: 'ordering',
+    };
+    await inv.searchProductParameters('PRD-000', query)
+    expect(mockedFn).toHaveBeenCalledWith(query);
   });
 });
