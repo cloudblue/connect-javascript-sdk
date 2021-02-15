@@ -23,6 +23,7 @@ describe('ConnectClient', () => {
     ['tierConfigRequests', api.TierConfigRequestResource],
     ['webhooks', api.WebhookResource],
     ['listingRequests', api.ListingRequestResource],
+    ['cases', api.CaseResource],
   ])('%s returns an instance of the corresponding endpoint', (property, type) => {
     const client = new ConnectClient('http://server', '1234567890');
     expect(client[property]).toBeInstanceOf(type);
