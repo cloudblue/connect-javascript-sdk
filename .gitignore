@@ -9,3 +9,4 @@ docs/build
 .devcontainer
 .vscode
 .scannerwork
+test.js

@@ -183,48 +183,33 @@ describe('Fulfillment - Others', () => {
     jest.clearAllMocks();
   });
   it('getConnectionIdByProductAndHub invokes getConnections on products endpoint', async () => {
-    const mockedFn = client.products.getConnections = jest.fn();
+    const connectionResource = client.products.connections('PRD-000');
+    const mockedFn = connectionResource.search = jest.fn();
     mockedFn.mockImplementation(async (productId) => {
       return Promise.resolve([
         {
           id: 'CT-000',
           hub: {
             id: 'HB-000'
-          }
-        },
-        {
-          id: 'CT-001',
-          hub: {
-            id: 'HB-001'
           }
         },        
       ])
     });
     const ff = new Fulfillment(client);
     await expect(ff.getConnectionIdByProductAndHub('PRD-000', 'HB-000')).resolves.toEqual('CT-000');
-    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+    expect(mockedFn).toHaveBeenCalledWith({'hub.id': 'HB-000'});
   });
+  
   it('getConnectionIdByProductAndHub returns null if (hub, product) does not exists', async () => {
-    const mockedFn = client.products.getConnections = jest.fn();
+    const connectionResource = client.products.connections('PRD-000');
+    const mockedFn = connectionResource.search = jest.fn();
     mockedFn.mockImplementation(async (productId) => {
-      return Promise.resolve([
-        {
-          id: 'CT-000',
-          hub: {
-            id: 'HB-000'
-          }
-        },
-        {
-          id: 'CT-001',
-          hub: {
-            id: 'HB-001'
-          }
-        },        
-      ])
+      return Promise.resolve([]);
     });
     const ff = new Fulfillment(client);
     await expect(ff.getConnectionIdByProductAndHub('PRD-000', 'HB-003')).resolves.toBeNull();
-    expect(mockedFn).toHaveBeenCalledWith('PRD-000');
+    expect(mockedFn).toHaveBeenCalledWith({'hub.id': 'HB-003'});
   });
+  
 });
 
