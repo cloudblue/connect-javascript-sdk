@@ -15,7 +15,11 @@
 </dd>
 <dt><a href="#ProductParameterResource">ProductParameterResource</a> ⇐ <code>GenericResource</code></dt>
 <dd><p>The <em>ProductParameterResource</em> class provides methods to access the
-<em>ProductConfiguration</em> objects for a product.</p>
+<em>Productpameter</em> objects for a product.</p>
+</dd>
+<dt><a href="#ProductConnectionsResource">ProductConnectionsResource</a> ⇐ <code>GenericResource</code></dt>
+<dd><p>The <em>ProductConnectionsResource</em> class provides methods to access the
+<em>ProductConnection</em> objects for a product.</p>
 </dd>
 <dt><a href="#ProductResource">ProductResource</a> ⇐ <code>GenericResource</code></dt>
 <dd><p>The <em>ProductResource</em> class provides methods to access the products
@@ -98,7 +102,16 @@ The *ProductConfigurationResource* class provides methods to access the
 
 ## ProductParameterResource ⇐ <code>GenericResource</code>
 The *ProductParameterResource* class provides methods to access the
-*ProductConfiguration* objects for a product.
+*Productpameter* objects for a product.
+
+**Kind**: global class  
+**Extends**: <code>GenericResource</code>  
+**Category**: Resources  
+<a name="ProductConnectionsResource"></a>
+
+## ProductConnectionsResource ⇐ <code>GenericResource</code>
+The *ProductConnectionsResource* class provides methods to access the
+*ProductConnection* objects for a product.
 
 **Kind**: global class  
 **Extends**: <code>GenericResource</code>  
@@ -119,6 +132,7 @@ endpoint of the Cloud Blue Connect API.
     * [.versions(id)](#ProductResource+versions) ⇒ [<code>ProductVersionResource</code>](#ProductVersionResource)
     * [.configurations(id)](#ProductResource+configurations) ⇒ [<code>ProductConfigurationResource</code>](#ProductConfigurationResource)
     * [.parameters(id)](#ProductResource+parameters) ⇒ [<code>ProductParameterResource</code>](#ProductParameterResource)
+    * [.connections(id)](#ProductResource+connections) ⇒ [<code>ProductConnectionsResource</code>](#ProductConnectionsResource)
     * [.getTemplates(id)](#ProductResource+getTemplates) ⇒ <code>Array</code>
     * ~~[.getParameters(id)](#ProductResource+getParameters) ⇒ <code>Array</code>~~
     * [.getItems(id)](#ProductResource+getItems) ⇒ <code>Array</code>
@@ -181,6 +195,19 @@ Returns an instance of the *ProductParameterResource* for a *Product*.
 
 **Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
 **Returns**: [<code>ProductParameterResource</code>](#ProductParameterResource) - An instance of the *ProductParameterResource*
+                                          for the product.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the *Product*. |
+
+<a name="ProductResource+connections"></a>
+
+### productResource.connections(id) ⇒ [<code>ProductConnectionsResource</code>](#ProductConnectionsResource)
+Returns an instance of the *ProductConnectionsResource* for a *Product*.
+
+**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
+**Returns**: [<code>ProductConnectionsResource</code>](#ProductConnectionsResource) - An instance of the *ProductParameterResource*
                                           for the product.  
 
 | Param | Type | Description |
