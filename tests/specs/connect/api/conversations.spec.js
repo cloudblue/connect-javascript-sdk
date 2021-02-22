@@ -34,25 +34,35 @@ describe('ConversationResource', () => {
 
   it('returns a list of messages of a conversation specified by its id', async () => {
     const conv = new ConversationResource(client);
-    const messages = {
-      id: "CO-000-000-000",
-      messages: [
-        {
-          id: 'ME-000-000-000',
-          conversation: 'CO-000-000-000',
-          created: '2018-12-18T13:03:30+00:00',
-          creator: {
-            id: 'UR-000-000-000',
-            name: 'Some User'
-          },
-          text: 'Hi, check out'
-        },
-      ],
-      creator: {
-        id: 'UR-000-000-000',
-        name: 'Some User'
+    const messages =module.exports = [
+    {
+      id: 'ME-000',
+      conversation: 'CO-000',
+      account: {
+        id: 'VA-00-000',
+        name: 'Vendor name'
       },
-    };
+      created: '2021-02-22T08:52:11+00:00',
+      creator: {
+        id: 'SU-000-000',
+        name: 'name'
+      },
+      text: 'text message',
+      type: 'message',
+      events: {
+        created: {
+          at: '2021-02-22T08:52:11+00:00',
+          by: {
+            id: 'SU-000-000',
+            name: 'name'
+          }
+        },
+        updated: {
+          at: '2021-02-22T08:52:11+00:00'
+        }
+      }
+    },
+  ];
   fetch.mockResponseOnce(JSON.stringify(messages), { status: 200, headers: contentTypeJson });
     await expect(conv.messages('PR-001').search()).resolves.toEqual(messages);
     expect(fetch).toBeCalledWith('https://localhost/conversations/PR-001/messages', expect.anything());
