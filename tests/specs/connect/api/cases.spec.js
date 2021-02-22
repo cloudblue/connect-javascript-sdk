@@ -45,10 +45,9 @@ describe('CaseResource', () => {
     ['close'],
   ])('invoke the %s a action on a case request', async (action) => {
     const lstr = new CaseResource(client);
-    fetch.mockResponseOnce('', { status: 200, headers: contentTypeJson });
+    fetch.mockResponseOnce('{}', { status: 200, headers: contentTypeJson });
     const method = lstr[action].bind(lstr);
     await method('CA-000-000-000');
     expect(fetch).toBeCalledWith(`https://localhost/helpdesk/cases/CA-000-000-000/${action}`, expect.anything());
   });
 });
-
