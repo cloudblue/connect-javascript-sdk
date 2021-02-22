@@ -34,7 +34,7 @@ describe('ConversationResource', () => {
 
   it('returns a list of messages of a conversation specified by its id', async () => {
     const conv = new ConversationResource(client);
-    const messages =module.exports = [
+    const messages = [
     {
       id: 'ME-000',
       conversation: 'CO-000',
