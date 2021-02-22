@@ -32,6 +32,19 @@ describe('ConversationResource', () => {
     expect(fetch).toBeCalledWith('https://localhost/conversations?instance_id=PR-001', expect.anything());
   });
 
+  it('returns a list of messages of a conversation specified by its id', async () => {
+    const conv = new ConversationResource(client);
+    const conversations = [
+      {
+        id: 'CV-001',
+        messages: []
+      }
+    ]
+    fetch.mockResponseOnce(JSON.stringify(conversations), { status: 200, headers: contentTypeJson });
+    await expect(conv.messages('PR-001').search()).resolves.toEqual(conversations);
+    expect(fetch).toBeCalledWith('https://localhost/conversations/PR-001/messages', expect.anything());
+  });
+
   it('append a message to a conversation', async () => {
     const conv = new ConversationResource(client);
     const obj = {id: 'ME-000', conversation: 'CO-000', text: 'hello'};

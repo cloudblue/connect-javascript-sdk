@@ -30,14 +30,6 @@ describe('CaseResource', () => {
     expect(fetch).toBeCalledWith('https://localhost/helpdesk/cases/CA-000-000-000/attachments', expect.anything());
   });
 
-  it('returns the comments of the helpdesk case', async () => {
-    const cases = new CaseResource(client);
-    const comments = [{ id: 'CA-000-000-000', name: 'test version comments' }];
-    fetch.mockResponseOnce(JSON.stringify(comments), { status: 200, headers: contentTypeJson });
-    await expect(cases.comments('CA-000-000-000').search()).resolves.toEqual(comments);
-    expect(fetch).toBeCalledWith('https://localhost/helpdesk/cases/CA-000-000-000/comments', expect.anything());
-  });
-
   it('returns the settings of the helpdesk case', async () => {
     const cases = new CaseResource(client);
     const settings = [{ id: 'CA-000-000-000', name: 'test helpdesk case' }];
