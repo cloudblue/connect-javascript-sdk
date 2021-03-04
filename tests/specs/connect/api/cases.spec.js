@@ -42,12 +42,31 @@ describe('CaseResource', () => {
     ['pend'],
     ['inquire'],
     ['resolve'],
-    ['close'],
   ])('invoke the %s a action on a case request', async (action) => {
     const lstr = new CaseResource(client);
     fetch.mockResponseOnce('{}', { status: 200, headers: contentTypeJson });
     const method = lstr[action].bind(lstr);
     await method('CA-000-000-000');
     expect(fetch).toBeCalledWith(`https://localhost/helpdesk/cases/CA-000-000-000/${action}`, expect.anything());
+  });
+
+  it('close helpdesk case', async () => {
+    const req = new CaseResource(client);
+    const response =  {
+      feedback: 'Cool resolution',
+      rating: 5,
+    };
+  
+    fetch.mockResponseOnce(JSON.stringify(response), { status: 200, headers:  contentTypeJson });
+    const reqBody = {
+      rating: 5,
+      feedback: 'Cool resolution',
+    };
+    await expect(req.close('CA-0000', 5, 'Cool resolution')).resolves.toEqual(response);
+    expect(fetch).toBeCalledWith('https://localhost/helpdesk/cases/CA-0000/close', {
+      method: 'POST',
+      headers: expect.anything(),
+      body: JSON.stringify(reqBody),
+    });    
   });
 });
