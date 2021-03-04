@@ -50,7 +50,7 @@ endpoint of the CloudBlue Connect API.
     * [.pend(id)](#CaseResource+pend) ⇒ <code>CaseCommentsResource</code>
     * [.inquire(id)](#CaseResource+inquire) ⇒ <code>CaseCommentsResource</code>
     * [.resolve(id)](#CaseResource+resolve) ⇒ <code>CaseCommentsResource</code>
-    * [.close(id)](#CaseResource+close) ⇒ <code>CaseCommentsResource</code>
+    * [.close(id, rating, feedback)](#CaseResource+close) ⇒ <code>CaseCommentsResource</code>
 
 <a name="new_CaseResource_new"></a>
 
@@ -130,7 +130,7 @@ Set *Case* to resolve status.
 
 <a name="CaseResource+close"></a>
 
-### caseResource.close(id) ⇒ <code>CaseCommentsResource</code>
+### caseResource.close(id, rating, feedback) ⇒ <code>CaseCommentsResource</code>
 Set *Case* to close status.
 
 **Kind**: instance method of [<code>CaseResource</code>](#CaseResource)  
@@ -140,4 +140,6 @@ Set *Case* to close status.
 | Param | Type | Description |
 | --- | --- | --- |
 | id | <code>string</code> | The unique identifier of the *Case*. |
+| rating | <code>rating</code> | Rating of the case |
+| feedback | <code>string</code> | Feedback message |
 
