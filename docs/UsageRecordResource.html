@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>ListingRequestResource</title>
+    <title>UsageRecordResource</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>ListingRequestResource</h1>
+                        <h1>UsageRecordResource</h1>
                     </header>
                     
                     
@@ -84,10 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ListingRequestResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="ListingRequestResource.html">ListingRequestResource</a>}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>UsageRecordResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="UsageRecordResource.html">UsageRecordResource</a>}</span></h2>
         
-            <div class="class-description"><p>The <em>ListingRequestResource</em> class provides methods to access the listing
-requests endpoint of the Cloud Blue Connect API.</p></div>
+            <div class="class-description"><p>The <em>UsageFileResource</em> class provides methods to access the usage file
+endpoint of the Cloud Blue Connect API.</p></div>
         
     
 </header>
@@ -103,12 +103,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="ListingRequestResource">
-        <a class="href-link" href="#ListingRequestResource">#</a>
+    <h4 class="name" id="UsageRecordResource">
+        <a class="href-link" href="#UsageRecordResource">#</a>
         
         <span class="code-name">
             
-                new ListingRequestResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="ListingRequestResource.html">ListingRequestResource</a>}</span>
+                new UsageRecordResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="UsageRecordResource.html">UsageRecordResource</a>}</span>
             
         </span>
     </h4>
@@ -117,7 +117,7 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Creates a new instance of the <em>ListingRequestResource</em> class.</p>
+        <p>Creates a new instance of the <em>UsageRecordResource</em> class.</p>
     </div>
     
 
@@ -242,13 +242,13 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An instance of the <em>ListingRequestResource</em> class.</p></div>
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageFileResource</em> class.</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type"><a href="ListingRequestResource.html">ListingRequestResource</a></span>
+<span class="param-type"><a href="UsageRecordResource.html">UsageRecordResource</a></span>
 
 
     </div>
@@ -385,8 +385,8 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="cancel">
-        <a class="href-link" href="#cancel">#</a>
+    <h4 class="name" id="close">
+        <a class="href-link" href="#close">#</a>
         
             
                 <span class='tag'>async</span>
@@ -394,7 +394,7 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                cancel<span class="signature">(id)</span><span class="type-signature"></span>
+                close<span class="signature">(id, externalBillingId, externalBillingNote)</span><span class="type-signature"> &rarr; {<a href="UsageChunkResource.html">UsageChunkResource</a>}</span>
             
         </span>
     </h4>
@@ -403,7 +403,7 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Cancel the ListingRequest.</p>
+        <p>Close all <em>Record File</em>.</p>
     </div>
     
 
@@ -457,7 +457,57 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
+  <td class="description last"><p>The unique identifier of the <em>Usage File</em>.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>externalBillingId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of the billing to close record</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>externalBillingNote</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Note of the billing to close record</p></td>
 </tr>
 
 
@@ -519,6 +569,31 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
 
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageChunkResource</em>.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="UsageChunkResource.html">UsageChunkResource</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
 
 
 
@@ -529,8 +604,8 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="complete">
-        <a class="href-link" href="#complete">#</a>
+    <h4 class="name" id="closeRecords">
+        <a class="href-link" href="#closeRecords">#</a>
         
             
                 <span class='tag'>async</span>
@@ -538,7 +613,7 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
         
         <span class="code-name">
             
-                complete<span class="signature">(id)</span><span class="type-signature"></span>
+                closeRecords<span class="signature">(id, recordId, externalBillingId, externalBillingNote)</span><span class="type-signature"> &rarr; {<a href="UsageChunkResource.html">UsageChunkResource</a>}</span>
             
         </span>
     </h4>
@@ -547,7 +622,7 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
     
     <div class="description">
-        <p>Complete the ListingRequest.</p>
+        <p>Close Records <em>Record File</em>.</p>
     </div>
     
 
@@ -601,7 +676,82 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
   
 
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
+  <td class="description last"><p>The unique identifier of the <em>Usage File</em>.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>recordId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of the record to  close</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>externalBillingId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of the billing to close record</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>externalBillingNote</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Note of the billing to close record</p></td>
 </tr>
 
 
@@ -663,6 +813,31 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
 
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageChunkResource</em>.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="UsageChunkResource.html">UsageChunkResource</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
 
 
 
@@ -944,150 +1119,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#delete">GenericResource#delete</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="deploy">
-        <a class="href-link" href="#deploy">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                deploy<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Deploy the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
     
 
     
@@ -1488,150 +1519,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="refine">
-        <a class="href-link" href="#refine">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                refine<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Refine the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
     <h4 class="name" id="search">
         <a class="href-link" href="#search">#</a>
         
@@ -1796,150 +1683,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
                 
         </div>
     </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="submit">
-        <a class="href-link" href="#submit">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                submit<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Submit the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

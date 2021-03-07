@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>ListingRequestResource</title>
+    <title>ProductUsageRulesResource</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>ListingRequestResource</h1>
+                        <h1>ProductUsageRulesResource</h1>
                     </header>
                     
                     
@@ -84,10 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ListingRequestResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="ListingRequestResource.html">ListingRequestResource</a>}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ProductUsageRulesResource<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>The <em>ListingRequestResource</em> class provides methods to access the listing
-requests endpoint of the Cloud Blue Connect API.</p></div>
+            <div class="class-description"><p>The <em>ProductUsageRulesResource</em> class provides methods to access the
+<em>ProductUsageRule</em> objects for a product.</p></div>
         
     
 </header>
@@ -103,12 +103,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
     
-    <h4 class="name" id="ListingRequestResource">
-        <a class="href-link" href="#ListingRequestResource">#</a>
+    <h4 class="name" id="ProductUsageRulesResource">
+        <a class="href-link" href="#ProductUsageRulesResource">#</a>
         
         <span class="code-name">
             
-                new ListingRequestResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="ListingRequestResource.html">ListingRequestResource</a>}</span>
+                new ProductUsageRulesResource<span class="signature">()</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -116,10 +116,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
     
     
-    <div class="description">
-        <p>Creates a new instance of the <em>ListingRequestResource</em> class.</p>
-    </div>
-    
 
 
 
@@ -128,56 +124,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
 
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>client</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="ConnectClient.html">ConnectClient</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>An instance of the ConnectClient class.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
 
 
 
@@ -233,31 +179,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
 
 
 
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>An instance of the <em>ListingRequestResource</em> class.</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type"><a href="ListingRequestResource.html">ListingRequestResource</a></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
 
 
 
@@ -334,12 +255,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#baseUri">GenericResource#baseUri</a>
     </li></ul></dd>
+    
+
     
 
     
@@ -380,294 +301,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
         <div class='vertical-section'>
             <h3 class="title"><span>Methods</span></h3>
             <div class="members">
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="cancel">
-        <a class="href-link" href="#cancel">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                cancel<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Cancel the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="complete">
-        <a class="href-link" href="#complete">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                complete<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Complete the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
             
                 <div class="member">
 
@@ -764,12 +397,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#create">GenericResource#create</a>
     </li></ul></dd>
+    
+
     
 
     
@@ -938,154 +571,10 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#delete">GenericResource#delete</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="deploy">
-        <a class="href-link" href="#deploy">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                deploy<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Deploy the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
     
 
     
@@ -1256,12 +745,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#fetch">GenericResource#fetch</a>
     </li></ul></dd>
+    
+
     
 
     
@@ -1405,12 +894,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#get">GenericResource#get</a>
     </li></ul></dd>
+    
+
     
 
     
@@ -1478,150 +967,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
                 
         </div>
     </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="refine">
-        <a class="href-link" href="#refine">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                refine<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Refine the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1723,12 +1068,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#search">GenericResource#search</a>
     </li></ul></dd>
+    
+
     
 
     
@@ -1796,150 +1141,6 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
                 
         </div>
     </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="submit">
-        <a class="href-link" href="#submit">#</a>
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            
-                submit<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Submit the ListingRequest.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>The unique identifier of the ListingRequest object.</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2066,12 +1267,12 @@ requests endpoint of the Cloud Blue Connect API.</p></div>
     
 
     
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
         <a href="GenericResource.html#update">GenericResource#update</a>
     </li></ul></dd>
+    
+
     
 
     

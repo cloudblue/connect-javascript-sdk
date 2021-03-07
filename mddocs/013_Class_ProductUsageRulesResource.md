@@ -21,6 +21,10 @@
 <dd><p>The <em>ProductConnectionsResource</em> class provides methods to access the
 <em>ProductConnection</em> objects for a product.</p>
 </dd>
+<dt><a href="#ProductUsageRulesResource">ProductUsageRulesResource</a> ⇐ <code>GenericResource</code></dt>
+<dd><p>The <em>ProductUsageRulesResource</em> class provides methods to access the
+<em>ProductUsageRule</em> objects for a product.</p>
+</dd>
 <dt><a href="#ProductResource">ProductResource</a> ⇐ <code>GenericResource</code></dt>
 <dd><p>The <em>ProductResource</em> class provides methods to access the products
 endpoint of the Cloud Blue Connect API.</p>
@@ -116,6 +120,15 @@ The *ProductConnectionsResource* class provides methods to access the
 **Kind**: global class  
 **Extends**: <code>GenericResource</code>  
 **Category**: Resources  
+<a name="ProductUsageRulesResource"></a>
+
+## ProductUsageRulesResource ⇐ <code>GenericResource</code>
+The *ProductUsageRulesResource* class provides methods to access the
+*ProductUsageRule* objects for a product.
+
+**Kind**: global class  
+**Extends**: <code>GenericResource</code>  
+**Category**: Resources  
 <a name="ProductResource"></a>
 
 ## ProductResource ⇐ <code>GenericResource</code>
@@ -133,6 +146,7 @@ endpoint of the Cloud Blue Connect API.
     * [.configurations(id)](#ProductResource+configurations) ⇒ [<code>ProductConfigurationResource</code>](#ProductConfigurationResource)
     * [.parameters(id)](#ProductResource+parameters) ⇒ [<code>ProductParameterResource</code>](#ProductParameterResource)
     * [.connections(id)](#ProductResource+connections) ⇒ [<code>ProductConnectionsResource</code>](#ProductConnectionsResource)
+    * [.usageRules(id)](#ProductResource+usageRules) ⇒ <code>ProductUsageRuleResource</code>
     * [.getTemplates(id)](#ProductResource+getTemplates) ⇒ <code>Array</code>
     * ~~[.getParameters(id)](#ProductResource+getParameters) ⇒ <code>Array</code>~~
     * [.getItems(id)](#ProductResource+getItems) ⇒ <code>Array</code>
@@ -208,6 +222,19 @@ Returns an instance of the *ProductConnectionsResource* for a *Product*.
 
 **Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
 **Returns**: [<code>ProductConnectionsResource</code>](#ProductConnectionsResource) - An instance of the *ProductParameterResource*
+                                          for the product.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the *Product*. |
+
+<a name="ProductResource+usageRules"></a>
+
+### productResource.usageRules(id) ⇒ <code>ProductUsageRuleResource</code>
+Returns an instance of the *ProductUsageRulesResource* for a *Product*.
+
+**Kind**: instance method of [<code>ProductResource</code>](#ProductResource)  
+**Returns**: <code>ProductUsageRuleResource</code> - An instance of the *ProductUsageRuleResource*
                                           for the product.  
 
 | Param | Type | Description |
