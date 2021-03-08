@@ -21,8 +21,8 @@ describe('UsageChunkResource', () => {
   });
 
   it.each([
-    ['processedfile'],
-    ['uploadedfile']
+    ['processedFile'],
+    ['uploadedFile']
   ])('performs the %s action', async (action) => {
     const req = new UsageReconciliationResource(client);
     const response =  {
