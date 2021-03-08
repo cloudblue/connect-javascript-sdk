@@ -49,6 +49,12 @@ describe('ProductResource', () => {
     await expect(prod.configurations('PRD-000').search()).resolves.toEqual(configs);
     expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/configurations', expect.anything());
   });
+  it('returns a list of product usage rules for a product', async () => {
+    const prod = new ProductResource(client);
+    const test = [{ id: 'PRD-000', name: 'test product' }];
+    fetch.mockResponseOnce(JSON.stringify(test), { status: 200, headers: contentTypeJson });
+    await expect(prod.usageRules('PRD-000').search()).resolves.toEqual(test);
+    expect(fetch).toBeCalledWith('https://localhost/products/PRD-000/usage/rules', expect.anything());  });
   it.each([
     ['templates', [{ id: 'TL-000', title: 'test template', body: 'template body' }]],
     ['parameters', [{ id: 'test_param', title: 'test parameter' }]],
