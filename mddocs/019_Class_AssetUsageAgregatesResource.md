@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#AssetUsageAgregates">AssetUsageAgregates</a> ⇐ <code>GenericResource</code></dt>
+<dt><a href="#AssetUsageAgregatesResource">AssetUsageAgregatesResource</a> ⇐ <code>GenericResource</code></dt>
 <dd><p>The <em>AssetUsageAgregatesResource</em> class provides methods to access the
 <em>AssetUsageAgregates</em> objects for a asset.</p>
 </dd>
@@ -11,9 +11,9 @@ endpoint of the Cloud Blue Connect API.</p>
 </dd>
 </dl>
 
-<a name="AssetUsageAgregates"></a>
+<a name="AssetUsageAgregatesResource"></a>
 
-## AssetUsageAgregates ⇐ <code>GenericResource</code>
+## AssetUsageAgregatesResource ⇐ <code>GenericResource</code>
 The *AssetUsageAgregatesResource* class provides methods to access the
 *AssetUsageAgregates* objects for a asset.
 
@@ -32,7 +32,7 @@ endpoint of the Cloud Blue Connect API.
 
 * [AssetResource](#AssetResource) ⇐ <code>GenericResource</code>
     * [new AssetResource(client)](#new_AssetResource_new)
-    * [.usageAgregates(id)](#AssetResource+usageAgregates) ⇒ <code>AssetUsageAgregatesResource</code>
+    * [.usageAgregates(id)](#AssetResource+usageAgregates) ⇒ [<code>AssetUsageAgregatesResource</code>](#AssetUsageAgregatesResource)
 
 <a name="new_AssetResource_new"></a>
 
@@ -47,11 +47,11 @@ Creates a new instance of the *AssetResource* class.
 
 <a name="AssetResource+usageAgregates"></a>
 
-### assetResource.usageAgregates(id) ⇒ <code>AssetUsageAgregatesResource</code>
+### assetResource.usageAgregates(id) ⇒ [<code>AssetUsageAgregatesResource</code>](#AssetUsageAgregatesResource)
 Returns an instance of the *AssetUsageAgregatesResource* for a *Asset*.
 
 **Kind**: instance method of [<code>AssetResource</code>](#AssetResource)  
-**Returns**: <code>AssetUsageAgregatesResource</code> - An instance of the *AssetUsageAgregatesResource*
+**Returns**: [<code>AssetUsageAgregatesResource</code>](#AssetUsageAgregatesResource) - An instance of the *AssetUsageAgregatesResource*
                                           for the asset.  
 
 | Param | Type | Description |

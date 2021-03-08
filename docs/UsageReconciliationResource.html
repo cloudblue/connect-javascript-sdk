@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>ProductConfigurationResource</title>
+    <title>UsageReconciliationResource</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Class</p>
-                        <h1>ProductConfigurationResource</h1>
+                        <h1>UsageReconciliationResource</h1>
                     </header>
                     
                     
@@ -84,10 +84,10 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ProductConfigurationResource<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>UsageReconciliationResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="UsageRecordResource.html">UsageRecordResource</a>}</span></h2>
         
-            <div class="class-description"><p>The <em>ProductConfigurationResource</em> class provides methods to access the
-<em>ProductConfiguration</em> objects for a product.</p></div>
+            <div class="class-description"><p>The <em>UsageFileResource</em> class provides methods to access the usage file
+endpoint of the Cloud Blue Connect API.</p></div>
         
     
 </header>
@@ -103,12 +103,12 @@
 
 
     
-    <h4 class="name" id="ProductConfigurationResource">
-        <a class="href-link" href="#ProductConfigurationResource">#</a>
+    <h4 class="name" id="UsageReconciliationResource">
+        <a class="href-link" href="#UsageReconciliationResource">#</a>
         
         <span class="code-name">
             
-                new ProductConfigurationResource<span class="signature">()</span><span class="type-signature"></span>
+                new UsageReconciliationResource<span class="signature">(client)</span><span class="type-signature"> &rarr; {<a href="UsageRecordResource.html">UsageRecordResource</a>}</span>
             
         </span>
     </h4>
@@ -116,6 +116,10 @@
 
     
     
+    <div class="description">
+        <p>Creates a new instance of the <em>UsageReconciliationResource</em> class.</p>
+    </div>
+    
 
 
 
@@ -124,6 +128,56 @@
 
 
 
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>client</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="ConnectClient.html">ConnectClient</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>An instance of the ConnectClient class.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
 
 
 
@@ -179,6 +233,31 @@
 
 
 
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageFileResource</em> class.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="UsageRecordResource.html">UsageRecordResource</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
 
 
 
@@ -255,12 +334,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#baseUri">GenericResource#baseUri</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -397,12 +476,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#create">GenericResource#create</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -571,12 +650,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#delete">GenericResource#delete</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -745,12 +824,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#fetch">GenericResource#fetch</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -894,12 +973,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#get">GenericResource#get</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -958,6 +1037,175 @@
         <label>Type: </label>
         
 <span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="processedFile">
+        <a class="href-link" href="#processedFile">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                processedFile<span class="signature">(id)</span><span class="type-signature"> &rarr; {<a href="UsageReconciliationResource.html">UsageReconciliationResource</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get processed files.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>Usage File</em>.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageReconciliationResource</em>.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="UsageReconciliationResource.html">UsageReconciliationResource</a></span>
 
 
     </div>
@@ -1068,12 +1316,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#search">GenericResource#search</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -1267,12 +1515,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="GenericResource.html#update">GenericResource#update</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -1331,6 +1579,175 @@
         <label>Type: </label>
         
 <span class="param-type">object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="uploadedFile">
+        <a class="href-link" href="#uploadedFile">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                uploadedFile<span class="signature">(id)</span><span class="type-signature"> &rarr; {<a href="UsageReconciliationResource.html">UsageReconciliationResource</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get uploaded files.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>id</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The unique identifier of the <em>Usage File</em>.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>An instance of the <em>UsageReconciliationResource</em>.</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="UsageReconciliationResource.html">UsageReconciliationResource</a></span>
 
 
     </div>

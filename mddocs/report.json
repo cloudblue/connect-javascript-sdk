@@ -1,5 +1,5 @@
 {
-    "generated": "2021-03-07T07:50:05.148Z",
+    "generated": "2021-03-08T08:56:17.771Z",
     "pages": [
         {
             "name": "Welcome",
@@ -106,12 +106,12 @@
             "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/012_Class_Subscriptions.md"
         },
         {
-            "name": "Class ProductUsageRulesResource",
+            "name": "Class ProductUsageRuleResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/products.js",
             "idx": "13",
-            "outputFileName": "013_Class_ProductUsageRulesResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/013_Class_ProductUsageRulesResource.md"
+            "outputFileName": "013_Class_ProductUsageRuleResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/013_Class_ProductUsageRuleResource.md"
         },
         {
             "name": "Class AccountUserResource",
@@ -154,12 +154,12 @@
             "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/018_Class_BillingRequestResource.md"
         },
         {
-            "name": "Class AssetUsageAgregates",
+            "name": "Class AssetUsageAgregatesResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/assets.js",
             "idx": "19",
-            "outputFileName": "019_Class_AssetUsageAgregates.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/019_Class_AssetUsageAgregates.md"
+            "outputFileName": "019_Class_AssetUsageAgregatesResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/019_Class_AssetUsageAgregatesResource.md"
         },
         {
             "name": "Class RequestResource",
@@ -338,12 +338,12 @@
             "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/041_Class_TierAccountVersionResource.md"
         },
         {
-            "name": "Class UsageReconciliationsResource",
+            "name": "Class UsageReconciliationResource",
             "category": "Resources",
             "file": "/home/travis/build/cloudblue/connect-javascript-sdk/lib/connect/api/usageReconciliations.js",
             "idx": "42",
-            "outputFileName": "042_Class_UsageReconciliationsResource.md",
-            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/042_Class_UsageReconciliationsResource.md"
+            "outputFileName": "042_Class_UsageReconciliationResource.md",
+            "url": "https://raw.githubusercontent.com/cloudblue/connect-javascript-sdk/master/mddocs/042_Class_UsageReconciliationResource.md"
         },
         {
             "name": "Class UsageChunkResource",
