@@ -23,6 +23,11 @@
     * [.webhooks](#ConnectClient+webhooks) : <code>WebhookResource</code>
     * [.listingRequests](#ConnectClient+listingRequests) : <code>ListingRequestResource</code>
     * [.cases](#ConnectClient+cases) : <code>CaseResource</code>
+    * [.usageFiles](#ConnectClient+usageFiles) : <code>UsageFileResource</code>
+    * [.usageAggregates](#ConnectClient+usageAggregates) : <code>UsageAggregateResource</code>
+    * [.usageChunks](#ConnectClient+usageChunks) : <code>UsageChunkResource</code>
+    * [.usageReconciliations](#ConnectClient+usageReconciliations) : <code>UsageReconciliationResource</code>
+    * [.usageRecords](#ConnectClient+usageRecords) : <code>UsageRecordResource</code>
 
 <a name="new_ConnectClient_new"></a>
 
@@ -142,5 +147,40 @@ the *ListingRequest* resource endpoint.
 ### connectClient.cases : <code>CaseResource</code>
 Returns an instance of the *CaseResource* class to access
 the *HelpdesCase* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+usageFiles"></a>
+
+### connectClient.usageFiles : <code>UsageFileResource</code>
+Returns an instance of the *UsageFileResource* class to access
+the *UsageFile* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+usageAggregates"></a>
+
+### connectClient.usageAggregates : <code>UsageAggregateResource</code>
+Returns an instance of the *UsageAggregateResource* class to access
+the *UsageFile* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+usageChunks"></a>
+
+### connectClient.usageChunks : <code>UsageChunkResource</code>
+Returns an instance of the *UsageChunkResource* class to access
+the *UsageChunk* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+usageReconciliations"></a>
+
+### connectClient.usageReconciliations : <code>UsageReconciliationResource</code>
+Returns an instance of the *UsageReconciliationResource* class to access
+the *UsageReconciliation* resource endpoint.
+
+**Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
+<a name="ConnectClient+usageRecords"></a>
+
+### connectClient.usageRecords : <code>UsageRecordResource</code>
+Returns an instance of the *UsagerecordResource* class to access
+the *UsageRecord* resource endpoint.
 
 **Kind**: instance property of [<code>ConnectClient</code>](#ConnectClient)  
