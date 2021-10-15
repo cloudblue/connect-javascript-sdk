@@ -52,7 +52,7 @@ The Cloud Blue Connect JSON error looks like:
 
 **Kind**: global class  
 **Extends**: [<code>HttpError</code>](#HttpError)  
-**Category**: Base  
+**Category**: Resources  
 
 * [APIError](#APIError) ⇐ [<code>HttpError</code>](#HttpError)
     * [new APIError(status, message)](#new_APIError_new)

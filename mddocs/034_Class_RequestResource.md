@@ -14,6 +14,9 @@ endpoint of the Cloud Blue Connect API.
     * [.inquire(id, request)](#RequestResource+inquire) ⇒ <code>object</code>
     * [.approve(id, request)](#RequestResource+approve) ⇒ <code>object</code>
     * [.pending(id)](#RequestResource+pending) ⇒ <code>object</code>
+    * [.schedule(id)](#RequestResource+schedule) ⇒ <code>object</code>
+    * [.revoke(id)](#RequestResource+revoke) ⇒ <code>object</code>
+    * [.confirm(id)](#RequestResource+confirm) ⇒ <code>object</code>
 
 <a name="new_RequestResource_new"></a>
 
@@ -101,6 +104,42 @@ either a template id or a template tile.
 
 ### requestResource.pending(id) ⇒ <code>object</code>
 Change the status of a *Request* to pending.
+
+**Kind**: instance method of [<code>RequestResource</code>](#RequestResource)  
+**Returns**: <code>object</code> - The updated Request object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the Request object. |
+
+<a name="RequestResource+schedule"></a>
+
+### requestResource.schedule(id) ⇒ <code>object</code>
+Change the status of a *Request* to scheduled.
+
+**Kind**: instance method of [<code>RequestResource</code>](#RequestResource)  
+**Returns**: <code>object</code> - The updated Request object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the Request object. |
+
+<a name="RequestResource+revoke"></a>
+
+### requestResource.revoke(id) ⇒ <code>object</code>
+Change the status of a *Request* to revoking.
+
+**Kind**: instance method of [<code>RequestResource</code>](#RequestResource)  
+**Returns**: <code>object</code> - The updated Request object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | The unique identifier of the Request object. |
+
+<a name="RequestResource+confirm"></a>
+
+### requestResource.confirm(id) ⇒ <code>object</code>
+Change the status of a *Request* to revoqued.
 
 **Kind**: instance method of [<code>RequestResource</code>](#RequestResource)  
 **Returns**: <code>object</code> - The updated Request object.  
