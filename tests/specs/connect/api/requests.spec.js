@@ -20,7 +20,10 @@ describe('RequestResource', () => {
   });
   it.each([
     ['inquire', { template_id: 'TL-000' }, {id: 'PR-000', type: 'purchase'}],
-    ['approve', { template_id: 'TL-000' }, {id: 'PR-000', type: 'purchase'}]
+    ['approve', { template_id: 'TL-000' }, {id: 'PR-000', type: 'purchase'}],
+    ['schedule', { data: {'planned_date': '2021-08-04T20:10:59+00:00'} }, {id: 'PR-000', type: 'purchase'}],
+    ['revoke', { data: {'reason': 'abcd'} }, {id: 'PR-000', type: 'purchase'}]
+
   ])('performs the %s action', async (action, request, response) => {
     const req = new RequestResource(client);
     fetch.mockResponseOnce(JSON.stringify(response), { status: 200, headers: contentTypeJson });
@@ -48,6 +51,17 @@ describe('RequestResource', () => {
       body: JSON.stringify({
         reason: 'test reason',
       }),
+      headers: expect.anything()
+    });    
+  });
+
+  it('changes the status of the request to revoked', async () => {
+    const req = new RequestResource(client);
+    const response = {id: 'PR-000', type: 'purchase', status: 'revoked'};
+    fetch.mockResponseOnce(JSON.stringify(response), { status: 200, headers: contentTypeJson });
+    await expect(req.confirm('PR-000')).resolves.toEqual(response);
+    expect(fetch).toBeCalledWith('https://localhost/requests/PR-000/confirm', {
+      method: 'POST',
       headers: expect.anything()
     });    
   });
