@@ -22,7 +22,7 @@ git push origin $TRAVIS_BRANCH
 CHECK_TAG=$(git tag -l "$GIT_TAG")
 if [ "$CHECK_TAG" != "$GIT_TAG" ]; then
     echo "Create tag $GIT_TAG"
-    git tag -a $GIT_TAG -m "Generated tag from TravisCI build"
+    git tag -a $GIT_TAG -m "Generated tag from build"
     echo "Tag $GIT_TAG added"
     git push origin $TRAVIS_BRANCH --tags
 else

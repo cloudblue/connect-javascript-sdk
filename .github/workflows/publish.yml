@@ -33,6 +33,7 @@ jobs:
           echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}"
           ./commit_tag_push.sh
         env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           TRAVIS_REPO_SLUG: ${{ github.repository }}
           TRAVIS_BRANCH: ${{ github.head_ref }}
           CONNECT_GITHUB_TOKEN: ${{ secrets.CONNECT_GITHUB_TOKEN }}
