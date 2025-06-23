@@ -19,7 +19,7 @@
     "cloudblue",
     "connect"
   ],
-  "author": "Ingram Micro Inc",
+  "author": "CloudBlue",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cloudblue/connect-javascript-sdk/issues"
